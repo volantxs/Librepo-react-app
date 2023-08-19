@@ -35,11 +35,11 @@ function Dashboard() {
          </button>
       </div>   
     </nav>
-    <div className='container mt-5'>
-      <h1>Librepo</h1>
-      <Profile />
+    <div className='container mt-5 text-center' >
+    <h1 className="mb-3">Add to collection</h1>
+     <div className="w-50 container text-center"><Profile /></div>
     </div>
-    <div className="jumbotron-fluid bg-dark">
+    <div className="jumbotron bg-dark">
        <div className="text-center text-light">
         Logged in as
          <div>{name}</div>

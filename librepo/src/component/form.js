@@ -7,7 +7,7 @@ function Form({ onValChange, formObject, onFormSubmit }) {
             className="form-control"
             placeholder="Book Name"
             onChange={onValChange}
-            value={formObject.name}
+            value={formObject.bookName}
             name="bookName"
           />
         </div>
@@ -17,7 +17,7 @@ function Form({ onValChange, formObject, onFormSubmit }) {
             className="form-control"
             placeholder="Pages"
             onChange={onValChange}
-            value={formObject.email}
+            value={formObject.bookPages}
             name="bookPages"
           />
         </div>

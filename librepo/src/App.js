@@ -5,6 +5,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Register from "./register";
 import Reset from "./reset";
 import Dashboard from './dashboard';
+
 // import TableData from './form';
 function App() {
   return (
