@@ -45,22 +45,12 @@ function Dashboard() {
     }, [])
   return (
     <>
-    <nav className="navbar navbar-light bg-dark">
+    <nav className="navbar navbar-light bg-black">
       <div className="container-fluid">
       <span className="text-light h1">{name}<small className="text-secondary h5"> @Librepo</small>
       </span>
-      <div class="btn-group btn-group-toggle text-center" data-toggle="buttons">
-        <label class="btn btn-secondary active">
-          <input type="radio" name="options" id="option1" autocomplete="off" />X-class
-        </label>
-        <label class="btn btn-secondary">
-          <input type="radio" name="options" id="option2" autocomplete="off"/> S-class
-        </label>
-        <label class="btn btn-secondary">
-          <input type="radio" name="options" id="option3" autocomplete="off"/> R-class
-        </label>
-      </div>
-  <button className="btn btn-danger" onClick={logout}>Logout
+
+  <button className="btn btn-danger rounded-pill" onClick={logout}>Logout
          </button> 
   </div> 
     </nav>
@@ -70,13 +60,18 @@ function Dashboard() {
     <h1 className="mb-3">Add to collection</h1>
      <div className="w-50 container text-center"><Xperience /></div>
     </div>
-    <div className="jumbotron bg-dark">
+    {/* <div className="jumbotron bg-dark">
        <div className="text-center text-light">
         Logged in as
          <div>{name}</div>
          <div>{user?.email}</div>
        </div>
-     </div>
+     </div> */}
+     <div class="jumbotron fixed-bottom navbar-dark bg-black p-3">
+           <div className="text-center text-light">
+            Always logout of your Lib.Vault 
+            </div>
+    </div>
     </> 
   );
 }

@@ -7,9 +7,9 @@ function Home() {
     <>
     <nav className="navbar navbar-light">
       <div className="container-fluid flex-row justify-content-start p-2">
-            <a className="btn bg-dark text-light rounded-pill" href="./register" role="button"><strong>New Reader</strong></a>
-            <span className="h6 text-light">Gem</span>
-            <a className="btn bg-dark text-light rounded-pill" href="./login" role="button"><strong>Log in</strong></a>
+            <a className="btn bg-dark text-light rounded-pill" href="./register" role="button">New Reader</a>
+            <span className="h6 text-light">Lib</span>
+            <a className="btn bg-dark text-light rounded-pill" href="./login" role="button">Log in</a>
       </div>   
     </nav>
     <div className="jumbotron">
@@ -21,7 +21,7 @@ function Home() {
         </div>    
     </div>
     
-    <nav class="navbar fixed-bottom navbar-dark bg-dark">
+    <nav class="navbar fixed-bottom navbar-dark bg-black">
         <div className="container-fluid">
         <a class="navbar-brand" href="">Quick Link</a>
         </div>

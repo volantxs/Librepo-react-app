@@ -19,49 +19,53 @@ function Login() {
   }, [user, loading, navigate]);
   return (
     <>
-      <div className="container-fluid text-center">
+      <div className="container-fluid text-center text-light bg-black p-2">
         <h1>
             {/* <small className="text-muted">Welcome to </small> */}
-            <strong>Welcome to Librepo</strong>
+            Lib.Vault
         </h1>
-        <p className="lead">This is the toy version 1.0</p>
       </div>
       <div className="login">
       <div className="login__container rounded">
       <span className="text-light h1 text-center mb-4">Login</span>
-      <label className="text-light h6">Lib.id</label>
+      <label className="text-light h5">Lib.id</label>
         <input
           type="text"
           className="login__textBox rounded-pill"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="E-mail Address"
+          placeholder="E-mail"
         />
-      <label className="text-light h6">Secret Key</label>
+      <label className="text-light h5">Secret key</label>
         <input
           type="password"
           className="login__textBox rounded-pill"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
+          placeholder="Passkey"
         />
         <button
-          className="login__btn"
+          className="btn btn-violet rounded-pill mt-3"
           onClick={() => logInWithEmailAndPassword(email, password)}
         >
-          Login
+          Enter Lib.vault
         </button>
-        <button className="login__btn login__google" onClick={signInWithGoogle}>
+        <button className="btn btn-light rounded-pill mt-3 mb-3" onClick={signInWithGoogle}>
           Login with Google
         </button>
-        <div>
-          <Link to="/reset">Forgot Password</Link>
-        </div>
-        <div>
+        <div className="text-light">
           Don't have an account? <Link to="/register">Register</Link> now.
         </div>
+        <div className="text-light text-center">
+          <Link to="/reset">Forgot Password</Link>
+        </div>
       </div>
       </div>
+      <nav class="navbar fixed-bottom navbar-dark bg-black">
+        <div className="container-fluid d-flex justify-content-start">
+        <a className="text-light" href="/">Librepo</a>
+        </div>
+    </nav>
     </>
   );
 }

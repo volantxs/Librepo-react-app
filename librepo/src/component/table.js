@@ -18,11 +18,6 @@ function Table() {
     useEffect(()=>{
       fetchPost();
     }, [])
-
-    // const totalXP = async () => {
-    //   books.doc.XP = 
-      
-    // } 
     return (
       <table className="table mt-5 mb-5">
         <thead>
@@ -30,7 +25,7 @@ function Table() {
             <th>Id</th>
             <th>Book</th>
             <th>Pages</th>
-            <th>XP</th>
+            <th>Book XP</th>
           </tr>
         </thead>
         <tbody>

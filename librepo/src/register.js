@@ -27,41 +27,41 @@ function Register() {
     <div className="container-fluid text-center text-light bg-black p-2">
         <h1>
             {/* <small className="text-muted">Welcome to </small> */}
-            <strong>Lib.Vault</strong>
+            Lib.Vault
         </h1>
       </div>
-    <div className="register p-5">
+    <div className="register">
       <div className="register__container rounded">
         <span className="text-light text-center h1 mb-4">New Reader</span>
-        <label className="text-light h6">Reader</label>
+        <label className="text-light h5">Reader</label>
         <input
           type="text"
           className="register__textBox rounded-pill"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Full Name"
+          placeholder="Reader's Name"
         />
-        <label className="text-light h6">Lib.id</label>
+        <label className="text-light h5">Lib.id</label>
         <input
           type="text"
           className="register__textBox rounded-pill"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="E-mail Address"
+          placeholder="E-mail"
         />
-        <label className="text-light h6">Secret Key</label>
+        <label className="text-light h5">Secret Key</label>
         <input
           type="password"
           className="register__textBox rounded-pill"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
+          placeholder="Passkey"
         />
-        <button className="btn btn-danger rounded-pill mt-3 mb-3" onClick={register}>
+        <button className="btn btn-violet rounded-pill mt-3 mb-3" onClick={register}>
           Create Reader
         </button>
         <button
-          className="btn btn-primary rounded-pill mb-3"
+          className="btn btn-light rounded-pill mb-3"
           onClick={signInWithGoogle}
         >
           Register with Google

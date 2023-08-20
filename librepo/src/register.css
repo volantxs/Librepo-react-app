@@ -1,5 +1,5 @@
 .register {
-    /* height: 100vh; */
+    height: 100vh;
     /* width: 100vw; */
     display: flex;
     align-items: center;
@@ -22,4 +22,19 @@
 
   .bg-black{
     background-color: black;
+  }
+  
+  .btn-violet{
+    background-color: #580BFB;
+    color: white;
+  }
+  .btn-violet:hover { 
+    border-color: #580BFB;
+    background-color: #7839ff;
+    color: white;
+    
+  }
+  .btn-light:hover{
+    background-color: grey;
+    border-color: grey;
   }
