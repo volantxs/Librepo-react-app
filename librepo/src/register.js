@@ -30,7 +30,7 @@ function Register() {
             Lib.Vault
         </h1>
       </div>
-    <div className="register">
+    <div className="register p-5">
       <div className="register__container rounded">
         <span className="text-light text-center h1 mb-4">New Reader</span>
         <label className="text-light h5">Reader</label>
@@ -70,6 +70,11 @@ function Register() {
           Already have an account? <Link to="/login">Login</Link> now.
         </div>
       </div>
+    </div>
+    <div class="jumbotron fixed-bottom bg-black p-2">
+           <div className="text-center">
+            <a className="text-light" href="/">Gateway to Librepo</a>
+            </div>
     </div>
   </>  
   );

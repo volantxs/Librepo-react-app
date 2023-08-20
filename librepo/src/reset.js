@@ -21,7 +21,7 @@ function Reset() {
             Lib.Unlock
         </h1>
       </div>
-    <div className="reset">
+    <div className="reset p-5">
       <div className="reset__container rounded">
       <span className="text-light h1 text-center mb-4">Reset Secret Key</span>
         <input
@@ -35,12 +35,17 @@ function Reset() {
           className="btn btn-violet rounded-pill mt-3 mb-3"
           onClick={() => sendPasswordReset(email)}
         >
-          Send password reset email
+          Send passkey reset email
         </button>
         <div className="text-light">
           Don't have an account? <Link to="/register">Register</Link> now.
         </div>
       </div>
+    </div>
+    <div class="jumbotron fixed-bottom navbar-dark bg-black p-2">
+           <div className="text-center text-light">
+            <a className="text-light" href="/">Gateway to Librepo</a>
+            </div>
     </div>
     </>
   );

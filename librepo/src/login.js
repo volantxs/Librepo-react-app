@@ -25,7 +25,7 @@ function Login() {
             Lib.Vault
         </h1>
       </div>
-      <div className="login">
+      <div className="login p-5">
       <div className="login__container rounded">
       <span className="text-light h1 text-center mb-4">Login</span>
       <label className="text-light h5">Lib.id</label>
@@ -61,11 +61,11 @@ function Login() {
         </div>
       </div>
       </div>
-      <nav class="navbar fixed-bottom navbar-dark bg-black">
-        <div className="container-fluid d-flex justify-content-start">
-        <a className="text-light" href="/">Librepo</a>
-        </div>
-    </nav>
+      <div class="jumbotron fixed-bottom navbar-dark bg-black p-2">
+           <div className="text-center text-light">
+            <a className="text-light" href="/">Gateway to Librepo</a>
+            </div>
+    </div>
     </>
   );
 }
