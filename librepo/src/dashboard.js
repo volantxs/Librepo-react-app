@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./dashboard.css";
 import { auth, db, logout } from "./firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
-import Profile from "./component/profile";
+import Xperience from "./component/xperience";
 function Dashboard() {
   // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
@@ -26,18 +26,49 @@ function Dashboard() {
     if (!user) return navigate("/");
     fetchUserName();
   }, [user, loading]);
+
+  const [XP, setXP] = useState([]);
+    const fetchPost = async () => {
+        try {
+          const q = query(collection(db, "Book Data"));
+          const doc = await getDocs(q);
+          const data = doc.docs[0].data();
+          setXP(data.XP);
+        } catch (err) {
+          console.error(err);
+          alert("Error: Can't fetch Xp data");
+        }
+       
+    }
+    useEffect(()=>{
+      fetchPost();
+    }, [])
   return (
     <>
     <nav className="navbar navbar-light bg-dark">
       <div className="container-fluid">
-      <span className="navbar-brand mb-0 h1 text-light">Librepo @ {name}</span>
-      <button className="btn btn-warning" onClick={logout}>Logout
-         </button>
-      </div>   
+      <span className="text-light h1">{name}<small className="text-secondary h5"> @Librepo</small>
+      </span>
+      <div class="btn-group btn-group-toggle text-center" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="options" id="option1" autocomplete="off" />X-class
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="options" id="option2" autocomplete="off"/> S-class
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="options" id="option3" autocomplete="off"/> R-class
+        </label>
+      </div>
+  <button className="btn btn-danger" onClick={logout}>Logout
+         </button> 
+  </div> 
     </nav>
-    <div className='container mt-5 text-center' >
+    <div className='container mt-4 text-center' >
+  
+    <p className="font-weight-light text-secondary">Toy Version 1.0</p>
     <h1 className="mb-3">Add to collection</h1>
-     <div className="w-50 container text-center"><Profile /></div>
+     <div className="w-50 container text-center"><Xperience /></div>
     </div>
     <div className="jumbotron bg-dark">
        <div className="text-center text-light">

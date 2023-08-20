@@ -5,7 +5,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Register from "./register";
 import Reset from "./reset";
 import Dashboard from './dashboard';
-
+import Home from './home';
 // import TableData from './form';
 function App() {
   return (
@@ -13,7 +13,8 @@ function App() {
     <div>
       <Router>
         <Routes>
-          <Route exact path="/" element={<Login />} />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/reset" element={<Reset />} />
           <Route exact path="/dashboard" element={<Dashboard />} />

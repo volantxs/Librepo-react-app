@@ -3,12 +3,12 @@ import Form from "./form";
 import Table from "./table";
 import { addDoc, collection } from "firebase/firestore";
 import { db }  from "../firebase";
-function Profile() {
+function Xperience() {
   const [tableData, setTableData] = useState([]);
   const [formObject, setFormObject] = useState({
     bookName: "",
     bookPages: "",
-    profile: "",
+    xp: "",
   });
   const onValChange = (event) => {
     const value = (res) => ({
@@ -16,6 +16,7 @@ function Profile() {
       [event.target.name]: event.target.value,
     });
     setFormObject(value);
+    formObject.xp = Math.ceil(parseInt(formObject.bookPages)*7);
   };
   const onFormSubmit = async (event) => {
     event.preventDefault();
@@ -26,11 +27,12 @@ function Profile() {
         const docRef = await addDoc(collection(db, "Book Data"), {
                 Book: formObject.bookName,
                 Pages: formObject.bookPages,
-                Profile: formObject.profile
+                XP: formObject.xp
             });
         alert("Book data sent!");
         setTableData(dataObj);
-        const isEmpty = { bookName: "", bookPages: "", profile: "" };
+       
+        const isEmpty = { bookName: "", bookPages: "", xp: "" };
         setFormObject(isEmpty);
       } catch (err) {
             console.error(err);
@@ -50,4 +52,5 @@ function Profile() {
     </Fragment>
   );
 }
-export default Profile;
+
+export default Xperience;

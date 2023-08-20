@@ -22,14 +22,16 @@ function Form({ onValChange, formObject, onFormSubmit }) {
           />
         </div>
         <div className="mb-3">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Profile"
-            onChange={onValChange}
-            value={formObject.profile}
-            name="profile"
-          />
+          <label for="StaticXP" className="text-danger"><strong>Book XP</strong></label>
+            <input
+              type="text"
+              readOnly className="form-control-plaintext text-center"
+              id="StaticXP"
+              placeholder="XP"
+              onChange={onValChange}
+              value={formObject.xp}
+              name="xperience"
+            />
         </div>
         <div className="d-grid">
           <input
