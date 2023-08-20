@@ -18,7 +18,3 @@ The project is done under the nights & weekends season 4.
 I am quiet nascent to this space. I hope people who review this could be patient with this Dev. 
 
 ### Feebacks are super duper welcome!
-
-
-
-
