@@ -19,7 +19,7 @@ function Login() {
   }, [user, loading, navigate]);
   return (
     <>
-      <div className="container text-center">
+      <div className="container-fluid text-center">
         <h1>
             {/* <small className="text-muted">Welcome to </small> */}
             <strong>Welcome to Librepo</strong>
@@ -27,17 +27,20 @@ function Login() {
         <p className="lead">This is the toy version 1.0</p>
       </div>
       <div className="login">
-      <div className="login__container">
+      <div className="login__container rounded">
+      <span className="text-light h1 text-center mb-4">Login</span>
+      <label className="text-light h6">Lib.id</label>
         <input
           type="text"
-          className="login__textBox"
+          className="login__textBox rounded-pill"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
         />
+      <label className="text-light h6">Secret Key</label>
         <input
           type="password"
-          className="login__textBox"
+          className="login__textBox rounded-pill"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"

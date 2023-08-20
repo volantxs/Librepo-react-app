@@ -24,47 +24,50 @@ function Register() {
   }, [user, loading]);
   return (
     <>
-    <div className="container text-center">
+    <div className="container-fluid text-center text-light bg-black p-2">
         <h1>
             {/* <small className="text-muted">Welcome to </small> */}
-            <strong>Welcome to Librepo</strong>
+            <strong>Lib.Vault</strong>
         </h1>
-        <p className="lead">This is the toy version 1.0</p>
       </div>
-    <div className="register">
-      <div className="register__container">
+    <div className="register p-5">
+      <div className="register__container rounded">
+        <span className="text-light text-center h1 mb-4">New Reader</span>
+        <label className="text-light h6">Reader</label>
         <input
           type="text"
-          className="register__textBox"
+          className="register__textBox rounded-pill"
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Full Name"
         />
+        <label className="text-light h6">Lib.id</label>
         <input
           type="text"
-          className="register__textBox"
+          className="register__textBox rounded-pill"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
         />
+        <label className="text-light h6">Secret Key</label>
         <input
           type="password"
-          className="register__textBox"
+          className="register__textBox rounded-pill"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
-        <button className="register__btn" onClick={register}>
-          Register
+        <button className="btn btn-danger rounded-pill mt-3 mb-3" onClick={register}>
+          Create Reader
         </button>
         <button
-          className="register__btn register__google"
+          className="btn btn-primary rounded-pill mb-3"
           onClick={signInWithGoogle}
         >
           Register with Google
         </button>
-        <div>
-          Already have an account? <Link to="/">Login</Link> now.
+        <div className="text-light">
+          Already have an account? <Link to="/login">Login</Link> now.
         </div>
       </div>
     </div>

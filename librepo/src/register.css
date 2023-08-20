@@ -1,6 +1,6 @@
 .register {
-    height: 100vh;
-    width: 100vw;
+    /* height: 100vh; */
+    /* width: 100vw; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,26 +8,18 @@
   .register__container {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    background-color: #dcdcdc;
+    background-color: black;
     padding: 30px;
   }
   .register__textBox {
-    padding: 10px;
-    font-size: 18px;
+    padding: 7px;
+    font-size: 15px;
     margin-bottom: 10px;
-  }
-  .register__btn {
-    padding: 10px;
-    font-size: 18px;
-    margin-bottom: 10px;
-    border: none;
-    color: white;
-    background-color: black;
-  }
-  .register__google {
-    background-color: #4285f4;
   }
   .register div {
     margin-top: 7px;
+  }
+
+  .bg-black{
+    background-color: black;
   }

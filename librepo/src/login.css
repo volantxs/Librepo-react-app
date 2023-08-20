@@ -8,8 +8,7 @@
   .login__container {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    background-color: #dcdcdc;
+    background-color: black;
     padding: 30px;
   }
   .login__textBox {
@@ -22,7 +21,7 @@
     font-size: 18px;
     margin-bottom: 10px;
     border: none;
-    color: white;
+    color: balck;
     background-color: black;
   }
   .login__google {
