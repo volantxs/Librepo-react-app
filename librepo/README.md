@@ -15,7 +15,7 @@ The project is done under the nights & weekends season 4.
 6. Readers' collection is displayed in a table below the form
 
 ### About Dev
-I am relatively very very nascent to this space. I have people who review this could be patient with this Dev. 
+I am quiet nascent to this space. I hope people who review this could be patient with this Dev. 
 
 ### Feebacks are super duper welcome!
 
