@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from "react";
 import Form from "./form";
 import Table from "./table";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, orderBy } from "firebase/firestore";
 import { db }  from "../firebase";
 function Xperience() {
   const [tableData, setTableData] = useState([]);
@@ -24,7 +24,7 @@ function Xperience() {
     if (checkVal) {
       const dataObj = (data) => [...data, formObject];
       try {
-        const docRef = await addDoc(collection(db, "Book Data"), {
+        const docRef = await addDoc(collection(db, "Book Data"),  {
                 Book: formObject.bookName,
                 Pages: formObject.bookPages,
                 XP: formObject.xp

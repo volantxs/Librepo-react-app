@@ -15,9 +15,10 @@ function Reset() {
   }, [user, loading]);
   return (
     <>
-    <div className="container-fluid text-center text-light bg-black p-2">
+    <div className="container-fluid text-center p-2">
+      <small className="text-muted">Welcome to </small>
+
         <h1>
-            {/* <small className="text-muted">Welcome to </small> */}
             Lib.Unlock
         </h1>
       </div>

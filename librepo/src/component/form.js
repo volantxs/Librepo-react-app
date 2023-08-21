@@ -34,7 +34,7 @@ function Form({ onValChange, formObject, onFormSubmit }) {
               name="xperience"
             />
         </div>
-        <div className="">
+        <div >
           <input
             type="submit"
             onClick={onFormSubmit}

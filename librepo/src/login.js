@@ -19,9 +19,10 @@ function Login() {
   }, [user, loading, navigate]);
   return (
     <>
-      <div className="container-fluid text-center text-light bg-black p-2">
+      <div className="container-fluid text-center p-2">
+      <small className="text-muted">Welcome to </small>
+
         <h1>
-            {/* <small className="text-muted">Welcome to </small> */}
             Lib.Vault
         </h1>
       </div>
@@ -30,7 +31,7 @@ function Login() {
       <span className="text-light h1 text-center mb-4">Login</span>
       <label className="text-light h5">Lib.id</label>
         <input
-          type="text"
+          type="email"
           className="login__textBox rounded-pill"
           value={email}
           onChange={(e) => setEmail(e.target.value)}

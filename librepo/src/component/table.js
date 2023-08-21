@@ -7,7 +7,7 @@ function Table() {
     const [books, setBooks] = useState([]);
     const fetchPost = async () => {
         const response = await getDocs(collection(db, "Book Data"))
-            .then((querySnapshot)=>{               
+            .then((querySnapshot)=> {               
                 const newData = querySnapshot.docs
                     .map((doc) => ({...doc.data(), id:doc.id }));
                 setBooks(newData);                
