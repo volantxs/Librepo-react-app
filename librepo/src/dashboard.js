@@ -31,14 +31,14 @@ function Dashboard() {
     const fetchPost = async () => {
         try {
           const q = query(collection(db, "Book Data"));
-          const doc = await getDocs(q);
-          const data = doc.docs[0].data();
-          setXP(data.XP);
+          const querySnapshot = await getDocs(q);
+          const data = querySnapshot.docs;
+          const totalXP = data.reduce( function(cnt,o){ return cnt + o.data().XP; }, 0);
+          setXP(totalXP);
         } catch (err) {
           console.error(err);
-          alert("Error: Can't fetch Xp data");
+          alert("Error: Can't fetch XP data");
         }
-       
     }
     useEffect(()=>{
       fetchPost();
@@ -55,18 +55,11 @@ function Dashboard() {
   </div> 
     </nav>
     <div className='container mt-4 text-center' >
-  
+    <p>XP: {XP}</p>
     <p className="font-weight-light text-secondary">Toy Version 1.0</p>
     <h1 className="mb-3">Add to collection</h1>
      <div className="w-50 container text-center"><Xperience /></div>
     </div>
-    {/* <div className="jumbotron bg-dark">
-       <div className="text-center text-light">
-        Logged in as
-         <div>{name}</div>
-         <div>{user?.email}</div>
-       </div>
-     </div> */}
      <div class="jumbotron fixed-bottom navbar-dark bg-black p-3">
            <div className="text-center text-light">
             Always logout of your Lib.Vault 
