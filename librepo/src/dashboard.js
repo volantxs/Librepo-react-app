@@ -8,6 +8,7 @@ import Xperience from "./component/xperience";
 function Dashboard() {
   // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
+  const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const navigate = useNavigate();
   const fetchUserName = async () => {
@@ -16,6 +17,7 @@ function Dashboard() {
       const doc = await getDocs(q);
       const data = doc.docs[0].data();
       setName(data.name);
+      setEmail(data.email);
     } catch (err) {
       console.error(err);
       alert("An error occured while fetching user data");
@@ -30,10 +32,10 @@ function Dashboard() {
   const [XP, setXP] = useState([]);
     const fetchPost = async () => {
         try {
-          const q = query(collection(db, "Book Data"));
+          const q = query(collection(db, "Book Data"), where("email", "==", email));
           const querySnapshot = await getDocs(q);
           const data = querySnapshot.docs;
-          const totalXP = data.reduce( function(cnt,o){ return cnt + o.data().XP; }, 0);
+          const totalXP = data.reduce(function(cnt,o){ return cnt + o.data().XP; }, 0);
           setXP(totalXP);
         } catch (err) {
           console.error(err);

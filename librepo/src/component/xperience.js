@@ -1,14 +1,38 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useEffect } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, db, logout } from "../firebase";
+import { query, collection, getDocs, where, addDoc } from "firebase/firestore";
 import Form from "./form";
 import Table from "./table";
-import { addDoc, collection, orderBy } from "firebase/firestore";
-import { db }  from "../firebase";
+import { useNavigate } from "react-router-dom";
+
+
 function Xperience() {
+  const [user, loading, error] = useAuthState(auth);
+  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
+  const fetchUserEmail = async () => {
+    try {
+      const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+      const doc = await getDocs(q);
+      const data = doc.docs[0].data();
+      setEmail(data.email);
+    } catch (err) {
+      console.error(err);
+      alert("An error occured while fetching user data");
+    }
+  };
+  useEffect(() => {
+    if (loading) return;
+    if (!user) return navigate("/dashboard");
+    fetchUserEmail();
+  }, [user, loading]);
   const [tableData, setTableData] = useState([]);
   const [formObject, setFormObject] = useState({
     bookName: "",
     bookPages: "",
     xp: "",
+    email: email,
   });
   const onValChange = (event) => {
     const value = (res) => ({
@@ -27,7 +51,8 @@ function Xperience() {
         const docRef = await addDoc(collection(db, "Book Data"),  {
                 Book: formObject.bookName,
                 Pages: formObject.bookPages,
-                XP: formObject.xp
+                XP: formObject.xp,
+                email: email,
             });
         alert("Book data sent!");
         setTableData(dataObj);
