@@ -46,19 +46,25 @@ function Dashboard() {
   return (
     <>
     <nav className="navbar navbar-light bg-black">
-      <div className="container-fluid">
-      <span className="text-light h1">{name}<small className="text-secondary h5"> @Librepo</small>
-      </span>
 
-  <button className="btn btn-danger rounded-pill" onClick={logout}>Logout
-         </button> 
+      <div className="d-flex col-sm-3">
+    <span className="h3 mt-2 text-light p-2">RXP: {XP}</span>
   </div> 
+
+    <div className="d-flex col-sm-3">
+      <span className="text-light h1 ">{name}<small className="lead text-secondary">#Librepo</small>
+      </span>
+      </div>
+    
+  <div className="d-flex p-2">
+  <button className="btn btn-light rounded-pill" onClick={logout}>Logout
+         </button> 
+  </div>
     </nav>
     <div className='container mt-4 text-center' >
-    <p>XP: {XP}</p>
-    <p className="font-weight-light text-secondary">Toy Version 1.0</p>
+    <p className="lead">Toy Version 1.0</p>
     <h1 className="mb-3">Add to collection</h1>
-     <div className="w-50 container text-center"><Xperience /></div>
+     <div className="w-50 container"><Xperience /></div>
     </div>
      <div class="jumbotron fixed-bottom navbar-dark bg-black p-3">
            <div className="text-center text-light">

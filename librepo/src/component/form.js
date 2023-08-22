@@ -23,7 +23,7 @@ function Form({ onValChange, formObject, onFormSubmit }) {
           />
         </div>
         <div className="mb-3">
-          <label for="StaticXP" className="text-violet h5"><strong>Book XP</strong></label>
+          <label for="StaticXP" className="h5 text-violet"><strong>Book-XP</strong></label>
             <input
               type="text"
               readOnly className="form-control-plaintext text-center"
@@ -34,12 +34,12 @@ function Form({ onValChange, formObject, onFormSubmit }) {
               name="xperience"
             />
         </div>
-        <div >
-          <input
+        <div className="">
+          <button
             type="submit"
             onClick={onFormSubmit}
-            className="btn btn-primary btn-violet rounded-pill"
-          />
+            className="btn btn-dark rounded-pill p-3"
+          >Add</button>
         </div>
       </div>
     );

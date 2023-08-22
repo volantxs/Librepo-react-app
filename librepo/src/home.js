@@ -47,7 +47,7 @@ function Home() {
           className="form-control rounded-pill"
           onClick={(e) => setEmail(e.target.value)}
           placeholder="Join waitlist"
-          /> <div className="text-light">Lib</div>
+          /> <div className="text-light">ll</div>
           <div className="input-group-append ">
             <button 
               type="submit"

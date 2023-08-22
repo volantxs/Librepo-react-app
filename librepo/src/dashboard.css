@@ -27,3 +27,9 @@
   .text-violet {
     color:#580BFB;
   }
+
+  .btn-light:hover { 
+    background-color: #580BFB;
+    border-color: #580BFB ;
+    color: white;
+  }

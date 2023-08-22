@@ -19,7 +19,9 @@ function Table() {
       fetchPost();
     }, [])
     return (
-      <table className="table mt-5 mb-5">
+      <>
+
+      <table className="table text-center mt-5 mb-5">
         <thead>
           <tr>
             <th>Id</th>
@@ -41,6 +43,7 @@ function Table() {
           })}
         </tbody>
       </table>
+      </>
     );
   }
   export default Table;
