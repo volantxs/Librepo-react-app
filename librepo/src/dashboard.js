@@ -23,12 +23,6 @@ function Dashboard() {
       alert("An error occured while fetching user data");
     }
   };
-  useEffect(() => {
-    if (loading) return;
-    if (!user) return navigate("/");
-    fetchUserName();
-  }, [user, loading]);
-
   const [XP, setXP] = useState([]);
     const fetchPost = async () => {
         try {
@@ -42,9 +36,16 @@ function Dashboard() {
           alert("Error: Can't fetch XP data");
         }
     }
-    useEffect(()=>{
+    useEffect(() => {
+      if (loading) return (
+        <div>
+          <h1>loading.....</h1>
+        </div>
+      );
+      fetchUserName();
       fetchPost();
-    }, [])
+    }, [user, loading]);
+
   return (
     <>
     <nav className="navbar navbar-light bg-black">

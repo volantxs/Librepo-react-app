@@ -10,7 +10,6 @@ import { useNavigate } from "react-router-dom";
 function Xperience() {
   const [user, loading, error] = useAuthState(auth);
   const [email, setEmail] = useState("");
-  const navigate = useNavigate();
   const fetchUserEmail = async () => {
     try {
       const q = query(collection(db, "users"), where("uid", "==", user?.uid));
@@ -19,12 +18,11 @@ function Xperience() {
       setEmail(data.email);
     } catch (err) {
       console.error(err);
-      alert("An error occured while fetching user data");
+      alert("An error occured while fetching user email in XP.js ");
     }
   };
   useEffect(() => {
     if (loading) return;
-    if (!user) return navigate("/dashboard");
     fetchUserEmail();
   }, [user, loading]);
   const [tableData, setTableData] = useState([]);
@@ -32,7 +30,7 @@ function Xperience() {
     bookName: "",
     bookPages: "",
     xp: "",
-    email: email,
+    email,
   });
   const onValChange = (event) => {
     const value = (res) => ({
@@ -52,7 +50,7 @@ function Xperience() {
                 Book: formObject.bookName,
                 Pages: formObject.bookPages,
                 XP: formObject.xp,
-                email: email,
+                email,
             });
         alert("Book data sent!");
         setTableData(dataObj);

@@ -3,12 +3,12 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db, auth } from '../firebase';
 import { useNavigate } from "react-router-dom";
+import { getAuth } from "firebase/auth";
 
 
 function Table() {
-  const [user, loading] = useAuthState(auth);
   const [email, setEmail] = useState("");
-  const navigate = useNavigate();
+  const [user, loading] = getAuth();
   const fetchUserEmail = async () => {
     try {
       const q = query(collection(db, "users"), where("uid", "==", user?.uid));
@@ -17,29 +17,36 @@ function Table() {
       setEmail(data.email);
     } catch (err) {
       console.error(err);
-      alert("An error occured while fetching user data");
+      alert(err.message + " for fetchUserEmail");
     }
-  };
-  useEffect(() => {
-    if (loading) return;
-    if (!user) return navigate("/dashboard");
-    fetchUserEmail();
-  }, [user, loading]);
-
+    };
     const [books, setBooks] = useState([]);
     const q = query(collection(db, "Book Data"), where("email", "==", email));
-    const fetchPost = async () => {
-        const response = await getDocs(q)
+    const fetchBook = async () => {
+      try {
+        await getDocs(q)
             .then((querySnapshot)=> {               
                 const newData = querySnapshot.docs
                     .map((doc) => ({...doc.data(), id:doc.id }));
                 setBooks(newData);                
                 console.log(books, newData);
             })
+      } catch (err) {
+        console.log(err);
+        alert(err.message);
+      }
+
     }
-    useEffect(()=>{
-      fetchPost();
-    }, [])
+    useEffect(() => {
+      if (user) {
+      fetchUserEmail();
+      } if (loading) {
+        return "errooorrrr";
+      }
+
+      fetchBook();
+    });
+
     return (
       <>
       <table className="table text-center mt-5 mb-5">
