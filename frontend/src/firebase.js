@@ -85,7 +85,10 @@ const sendPasswordReset = async (email) => {
 };
 //Logout function
 const logout = () => {
-    signOut(auth);
+   const loggedOut = signOut(auth);
+   if (loggedOut) {
+    alert("logged out succesfully");
+   }
 };
 
 

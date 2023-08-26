@@ -5,6 +5,13 @@ import { db } from "./firebase";
 
 function Home() {
   const [email, setEmail] = useState("");
+  const [data, setData] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => setData(data.message));
+  }, []);
 
   //Join waitlist
   const waitlist = () => {
@@ -35,6 +42,7 @@ function Home() {
       <div className="p-5"></div>
       <div className= "mt-5  text-center ">
         <h1 className="">Librepo</h1>
+        <h1>{!data ? "Loading.." : data}</h1>
         <p className="lead mt-2 text-secondary">Hubspot for all your loved books v1.0</p>
       </div> 
       </div>
