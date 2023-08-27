@@ -1,61 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="'viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Librepo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<!doctype html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Librepo</title>
+    <link rel="stylesheet" href="css/index.css" type="text/css"/>
 
-  <!-- jQuery library -->
-
-  <!-- Latest compiled JavaScript -->
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
-
 <body>
-  <script src="../frontend/src/home.js"></script>
-  <nav className="navbar navbar-light">
-    <div className="container-fluid justify-content-start p-2">
-          <a className="btn btn-width bg-black text-light rounded-pill" href="./register" role="button">New Reader</a>
-          <span className="h6 text-light">Lib</span>
-          <a className="btn btn-width bg-black text-light rounded-pill" href="./login" role="button">Log in</a>
-    </div> 
-  </nav>
-<div className="jumbotron">
-  <div className="p-5"></div>
-  <div className= "mt-5  text-center ">
-    <h1 className="">Librepo</h1>
-    <!-- <h1>{!data ? "Loading.." : data}</h1> -->
-    <p className="lead mt-2 text-secondary">Hubspot for all your loved books v1.0</p>
-  </div> 
-  </div>
-  <div className="waitlist">
-  <div className="waitlist__container rounded">
-    <!-- <div className="input-group">
-      <input 
-      type="email"
-      name="email"
-      className="form-control rounded-pill"
-      onClick={(e) => setEmail(e.target.value)}
-      placeholder="Join waitlist"
-      /> <div className="text-light">ll</div>
-      <div className="input-group-append ">
-        <button 
-          type="submit"
-          className="btn btn-dark rounded-pill" onClick={waitlist}> Join
-        </button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <nav class="navbar fixed-top" style="background-color: black;">
+    <div class="container-fluid">
+      <a class="navbar-brand text-light" href="#">READMe</a>
+      <button class="navbar-toggler text-light" type="button"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+         [ Vault ]
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Backdoor</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Team</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Features
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex mt-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
       </div>
-      </div> -->
-    </div>  
     </div>
-  
-  <div class="fixed-bottom navbar-dark bg-black p-3">
-      <div className="jumbotron text-center">
-      <a class="navbar-brand" href="https://github.com/volantxs/Librepo-react-app">Quick Link to Github repo</a>
+  </nav>
+  <main class="mt-5 mb-5">
+    <div class="jumbotron text-center p-5">
+      <h1>Welcome to Librepo</h1>
+      <p class="lead">No more reader's block.</p>
+      <div class="container">
+        <img src="bookmark.png" class="img-fluid img" width="800" height="500" alt="logo for the website"/>
       </div>
-  </div>
-  
-</body>
+    </div>
+    
+      <div class="container text-center">
+      <h1 class="mb-5">For Readers</h1>
 
+        <div class="row ">
+          <div class="col border p-3">
+            <button class="btn btn-dark  btn-lg rounded-pill ">Library</button>
+            <div><hr class="divider"></div>
+            <article>Lib vault defines your dashboard that contains your collection
+              of books.
+            </article>
+          </div>
+          <div class="col border p-3">
+            <button class="btn btn-dark btn-lg rounded-pill ">Game XP</button>
+            
+            <div><hr class="divider"></div>
+            <p>Reader's XP would be your total XP point card updated on every completed book.
+            </p>
+          </div>
+          <div class="col border p-3">
+            <button class="btn btn-dark btn-lg rounded-pill ">Collect</button>
+            
+            <div><hr class="divider"></div>
+            <p>Styling is import to improve the radability of your articles.</p>
+          </div>
+        </div>
+      </div>
+  </main>
+    <footer class="navbar fixed-bottom justify-content-center p-1" style="background-color: black;">
+    <p class="text-light text-center mt-2"><code>Good things take Time</code>    </p>        
+    </footer>
+    
+
+</body>
 </html>
