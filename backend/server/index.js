@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.urlencoded({extended: true}));
 
 
-app.get('/api', async(req, res) => {
+app.get('/waitlisted', async(req, res) => {
     res.json({message: "Hello from server"});
 })
 
