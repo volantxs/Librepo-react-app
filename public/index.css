@@ -1,36 +1,12 @@
 h1 {
     font-size: 80px;
     font-family: Garamond, serif;
-    animation: hovering 5s ;
 
 }
 
-h1:hover {
-}
 
-.icon-white {
-    background-color: aliceblue;
-}
 
 .btn-violet :hover {
     background-color: blueviolet;
-}
-
-@keyframes hovering {
-    0% {
-        font-size: large;
-        color: #480048;
-    }
-    25% {
-
-        color: #7700ff;
-    }
-    75% {
-        color: #2000a1;
-    }
-    100% {
-        color: black;
-    }
-    
 }
 
