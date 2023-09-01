@@ -9,6 +9,7 @@ h1 {
  
 div img {
   border-radius: 5% ;
+  border: 2px solid black;
 }
 
 .card {
@@ -17,16 +18,24 @@ div img {
   border: 2px solid black ;
 }
 
-.btn-mystery:hover {
-  font-family:fantasy;
+.btn-dark:hover {
+  font-family:'Courier New', Courier, monospace;
   color: black;
   background-color: white;
   border: 2px dashed black;
 }
 
-@media only screen and (max-width: 600px) {
+footer {
+  border: 2px dashed white ;
+  background-color: black;
+  display: block;
+  height: 70px;
+}
+
+
+/* @media only screen and (max-width: 600px) {
     body {
       font-size: small;
     }
-  }
+  } */
 

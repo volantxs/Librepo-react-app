@@ -5,7 +5,9 @@ h1 {
 }
 
 .btn-violet {
-    border: 1px dashed rgb(102, 0, 255) ;
+    border: 2px solid rgb(102, 0, 255) ;
+    border-right: 2px solid rgb(255, 0, 225);
+    border-bottom: 2px solid rgb(255, 0, 225);
     transition: transform 0.1s;
 
 }
