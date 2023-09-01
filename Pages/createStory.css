@@ -1,0 +1,32 @@
+
+h1 {
+    font-size: 70px;
+}
+
+.card-title{
+  color: white;
+}
+ 
+div img {
+  border-radius: 5% ;
+}
+
+.card {
+  background-image: linear-gradient(90deg, rgb(89, 0, 255), rgb(0, 251, 255));
+  padding: 7px;
+  border: 2px solid black ;
+}
+
+.btn-mystery:hover {
+  font-family:fantasy;
+  color: black;
+  background-color: white;
+  border: 2px dashed black;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+      font-size: small;
+    }
+  }
+
