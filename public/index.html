@@ -62,11 +62,13 @@
             <div class="col-lg-3"></div>
           </form>
           <div class="d-flex justify-content-center mt-5 p-5" style="border: 2px dashed black;"">
-            <a class="btn btn-violet rounded-pill btn-lg" href="../Pages/createStory.html" role="button">Start adventure</a>
+            <a class="btn btn-violet rounded-pill btn-lg" href="../Pages/createStory.html" role="button" target="_self">Start adventure</a>
+
+            <!-- <button class="btn btn-violet rounded-pill btn-lg"  target="_self" type="submit" Home()>Start adventure</button> -->
           </div>
         </div>
         <div class="col-sm-4 zoom-wrapper">
-          <img src="img/door.png" class="img-fluid" width="400px" height="600px" alt="opened door depicting your chosen adventrue story">
+          <img src="./public/img/door.png" class="img-fluid" width="400px" height="600px" alt="opened door depicting your chosen adventrue story">
         </div>
         
         </div>
@@ -190,47 +192,10 @@
   </div>
 </div>
 </main>
-  
     <footer class="navbar fixed-bottom justify-content-center p-1" style="background-color: black;">
     <p class="lead text-light mt-2"><a class="text-light" href="#">Get early access</a></p>        
     </footer>
   </div>
-
-  <script type="module" >
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js'
-    import { getFirestore, addDoc, collection } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js'
-    const firebaseConfig = {
-    apiKey: "AIzaSyCHSG2DeMvetR7PnXdeyzrELkw8fJXwOh0",
-    authDomain: "librepo-erevald.firebaseapp.com",
-    projectId: "librepo-erevald",
-    storageBucket: "librepo-erevald.appspot.com",
-    messagingSenderId: "184976154092",
-    appId: "1:184976154092:web:2dacf8b6923c113ccb74c9"
-  };
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  document.getElementById('joinWaitlist').addEventListener('submit', formSubmit);
-
-  function formSubmit(e) {
-    e.preventDefault();
-    const email = document.querySelector("#email").value;
-    sendMessage(email);
-  document.getElementById('joinWaitlist').reset();
-  }
-
-  function sendMessage(email) {
-        const docRef = addDoc(collection(db, "waitlist"),  {
-                email: email,
-            });
-       alert("Joined Librepo(beta) waitlist")
-        
- //Form Reset After Submission
-          document.getElementById('joinWaitlist').reset();
-        // setTableData(dataObj);
-      
-    }
-  </script>
-
+  <script type="module" src="../js/app.js"></script>
 </body>
 </html>

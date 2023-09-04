@@ -1,0 +1,78 @@
+body {
+    animation: wave 10s infinite;
+}
+
+.navbar-dark {
+    display: block;
+    padding: 20px;
+    background-color: rgb(18, 18, 18);
+    border-bottom: 2px dashed white;
+}
+
+.btn-violet {
+    border: 2px solid rgb(102, 0, 255) ;
+    border-right: 2px solid rgb(255, 0, 225);
+    border-bottom: 2px solid rgb(255, 0, 225);
+    transition: transform 0.1s;
+
+
+}
+
+.btn-violet:hover {
+    transform: scale(1.05) ;
+    color: white;
+    animation: border-swish 1s ;
+    animation-iteration-count: 1;
+    /* border: 2px solid rgb(255, 0, 225) ;
+    border-right: 2px solid rgb(102, 0, 255);
+    border-bottom: 2px solid rgb(102, 0, 255); */
+    /* background-image: linear-gradient(90deg, rgb(102, 0, 255), rgb(255, 0, 225)); */
+
+}
+
+
+@keyframes border-swish {
+    0% {
+        border: 2px solid rgb(102, 0, 255) ;
+        border-right: 2px solid rgb(255, 0, 225);
+        border-bottom: 2px solid rgb(255, 0, 225);
+    }
+    25% {
+        border: 2px solid rgb(150, 0, 255) ;
+        border-right: 2px solid rgb(200, 0, 225);
+        border-bottom: 2px solid rgb(200, 0, 225);
+    }
+    50% {
+        border: 2px solid rgb(200, 0, 255) ;
+        border-right: 2px solid rgb(150, 0, 225);
+        border-bottom: 2px solid rgb(150, 0, 225);
+    }
+    75% {
+        border: 2px solid rgb(255, 0, 255) ;
+        border-right: 2px solid rgb(102, 0, 225);
+        border-bottom: 2px solid rgb(102, 0, 225);
+    }
+    100% {
+        border: 2px solid rgb(102, 0, 255) ;
+        border-right: 2px solid rgb(255, 0, 225);
+        border-bottom: 2px solid rgb(255, 0, 225);
+    }
+}
+
+@keyframes wave {
+    0% {
+        
+        background-color: rgb(40, 0, 68);
+    }
+    25% {
+        background-color: rgb(27, 0, 66);
+    }
+    50% {
+        background-color: rgb(57, 5, 121);
+    }
+    100% {
+        background-color: rgb(35, 0, 68);
+    }
+}
+
+
