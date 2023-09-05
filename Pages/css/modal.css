@@ -1,0 +1,29 @@
+.modal {
+    justify-content: center;
+    
+}
+
+.modal-content {
+    border-radius: 5%;
+    align-items: center;
+    height: 500px;
+    width: 500px;
+    padding: 10px;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.btn-modal {
+    background-color: rgb(102, 0, 255) ;
+    color: white;
+}
+
+.close {
+    background-color: white;
+    color: black;
+}
+
+.btn-modal:hover, .close:hover {
+    border: 2px dashed white;
+
+}
