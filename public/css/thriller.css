@@ -24,16 +24,22 @@ body {
 }
 
 .btn-book {
+    font-weight: 500;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
     display: inline-block;
-    margin-top: 15px;
-    padding: 12px;
-    background-color: lightgray;
+    margin-top: 10px;
+    background-color: rgb(228, 228, 228);
 }
 
 .btn-book:hover{
     color: white;
     background-color: rgb(102, 0, 255);
     box-shadow: 2px 2px 5px black;
+}
+
+.box {
+    border: 2px dashed black;
 }
 
 @keyframes border-swish {
