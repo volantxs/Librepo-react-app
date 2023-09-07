@@ -3,6 +3,10 @@
     
 }
 
+.frame {
+    border: 4px solid black;
+}
+
 .modal-content {
     border-radius: 5%;
     align-items: center;

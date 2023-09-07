@@ -9,7 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/thriller.css" type="text/css"/>
     <link rel="stylesheet" href="./css/modal.css" type="text/css"/>
-    <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
     <script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
 </head>
 <body>
@@ -18,11 +17,10 @@
             <div class="jumbotron ">
               <a class="btn text-light btn-violet rounded-pill me-3" href="./createStory.html">&lt;</a>
               <button class="btn text-light btn-violet rounded-pill" id="addModalButton">Add a wild card</button>
-              <!-- <h1 class="text-center text-light" style="display: inline;">Choose your pick</h1> -->
-            
             </div>
         </nav>
     </header>
+        <!-- Modal structure for addition of books -->
     <div class="modal text-light justify-content-center mt-5" id="addModal">
       <div class="modal-content mt-5">
         <header class="modal-header">
@@ -40,32 +38,93 @@
       </div>
         <div class="modal-footer text-center">
           <button class="btn btn-modal rounded-pill me-4" id="">Add the book</button>
-          <button class="close btn  rounded-pill">close</button>
+          <button class="btn close rounded-pill" id="close">close</button>
         </div>
       </div>
     </div>
+    <!-- modal for all books -->
+    <div class="modal mt-3" id="gg">
+      <a class="btn btn-danger p-0" role="button" id="ggClose" style="width: 50px; height: 30px;">X</a>
+      <iframe frameborder="0" scrolling="no" style="border:none" src="https://books.google.co.in/books?id=hxL2qWMAgv8C&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
+    </div>
+    <div class="modal mt-3" id="dosx">
+      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
+      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=wb6P92aPNGYC&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
+    </div>
+    <div class="modal mt-3" id="tdotj">
+      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
+      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=Srbs1xU-F24C&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
+    </div> 
+    <div class="modal mt-3" id="t">
+      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
+      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=INmVzXLOC7wC&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
+    </div> 
+    <div class="modal mt-3" id="s">
+      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
+      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=t4b69z5hs58C&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
+    </div> 
+    <div class="modal mt-3" id="eotn">
+      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
+      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=LaZ55xQ_OJ0C&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
+    </div> 
+    <div class="modal mt-3" id="tnotr">
+      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
+      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=ChlOAwAAQBAJ&newbks=0&lpg=PP1&dq=the%20name%20of%20the%20rose&pg=PP1&output=embed" width=600 height=700></iframe>
+    </div> 
+    <div class="modal mt-3" id="tpc">
+      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
+      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=YVNj05M8MqMC&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
+    </div> 
+    <div class="modal mt-3" id="so">
+      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
+      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=HB_DlQ766yMC&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe> </div> 
+    <div class="modal mt-3" id="imp">
+      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
+      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=9v3n3YOJ4BwC&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
+    </div> 
+    <div class="modal mt-3" id="ttl">
+      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
+      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=0BwyDwAAQBAJ&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
+    </div> 
+    <div class="modal mt-3" id="e">
+      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
+      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=R1o4DgAAQBAJ&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
+    </div> 
+    <div class="modal mt-3" id="dm">
+      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
+      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=VpwnDwAAQBAJ&lpg=PP1&pg=PP7&output=embed" width=600 height=700></iframe>
+    </div> 
+    <div class="modal mt-3" id="ttmr">
+      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
+      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=ZLKZAgAAQBAJ&newbks=0&lpg=PA1&pg=PA1&output=embed" width=600 height=700></iframe>
+    </div>     
+
+    <!-- book vault begins from here -->
     <div class="row m-5 g-3 p-3 justify-content-center">
       <div class="col-md-2 box p-2 m-3">
         <p><kbd>Author</kbd> Gillian Flynn
 <pre>
-Psychological Thriller
-Marriage Secrets
-Deception and Manipulation
-Mystery and Suspense
+  Psychological Thriller
+  Marriage Secrets
+  Deception & Manipulation
+  Mystery and Suspense
 
 </pre></p>
-        <a class="btn btn-book">Gone girl</a>
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/41wjnFxdxnL.jpg" style="max-width: 100px;">
+        <a class="btn btn-book" id="ggBtn" type="button" >Gone girl</a>
       </div>
       <div class="col-md-2 box p-2 m-3">
         <p><kbd>Author</kbd> Keigo Higashino
 <pre>
-Mystery Novel
-Japanese Literature
-Intellectual Challenge
-Friendship Dynamics
-Mathematical Intrigue
+  Mystery Novel
+  Japanese Literature
+  Intellectual Challenge
+  Friendship Dynamics
+  Mathematical Intrigue
 </pre></p>
-        <a class="btn btn-book ">Devotion of suspect X</a>
+<img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/513UDubStkL.jpg" style="max-width: 100px;">
+
+        <a class="btn btn-book" id="dosxBtn">Devotion of suspect X</a>
 
       </div>
       <div class="col-md-2 box p-2 m-3">
@@ -77,7 +136,9 @@ Mathematical Intrigue
   Meticulous Planning
   Cold War Era  
 </pre></p>
-        <a class="btn btn-book ">The Day of the Jackals</a>
+<img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71exL21lNrL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
+
+        <a class="btn btn-book" id="tdotjBtn">The Day of the Jackal</a>
 
       </div>
       <div class="col-md-2 box p-2 m-3">
@@ -89,7 +150,9 @@ Mathematical Intrigue
   Temporal Paradox
   Adventure Thriller
 </pre></p>
-        <a class="btn btn-book ">Timeline</a>
+<img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71em2HBF1gL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
+
+        <a class="btn btn-book" id="tBtn">Timeline</a>
 
       </div>
       <div class="col-md-2 box p-2 m-3">
@@ -101,7 +164,9 @@ Mathematical Intrigue
   Psychological Thriller
   Deep Sea Exploration
 </pre></p>
-        <a class="btn btn-book ">Sphere</a>
+<img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/51vM37sPNWL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
+
+        <a class="btn btn-book" id="sBtn">Sphere</a>
 
       </div>
       <div class="col-md-2 box p-2 m-3">
@@ -113,7 +178,9 @@ Mathematical Intrigue
   High-Stakes Pursuit
   Historical Suspense
 </pre></p>
-        <a class="btn btn-book ">Eye of the needle</a>
+<img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71UdMJ7um0L._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
+
+        <a class="btn btn-book" id="eotnBtn">Eye of the needle</a>
 
       </div>
       <div class="col-md-2 box p-2 m-3">
@@ -125,7 +192,9 @@ Mathematical Intrigue
   Religious Intrigue
   Literary Thriller
 </pre></p>
-        <a class="btn btn-book ">The Name of the Rose</a>
+<img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/819SFV6rfRL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
+
+        <a class="btn btn-book" id="tnotrBtn">The Name of the Rose</a>
 
       </div>
       <div class="col-md-2 box p-2 m-3">
@@ -137,7 +206,9 @@ Mathematical Intrigue
   Venetian Intrigue
   Anti-Semitism in Europe
 </pre></p>
-        <a class="btn btn-book ">The Prague Cemetery</a>
+<img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71pPtZRx6qL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
+
+        <a class="btn btn-book" id="tpcBtn">The Prague Cemetery</a>
 
       </div>
       <div class="col-md-2 box p-2 m-3">
@@ -149,7 +220,9 @@ Mathematical Intrigue
   Dark and Disturbing
 
 </pre></p>
-        <a class="btn btn-book ">Sharp Objects</a>
+<img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71PEVpZOtDL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
+
+        <a class="btn btn-book" id="soBtn">Sharp Objects</a>
 
       </div>
       <div class="col-md-2 box p-2 m-3">
@@ -161,7 +234,9 @@ Mathematical Intrigue
   Mysterious Identity
 
 </pre></p>
-        <a class="btn btn-book ">I Am Pilgrim</a>
+<img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/51bJXQkf2UL.jpg" style="max-width: 100px;">
+
+        <a class="btn btn-book" id="iapBtn">I Am Pilgrim</a>
 
       </div>
       <div class="col-md-2 box p-2 m-3">
@@ -173,7 +248,9 @@ Mathematical Intrigue
   Tactical Action
   
 </pre></p>
-        <a class="btn btn-book ">The Terminal List</a>
+<img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71chOXyr66L._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
+
+        <a class="btn btn-book" id="ttlBtn">The Terminal List</a>
 
       </div>
       <div class="col-md-2 box p-2 m-3">
@@ -185,7 +262,9 @@ Mathematical Intrigue
   Historical Non-Fiction
   Leadership and Resilience
 </pre></p>
-        <a class="btn btn-book ">Endurance</a>
+<img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/81JeZ8MnaqL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
+
+        <a class="btn btn-book" id="eBtn">Endurance</a>
 
       </div>
       <div class="col-md-2 box p-2 m-3">
@@ -197,7 +276,9 @@ Mathematical Intrigue
   Thriller Novel
   Identity Crisis
 </pre></p>
-        <a class="btn btn-book ">Dark Matter</a>
+<img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/81X6jSuxZ1L._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
+
+        <a class="btn btn-book" id="dmBtn">Dark Matter</a>
 
       </div>
       <div class="col-md-2 box p-2 m-3">
@@ -209,10 +290,10 @@ Mathematical Intrigue
   Moral Ambiguity
   Psychological Suspense
 </pre></p>
-        <a class="btn btn-book ">The Talented Mr. Ripley</a>
+<img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/518YQQJO6FL.jpg" style="max-width: 100px;">
 
+        <a class="btn btn-book" id="ttmrBtn">The Talented Mr. Ripley</a>
       </div>
-      
     </div>
     </div>
     <div class="modal text-light justify-content-center mt-5" id="bookModal">
@@ -225,12 +306,12 @@ Mathematical Intrigue
         <button class="close btn rounded-pill">close</button>
       </div>
     </div>
-
     </div>
     <footer>
     </footer>
     <script src="js/modal.js"></script>
-    <script src="js/fetchBook.js"></script>
+    <script src="js/iframe.js"></script>
+
 
   </body>
 </html>
