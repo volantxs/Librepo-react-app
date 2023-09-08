@@ -13,283 +13,101 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-dark" >
-            <div class="jumbotron ">
-              <a class="btn text-light btn-violet rounded-pill me-3" href="./createStory.html">&lt;</a>
-              <button class="btn text-light btn-violet rounded-pill" id="addModalButton">Add a wild card</button>
-            </div>
-        </nav>
+      <nav class="navbar" >
+        <a class=" btn btn-dark rounded-pill h4 pe-4 ps-4" href="./createStory.html">&lt;</a>
+        <p class="lead">Thriller/Mystery Vault</p>
+        <section>
+        <p class="xp_show rounded-pill h3" >XP | <p class="xp_show fs-3" id="total-xp" ></p></p>
+        </section>        
+      </nav>
     </header>
-        <!-- Modal structure for addition of books -->
-    <div class="modal text-light justify-content-center mt-5" id="addModal">
-      <div class="modal-content mt-5">
-        <header class="modal-header">
-           <h1>Add to Collection</h1>
-        </header>
-      <div class="modal-body ">
-        <form>
-        <label for="name">Book name</label><br/>
-        <input type="search" class="rounded-pill mb-3" name="name" id="name" size="50"><br>
-        <label for="pages">Pages</label><br/>
-        <input type="text" class="rounded-pill mb-3 me-5" name="pages" id="pages" size="10">
-        <label for="xp">XP</label>
-        <input type="text" class="rounded-pill" name="xp" id="xp" size="10">
-      </form>
-      </div>
-        <div class="modal-footer text-center">
-          <button class="btn btn-modal rounded-pill me-4" id="">Add the book</button>
-          <button class="btn close rounded-pill" id="close">close</button>
-        </div>
-      </div>
-    </div>
-    <!-- modal for all books -->
-    <div class="modal mt-3" id="gg">
-      <a class="btn btn-danger p-0" role="button" id="ggClose" style="width: 50px; height: 30px;">X</a>
-      <iframe frameborder="0" scrolling="no" style="border:none" src="https://books.google.co.in/books?id=hxL2qWMAgv8C&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
-    </div>
-    <div class="modal mt-3" id="dosx">
-      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
-      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=wb6P92aPNGYC&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
-    </div>
-    <div class="modal mt-3" id="tdotj">
-      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
-      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=Srbs1xU-F24C&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
-    </div> 
-    <div class="modal mt-3" id="t">
-      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
-      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=INmVzXLOC7wC&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
-    </div> 
-    <div class="modal mt-3" id="s">
-      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
-      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=t4b69z5hs58C&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
-    </div> 
-    <div class="modal mt-3" id="eotn">
-      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
-      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=LaZ55xQ_OJ0C&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
-    </div> 
-    <div class="modal mt-3" id="tnotr">
-      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
-      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=ChlOAwAAQBAJ&newbks=0&lpg=PP1&dq=the%20name%20of%20the%20rose&pg=PP1&output=embed" width=600 height=700></iframe>
-    </div> 
-    <div class="modal mt-3" id="tpc">
-      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
-      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=YVNj05M8MqMC&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
-    </div> 
-    <div class="modal mt-3" id="so">
-      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
-      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=HB_DlQ766yMC&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe> </div> 
-    <div class="modal mt-3" id="imp">
-      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
-      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=9v3n3YOJ4BwC&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
-    </div> 
-    <div class="modal mt-3" id="ttl">
-      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
-      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=0BwyDwAAQBAJ&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
-    </div> 
-    <div class="modal mt-3" id="e">
-      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
-      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=R1o4DgAAQBAJ&newbks=0&lpg=PP1&pg=PP1&output=embed" width=600 height=700></iframe>
-    </div> 
-    <div class="modal mt-3" id="dm">
-      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
-      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=VpwnDwAAQBAJ&lpg=PP1&pg=PP7&output=embed" width=600 height=700></iframe>
-    </div> 
-    <div class="modal mt-3" id="ttmr">
-      <a class="btn btn-danger p-0" role="button" id="dosxClose" style="width: 50px; height: 30px;">X</a>
-      <iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.in/books?id=ZLKZAgAAQBAJ&newbks=0&lpg=PA1&pg=PA1&output=embed" width=600 height=700></iframe>
-    </div>     
-
-    <!-- book vault begins from here -->
-    <div class="row m-5 g-3 p-3 justify-content-center">
+    <div class="row mt-2 me-5 ms-5 g-3 p-3 justify-content-center text-center">
       <div class="col-md-2 box p-2 m-3">
-        <p><kbd>Author</kbd> Gillian Flynn
-<pre>
-  Psychological Thriller
-  Marriage Secrets
-  Deception & Manipulation
-  Mystery and Suspense
-
-</pre></p>
+        <kbd>XP|700</kbd> Gillian Flynn 
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/41wjnFxdxnL.jpg" style="max-width: 100px;">
-        <a class="btn btn-book" id="ggBtn" type="button" >Gone girl</a>
+        <button class="btn btn-book" id="1" onclick="getXP(this.id)" aria-valuenow="450">Gone Girl</button>
+        </div>
+      <div class="col-md-2 box p-2 m-3">
+        <kbd>XP|500</kbd> Keigo Higashino
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/513UDubStkL.jpg" style="max-width: 100px;">
+        <button class="btn btn-book" id="2" onclick="getXP(this.id)" aria-valuenow="450">The Devotion of Suspect X</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
-        <p><kbd>Author</kbd> Keigo Higashino
-<pre>
-  Mystery Novel
-  Japanese Literature
-  Intellectual Challenge
-  Friendship Dynamics
-  Mathematical Intrigue
-</pre></p>
-<img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/513UDubStkL.jpg" style="max-width: 100px;">
-
-        <a class="btn btn-book" id="dosxBtn">Devotion of suspect X</a>
-
+        <kbd>XP|800</kbd> Frederick Forsyth
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71exL21lNrL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
+        <button class="btn btn-book" id="3" onclick="getXP(this.id)" aria-valuenow="450">The Day 0f the Jackal</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
-        <p><kbd>Author</kbd> Frederick Forsyth
-<pre>
-  Political Thriller
-  Assassination Plot
-  Espionage
-  Meticulous Planning
-  Cold War Era  
-</pre></p>
-<img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71exL21lNrL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
-
-        <a class="btn btn-book" id="tdotjBtn">The Day of the Jackal</a>
-
+        <kbd>XP|900</kbd> Michael Crichton
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71em2HBF1gL._AC_UF1000,1000_QL80_.jpg" style="width: auto; height: 160px ;">
+        <button class="btn btn-book" id="4" onclick="getXP(this.id)" aria-valuenow="450">Timeline</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
-        <p><kbd>Author</kbd> Michael Crichton
-<pre>
-  Science Fiction
-  Time Travel Adventure
-  Historical Exploration
-  Temporal Paradox
-  Adventure Thriller
-</pre></p>
-<img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71em2HBF1gL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
-
-        <a class="btn btn-book" id="tBtn">Timeline</a>
-
+        <kbd>XP|550</kbd> Michael Crichton
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/51vM37sPNWL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
+        <button class="btn btn-book" id="5" onclick="getXP(this.id)" aria-valuenow="450">Sphere</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
-        <p><kbd>Author</kbd>  Michael Crichton
-<pre>
-  Science Fiction
-  Underwater Mystery
-  Alien Encounter
-  Psychological Thriller
-  Deep Sea Exploration
-</pre></p>
-<img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/51vM37sPNWL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
-
-        <a class="btn btn-book" id="sBtn">Sphere</a>
-
+        <kbd>XP|450</kbd> Ken Follett
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71UdMJ7um0L._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
+        <button class="btn btn-book" id="6" onclick="getXP(this.id)" aria-valuenow="450">Eye of the Needle</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
-        <p><kbd>Author</kbd> Ken Follett
-<pre>
-  Spy Thriller
-  World War II Espionage
-  Lone Operative
-  High-Stakes Pursuit
-  Historical Suspense
-</pre></p>
-<img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71UdMJ7um0L._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
-
-        <a class="btn btn-book" id="eotnBtn">Eye of the needle</a>
-
+        <kbd>XP|450</kbd>  Umberto Eco
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/819SFV6rfRL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
+        <button class="btn btn-book" id="7" onclick="getXP(this.id)" aria-valuenow="450">The Name of the Rose</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
-        <p><kbd>Author</kbd>  Umberto Eco
-<pre>
-  Historical Mystery
-  Medieval Monastery
-  Intellectual Detective
-  Religious Intrigue
-  Literary Thriller
-</pre></p>
-<img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/819SFV6rfRL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
+        <p><kbd>XP|750</kbd> Umberto Eco
 
-        <a class="btn btn-book" id="tnotrBtn">The Name of the Rose</a>
-
-      </div>
-      <div class="col-md-2 box p-2 m-3">
-        <p><kbd>Author</kbd> Umberto Eco
-<pre>
-  Historical Fiction
-  Conspiracy Thriller
-  Espionage
-  Venetian Intrigue
-  Anti-Semitism in Europe
-</pre></p>
 <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71pPtZRx6qL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
 
         <a class="btn btn-book" id="tpcBtn">The Prague Cemetery</a>
 
       </div>
       <div class="col-md-2 box p-2 m-3">
-        <p><kbd>Author</kbd> Gillian Flynn
-<pre>
-  Psychological Thriller
-  Small-Town Mystery
-  Family Secrets
-  Dark and Disturbing
+        <p><kbd>XP|300</kbd> Gillian Flynn
 
-</pre></p>
 <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71PEVpZOtDL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
 
         <a class="btn btn-book" id="soBtn">Sharp Objects</a>
 
       </div>
       <div class="col-md-2 box p-2 m-3">
-        <p><kbd>Author</kbd>  Terry Hayes
-<pre>
-  Thriller Novel
-  International Espionage
-  Counterterrorism
-  Mysterious Identity
+        <p><kbd>XP|500</kbd>  Terry Hayes
 
-</pre></p>
 <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/51bJXQkf2UL.jpg" style="max-width: 100px;">
 
         <a class="btn btn-book" id="iapBtn">I Am Pilgrim</a>
 
       </div>
       <div class="col-md-2 box p-2 m-3">
-        <p><kbd>Author</kbd> Jack Carr
-<pre>
-  Military Thriller
-  Revenge Plot
-  Special Operations
-  Tactical Action
-  
-</pre></p>
+        <p><kbd>XP|650</kbd> Jack Carr
+
 <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71chOXyr66L._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
 
         <a class="btn btn-book" id="ttlBtn">The Terminal List</a>
 
       </div>
       <div class="col-md-2 box p-2 m-3">
-        <p><kbd>Author</kbd> Alfred Lansing
-<pre>
-  Exploration
-  Antarctic Expedition
-  Survival Story
-  Historical Non-Fiction
-  Leadership and Resilience
-</pre></p>
+        <p><kbd>XP|500</kbd> Alfred Lansing
+
 <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/81JeZ8MnaqL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
 
         <a class="btn btn-book" id="eBtn">Endurance</a>
 
       </div>
       <div class="col-md-2 box p-2 m-3">
-        <p><kbd>Author</kbd> Blake Crouch
-<pre>
-  Science Fiction
-  Parallel Universes
-  Quantum Physics
-  Thriller Novel
-  Identity Crisis
-</pre></p>
+        <p><kbd>XP|800</kbd> Blake Crouch
+
 <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/81X6jSuxZ1L._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;">
 
         <a class="btn btn-book" id="dmBtn">Dark Matter</a>
 
       </div>
       <div class="col-md-2 box p-2 m-3">
-        <p><kbd>Author</kbd> Patricia Highsmith
-<pre>
-  Psychological Thriller
-  Crime Fiction
-  Identity Theft
-  Moral Ambiguity
-  Psychological Suspense
-</pre></p>
+        <p><kbd>XP|600</kbd> Patricia Highsmith
+
 <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/518YQQJO6FL.jpg" style="max-width: 100px;">
 
         <a class="btn btn-book" id="ttmrBtn">The Talented Mr. Ripley</a>
@@ -307,10 +125,21 @@
       </div>
     </div>
     </div>
-    <footer>
+    <footer class="navbar-dark bg-black text-light p-3">
+      <div class="d-flex justify-content-center">
+        <form method="POST" id="requestBook">
+          <label for="reqBook" class="lead">Request a book</label>
+          <input class="rounded-pill bg-dark text-light ps-2 ms-3" name="reqBook" placeholder="verity"> 
+          <button class="btn-black rounded text-light" type="submit" >Req</button>
+          <!-- <button class="btn text-light btn-violet rounded-pill me-3" id="addModalButton">Add a wild card</button> -->
+        </form>
+
+      </div>
+
     </footer>
     <script src="js/modal.js"></script>
-    <script src="js/iframe.js"></script>
+    <script src="js/getXP.js"></script>
+    <script src="js/disableButton.js"></script>
 
 
   </body>

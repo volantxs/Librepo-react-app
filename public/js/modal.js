@@ -35,14 +35,13 @@ var ggClose = document.getElementById('ggClose');
 var dosxClose = document.getElementById('dosxClose');
 
 // When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "flex";
-}
+// btn.onclick = function() {
+//   modal.style.display = "flex";
+// }
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
 }
-
 
 ggBtn.onclick = function() {
   gg.style.display = "flex";
