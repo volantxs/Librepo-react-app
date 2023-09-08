@@ -2,6 +2,10 @@ body {
     background-color: white;
 }
 
+.gs:hover {
+    background-image: linear-gradient(90deg, rgb(73, 109, 240), rgb(23, 188, 191));
+    color: white;
+}
 
 .xp_show {
     display: inline;
@@ -19,6 +23,11 @@ body {
     display: flex;
     padding: 10px;
     color: black;
+}
+
+.btn-black {
+    background-color: black;
+    color: white;
 }
 
 .btn-xp {
@@ -64,18 +73,24 @@ body {
 
 @media only screen and (min-width: 300px) {
     .fs {
-        font-size: 12vw;
-        margin-bottom: 200px;
+        font-size: 7vw;
+        margin-top: 200px;
+        font-weight: lighter;
     }
     .hs {
-        margin-bottom: 270px;
+        font-size: 2.4vw;
     }
 }
 
 @media only screen and (min-width: 700px) {
     .fs {
-        font-size: 8vw;
-        margin-bottom: 200px;
+        font-size: 6vw;
+        margin-top: 200px;
+        font-weight: 100;
+
+    }
+    .hs {
+        font-size: 1.5vw;
     }
 }
 
