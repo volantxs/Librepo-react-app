@@ -13,6 +13,7 @@ div img {
 }
 
 .card {
+  max-width: 12rem;
   background-image: linear-gradient(90deg, rgb(89, 0, 255), rgb(0, 251, 255));
   padding: 7px;
   border: 2px solid black ;

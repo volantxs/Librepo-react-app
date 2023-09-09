@@ -10,28 +10,24 @@
   </head>
 <body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  <div id="root">
-  <nav class="navbar fixed-top navbar-expand-sm" >
-    <div class="container-fluid">
-      <button class="navbar-toggler bg-black rounded-pill text-light " type="button"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+  <main class="bg-grad jumbotron p-2" >
+  <nav class="navbar navbar-expand-sm" >
+      <button class="navbar-toggler rounded-pill text-light " type="button"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       Index
       </button>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas offcanvas-end"  tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Prequel</h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+          <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 text-light">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#vault">Vault</a>
+              <a class="nav-link" aria-current="page" href="#features">Features</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Features
+                Genre
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#rxp">RXP</a></li>
@@ -41,153 +37,126 @@
             </li>
             <li class="nav-item"><a class="nav-link" href="https://twitter.com/volantxs">Request a feature</a></li>
           </ul>
-          <form class="d-flex " role="search">
-            <input class="form-control me-2 rounded-pill " type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-dark rounded-pill" type="submit">Search</button>
-          </form>
         </div>
       </div>
-    </div>
+        <p class="fs-1 text-light">Librepo</p>
+        <img src="img/logo_white.png" class="img-fluid" style="max-width: 40px;">
   </nav>
-  <main class="">
-      <div class="container-fluid row p-5 " >
-        <div class="col-sm-8 text-center container" >
-          <div class="p-4 mt-5"></div>
-          <h1>Welcome to Librepo</h1>
-          <p class="lead">Be in your own adventure</p>
-          <form action="" method="POST" id="joinWaitlist" class="d-flex justify-content-center input-group mb-5 mt-5">
-            <div class="col-lg-3"></div>
+      <!-- main page -->
+      <div class="vh-100 mt-3 me-3 ms-3" >
+        <div class="pt-5 text-light gif2" >
+          <h1 class="pt-5 mb-4 d-flex justify-content-start">Discover, share & <br> 
+            earn XP on books
+          </h1>
+          <a class="btn fs-6 btn-lib rounded-pill btn-lg me-3" href="#vault">Learn librepo</a>
+          <a class="btn fs-6 bg-light text-dark rounded-pill btn-lg" href="#cat">Pet a cat</a>
+          <div class="d-flex justify-content-center p-5 mb-5" >
+            <form action="" method="POST" id="joinWaitlist" class="input-group">
               <input type="text" class="form-control rounded-pill me-3 col-lg-6" placeholder="adopt@librepo.com"  name="email" id="email" value="" required/>
-              <button class="btn btn-outline-dark rounded-pill col-lg-2 wobble"  type="submit" sendMessage()>Join wailist</button>
-            <div class="col-lg-3"></div>
+              <button class="btn rounded-pill wobble"  type="submit" sendMessage()>Join wailist</button>
           </form>
-          <div class="d-flex justify-content-center mt-5 p-5" style="border: 2px dashed black;">
-            <a class="btn btn-violet rounded-pill btn-lg" href="createStory.html" target="_self">Start adventure</a>
           </div>
         </div>
-        <div class="col-sm-4 zoom-wrapper">
-          <img src="img/door.png" class="img-fluid" width="400px" height="600px" alt="opened door depicting your chosen adventrue story">
+        <div style="margin-top: 90px;">
+          <img src="https://i.pinimg.com/originals/8e/75/2c/8e752cf446947d3d01c0eaaf9e1504e2.gif" class="img-fluid " id="cat">
+
         </div>
       </div>
-      <div class="jumbotron text-center">
-        <hr class="divider">
-        <h2 class="lead p-4 ">Keep your vault everywhere you go</h2>
-          <hr class="divider">
-        <img src="img/bg.png" class="img-fluid img" width="800" height="500" alt="Bookmark design depicting cover design with " loading="lazy"/>
+
+</main>
+  <!-- Features -->
+  <p style="font-size: 50px; font-weight: lighter;" class="text-center mt-5 pt-5" id="features">Feature</p>
+  <div class="jumbotron row justify-content-center mb-5 pb-5">
+    <div class="col-sm-3 m-3 rounded p-3 card-about" style="max-width: 360px;">
+    <p class="fs-2 text-light">Explore</p>
+    <p class="fs-5 text-secondary">Each week, new suggestions are introduced, 
+      allowing readers to choose from among the seven vaults that represent different genres</p>
+    </div>
+    <div class="col-sm-3 m-3 rounded p-3 card-about" style="max-width: 360px;">
+      <p class="fs-2 text-light">Contribute</p>
+      <p class="fs-5 text-secondary">Readers can suggest new books for inclusion, which will be displayed 
+        in the relevant vault for all users, making it a user-contributed repo of selected books.
+      </p>
       </div>
-      </div>
-      <div class="container p-5" id="about">
-        <p class="h1">About</p>
-        <hr class="divider mb-3">
-        <p class="fs-5">Librepo is built with the idea of having repositories for books. Both frontend and backend are being formulated, revised and updated daily by the one and only, me. 
-          Founded and in-process under<a href="https://buildspace.so/"> Buildspace's</a> night & weekends (n&w) Season 4. Figma flow is being developed right now to get a 
-          rough overview of how the UI/UX can be assessed to provide ease of access. Raw framework of Librepo fundamentals is ready which will be thoroughly refined and built as we move into 
-          6th week of n&w s4.
+      <div class="col-sm-3 m-3  rounded p-3 card-about" style="max-width: 360px;">
+        <p class="fs-2 text-light">XP</p>
+        <p class="fs-5 text-secondary">Upon finishing a book, readers can collect difficulty-based XP,
+           akin to quest completion. Each new book added equates to a fresh quest.
         </p>
-        <p class="lead fs-2">Developer (me)</p>
-        <p class="fs-5">I have a MS degree in Computational Chemistry, professional background in business developement and non-negotiable interest 
-          in technology, universe, astrophysics, anime and books.
-        </p>
-      </div>
-      <div class="container p-5" id="vault">
-          <p class="h1">Reader's Vault</p> 
-        <hr class="divider mb-5">
-      <div class="row">
-        <div class="col-md-auto card mb-3 me-3" style="max-width: 400px;">
-          <div class="row p-1">
-            <div class="col-md-4 p-2 ">
-              <img src="img/gentle man in moscow.jpg" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Amor Towles</h5>
-                <dl class="card-text">
-                  <dd>Pages: 512</dd>
-                  <dd>Year: 2016</dd>
-                  <dd>Genre: Historical fiction, Political Fiction</dd>
-
-                </dl>
-                <p class="card-text"><small class="text-body-secondary">RXP | +450</small></p>
-              </div>
-            </div>
-          </div>
-          </div>
-      
-        <div class="col-md-auto card mb-3 me-3" style="max-width: 400px;">
-          <div class="row p-1">
-            <div class="col-md-4 p-2 ">
-              <img src="img/shadow fo wind.jpg" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Carlos Ruiz Zafon</h5>
-                <dl class="card-text">
-                  <dd>Pages: 512</dd>
-                  <dd>Year: 2001</dd>
-                  <dd>Genre: Thriller, Gothic fiction, Drama</dd>
-
-                </dl>
-                <p class="card-text"><small class="text-body-secondary">RXP | +450</small></p>
-              </div>
-            </div>
-          </div>
-      </div>
-      <div class="col-md-auto card mb-3 me-3" style="max-width: 400px;">
-        <div class="row p-1">
-          <div class="col-md-4 p-2 ">
-            <img src="img/crooked-kingdom.jpg" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Leigh Bardugo</h5>
-              <dl class="card-text">
-                <dd>Pages: 560</dd>
-                <dd>Year: 2016</dd>
-                <dd>Genre: YA fiction, Fantasy </dd>
-              </dl>
-              <p class="card-text"><small class="text-body-secondary">RXP | +550</small></p>
-            </div>
-          </div>
         </div>
-    </div>
-    </div>
-    </div>
-  </div>
-  <section>
-    <div class="container p-5">
-      <p class="h1">Features</p>
-      <hr class="mb-3">
-      <dl class="fs-5">
-        <dd class="mb-4"><p class="fs-2 lead" id="rxp">RXP</p>Readers will gain RXP points with each book added to the completed collection.
-        Initially, the RXP will be accumulated as a single type XP which would eventually disintegrate into multiple 
-      categories in future depending upon the theme/genre of the book.</dd>
-      <dd class="mb-4"><p class="fs-2 lead " id="levels">Levels</p>Readers will set their monthly/yearly goals such that with every 
-        achievement they will be able climb a new level defined by thesystem. Librepo is considered as a pseudo-gamified library web app being 
-        developed to provide best UX and improve your reading habit.</dd>
-      <dd><p class="lead fs-2" id="stats">Stats</p>In the later phases of this project, the plan is to implement monthly stats of users 
-      to keep a track of their book-reading-streak. This will help readers to analyse their reading pattern.</dd>
-        </dd>
-      </dl>
-      
-
-      </div>
-
-    </div>
-  </section>
   
+  </div>
+ 
+   <!-- Vaults -->
+   <p style="font-size: 50px; font-weight: lighter;" class="text-center" id="vault" >Vaults</p><br>
+   <div class="d-flex justify-content-center " >
+   <div class="row g-5 mb-5 container">
+    <div class="col ">
+        <div class="card" >
+            <img class="img-fluid img-card" src="img/fantasy.png">
+            <div class="card-body text-center">
+                <a class="btn rounded-pill" role="button">Fantasy</a>
+            </div>
+        </div>
+    </div>
+    <div class="col animate__animated animate__backInRight">
+        <div class="card" >
+            <img class=" img-fluid img-card" src="img/romance.png">
+            <div class="card-body text-center">
+                <a class="btn rounded-pill" role="button">Romance</a>
+            </div>
+        </div>
+    </div>
+    <div class="col animate__animated animate__backInLeft">
+        <div class="card" >
+            <img class="img-fluid img-card" src="img/adventure.png">
+            <div class="card-body text-center">
+                <a class="btn rounded-pill" role="button">Adventure</a>
+            </div>
+        </div>
+    </div>
+    <div class="col animate__animated animate__backInLeft">
+        <div class="card" >
+            <img class="img-fluid img-card" src="img/horror.png">
+            <div class="card-body text-center">
+                <a class="btn rounded-pill" role="button" href="thriller.html">Mystery</a>
+            </div>
+        </div>
+    </div>
+    <div class="col animate__animated animate__backInUp">
+        <div class="card" >
+            <img class="img-fluid img-card" src="img/dystopian.png">
+            <div class="card-body text-center">
+                <a class="btn rounded-pill" role="button">Dystopian</a>
+            </div>
+        </div>
+    </div>
+    <div class="col animate__animated animate__backInRight">
+        <div class="card" >
+            <img class="img-fluid img-card" src="img/growth.png">
+            <div class="card-body text-center">
+                <a class="btn rounded-pill" role="button">Growth</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
   <div class="container p-5 mb-5">
-  <div class="card">
     <div class="card-body">
       <blockquote class="blockquote mb-0">
         <p>Open your eyes and see what you can with them before they close forever</p>
-        <footer class="blockquote-footer">Anthony Doerr |<cite title="Source Title"> All the light we cannot see</cite></footer>
+        <footer class="blockquote-footer"><cite title="Source Title"> All the light we cannot see </cite>| Anthony Doerr</footer>
       </blockquote>
     </div>
-  </div>
+    <div class="text-end gif container-fluid mt-4">
+      <p style="font-size: 5vw; font-weight: lighter;">Browse vaults</p>
+      <p style="font-size: 5vw; font-weight: lighter;">Select novel</p>
+      <p style="font-size: 5vw; font-weight: lighter;">Earn <mark style="background-color: black; color: white;">XP</mark></p>
+    </div>
 </div>
-</main>
-    <footer class="navbar fixed-bottom justify-content-center p-1" style="background-color: black;">
-    <p class="lead text-light mt-2"><a class="text-light" href="#">Get early access</a></p>        
+    <footer class="navbar justify-content-center p-1" style="background-color: black;">
+    <p class="lead text-light mt-2"><a class="text-light" href="#">Get early access</a></p> 
+           
     </footer>
   </div>
   <script type="module">

@@ -1,23 +1,50 @@
-h1 {
-    font-size: 80px; 
-    font-family: Garamond, serif;
 
+.bg-grad {
+    background-image: linear-gradient(180deg, rgb(73, 109, 240), rgb(23, 188, 191), rgb(255, 255, 255));
 }
 
-.btn-violet {
-    border: 2px solid rgb(102, 0, 255) ;
-    border-right: 2px solid rgb(255, 0, 225);
-    border-bottom: 2px solid rgb(255, 0, 225);
-    transition: transform 0.1s;
-
+.bg-black:hover {
+    background-color: white;
+    color: black;
 }
 
-.btn-violet:hover {
-    transform: scale(1.1) ;
-    color: white;
+.btn-vault:hover {
+    background-image: linear-gradient(90deg, rgb(54, 48, 249), rgb(0, 226, 230));
     border: none;
-    background-image: linear-gradient(90deg, rgb(102, 0, 255), rgb(255, 0, 225));
+    color: white;
+}
 
+.card-about {
+    background-color: rgb(14, 12, 12);
+    box-shadow: 4px 4px 8px grey;
+}
+
+.card {
+    background-image: linear-gradient(90deg, rgb(73, 109, 240), rgb(23, 188, 191));
+    max-width: 10rem;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px grey;
+  }
+
+.card:hover {
+    transform: scale(1.2);
+}
+
+.img-card {
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    box-shadow: 1px 1px 5px black;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    box-shadow: 2px 2px 4px black;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
 }
 
 .zoom-wrapper img {
@@ -28,15 +55,40 @@ h1 {
     transform: scale(1.2);
 }
 
-.wobble:hover {
-    transition: transform 1s;
-    transform: rotate(-5deg);
+.gif {
+    background-image: url("https://i.pinimg.com/originals/73/69/6e/73696e022df7cd5cb3d999c6875361dd.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
+/* .gif2 {
+    background-image: url("https://i.pinimg.com/originals/1c/a5/ba/1ca5ba6ee4774c4a595b2a859bc7c8e3.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+} */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 600px){
     h1 {
-      font-size: 50px;
+        font-size: 100px;
+        font-weight: lighter;
     }
-  }
+    .input-group {
+        width: 40vw;
+    }
+    .nav-link {
+        color: white;
+    }
+   
+}
+
+@media only screen and (max-width: 500px) {
+    h1 {
+        font-size: 40px;
+        font-weight: lighter;
+    }
+    .nav-link {
+        color: black;
+    }
+   
+}
 
