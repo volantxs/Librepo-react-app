@@ -71,6 +71,15 @@ body {
 
 }
 
+.reset {
+    color: white;
+}
+
+.reset:hover {
+    background-color: white;
+    color: black;
+}
+
 @media only screen and (min-width: 300px) {
     .fs {
         font-size: 7vw;

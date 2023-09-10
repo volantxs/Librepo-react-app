@@ -10,35 +10,11 @@
   </head>
 <body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  <main class="bg-grad jumbotron p-2" >
-  <nav class="navbar navbar-expand-sm" >
-      <button class="navbar-toggler rounded-pill text-light " type="button"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-      Index
-      </button>
-      <div class="offcanvas offcanvas-end"  tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Prequel</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 text-light">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#features">Features</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Genre
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#rxp">RXP</a></li>
-                <li><a class="dropdown-item" href="#levels">Levels</a></li>
-                <li><a class="dropdown-item" href="#stats">Stats</a></li>
-              </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="https://twitter.com/volantxs">Request a feature</a></li>
+  <main class="bg-grad jumbotron" >
+  <nav class="navbar ps-3 pe-2" >
+          <ul class="navbar-nav justify-content-start flex-grow-1 ">
+            <li class="nav-item"><a class="nav-link text-white-50 fs-5 " href="https://twitter.com/volantxs"><code>Request a feature</code></a></li>
           </ul>
-        </div>
-      </div>
         <p class="fs-1 text-light">Librepo</p>
         <img src="img/logo_white.png" class="img-fluid" style="max-width: 40px;">
   </nav>
@@ -61,23 +37,23 @@
 </main>
 
   <!-- Features -->
-  <p style="font-size: 50px; font-weight: lighter; margin-top: 160px;" class="text-center" id="features">Features</p>
+  <p style="font-size: 50px; font-weight: lighter; margin-bottom: 60px;" class="text-center" id="features">Features</p>
   <div class="row container me-auto ms-auto g-3">
     <!-- explore -->
     <div class="col-sm-6 rounded card-about me-auto ms-auto mt-auto mb-auto p-3 "  style="width: 500px; height: fit-content;">
       <p class="fs-2 text-light">Explore</p>
       <p class="fs-5 text-secondary">Each week, new suggestions are introduced, 
           allowing readers to choose from among the seven vaults that represent different genres</p>
-          <a class="d-flex btn btn-light justify-content-center fs-6" style="border: 1px dashed grey;">Select a vault</a>
+          <a class="d-flex btn btn-feature text-light justify-content-center fs-6" style="border: 1px solid grey;" href="#vault">Select a Vault</a>
       </div>   
     <div class="col-sm-6 ">
 <img src="https://i.pinimg.com/originals/20/86/b1/2086b1189cc058579c87b346d91bc808.gif" 
           class="img-fluid ms-3 pe-5 ps-5"  style="width: 500px; height: auto;">
-          <div class="container ms-auto me-auto mb-5">
+          <div class="container ms-auto me-auto mb-5 p-5">
             <div class="card-body">
               <blockquote class="blockquote mb-0">
-                <p>Books are mirros, you only see in them what you already have inside you </p>
-                <footer class="blockquote-footer">Anthony Doerr, <cite title="Source Title"> All the light we cannot see </cite></footer>
+                <p>Books are mirrors, you only see in them what you already have inside you </p>
+                <footer class="blockquote-footer">Carlor Ruiz Zaf&oacute;n, <cite title="Source Title">The Shadow of the Wind </cite></footer>
               </blockquote>
             </div>
             </div>
@@ -88,15 +64,17 @@
       <p class="fs-5 text-secondary">Readers can suggest new books for inclusion, which will be displayed 
         in the relevant vault for all users, making it a user-contributed repo of selected books.
       </p>
+      <a class="d-flex btn text-light justify-content-center fs-6 disabled" style="border: 1px dashed grey;" >Request a Book [<kbd class="bg-secondary">Coming Soon</kbd>]</a>
+
       </div>
       <div class="col-sm-6"  id="cat">
         <img src="https://cdna.artstation.com/p/assets/images/images/049/630/546/original/yuni_lamu-miaouuuu-export.gif?1653345866" 
         class="img-fluid ms-3 pe-5 ps-5" style="width: 500px;">
-        <div class="container ms-auto me-auto mb-5" >
+        <div class="container ms-auto me-auto mb-5 p-5" >
           <div class="card-body">
             <blockquote class="blockquote">
-              <p>Books are mirros, you only see in them what you already have inside you </p>
-              <footer class="blockquote-footer">Anthony Doerr, <cite title="Source Title"> All the light we cannot see </cite></footer>
+              <p>How wonderful it is that nobody need wait a single moment before starting to improve the world </p>
+              <footer class="blockquote-footer">Anne Frank, <cite title="Source Title">Diary of a Young Girl </cite></footer>
             </blockquote>
           </div>
           </div>
@@ -108,27 +86,25 @@
           <p class="fs-5 text-secondary">Upon finishing a book, readers can collect difficulty-based XP,
              akin to quest completion. Each new book added equates to a fresh quest.
           </p>
+          <a class="d-flex btn justify-content-center text-light fs-6 btn-feature" style="border: 1px solid grey;" href="#vault">Click on the book to collect XP</a>
+
           </div>
       <div class="col-sm-6" style="padding-top: 50px;">
         <img src="https://bestanimations.com/media/coins/781167865gold-coins-animated-gif.gif" 
         class="img-fluid ms-3 pe-5 ps-5 mb-4" >
-        <div class="container ms-auto me-auto mb-5 pb-5"  >
+        <div class="container ms-auto me-auto mb-5 p-5"  >
           <div class="card-body">
             <blockquote class="blockquote mb-0">
               <p>Open your eyes and see what you can with them before they close forever</p>
-              <footer class="blockquote-footer">Anthony Doerr, <cite title="Source Title"> All the light we cannot see </cite></footer>
+              <footer class="blockquote-footer">Anthony Doerr, <cite title="Source Title">All the light we cannot see </cite></footer>
             </blockquote>
           </div>
           </div>
       </div>
       
   </div>
-
- 
    <!-- Vaults -->
-
    <p style="font-size: 50px; font-weight: lighter;" class="text-center" id="vault" >Vaults</p><br>
-
    <div class="d-flex justify-content-center " >
    <div class="row g-5 mb-5 container">
     <div class="col ">

@@ -33,6 +33,12 @@
     box-shadow: 2px 2px 4px grey;
   }
 
+.btn-feature:hover  {
+    background-image: linear-gradient(90deg, rgb(73, 109, 240), rgb(23, 188, 191));
+    border-radius: 8px;
+    transform: scale(1.2);
+}
+
 .card:hover {
     transform: scale(1.2);
 }

@@ -1,11 +1,16 @@
-const totalXP = document.getElementById('total-xp')
+const totalXP = document.getElementById('total-xp');
+const reset = document.getElementById('reset');
 var xp = parseInt(localStorage.getItem('xp')) ? parseInt(localStorage.getItem(('xp'))) : 0 ;
 totalXP.innerHTML = xp;
-
 function getXP(bookxp) {
     var bookXP = document.getElementById(bookxp).ariaValueNow
     xp += parseInt(bookXP);
     totalXP.innerHTML = xp;
     localStorage.setItem('xp', JSON.stringify(xp))
 }
+reset.addEventListener('click', function () {
+    localStorage.clear();
+    location.reload();
+})
+
 
