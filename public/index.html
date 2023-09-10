@@ -48,47 +48,87 @@
           <h1 class="pt-5 mb-4 d-flex justify-content-start">Discover, share & <br> 
             earn XP on books
           </h1>
-          <a class="btn fs-6 btn-lib rounded-pill btn-lg me-3" href="#vault">Learn librepo</a>
-          <a class="btn fs-6 bg-light text-dark rounded-pill btn-lg" href="#cat">Pet a cat</a>
-          <div class="d-flex justify-content-center p-5 mb-5" >
-            <form action="" method="POST" id="joinWaitlist" class="input-group">
+          <a class="btn fs-6 btn-lib rounded-pill btn-lg me-3" href="#features">Learn librepo</a>
+          <a class="btn fs-6 btn-lib rounded-pill btn-lg" href="#cat">Pet a cat</a>
+          <div class="d-flex justify-content-center mb-5" >
+            <form action="" method="POST" id="joinWaitlist" class="input-group mt-5">
               <input type="text" class="form-control rounded-pill me-3 col-lg-6" placeholder="adopt@librepo.com"  name="email" id="email" value="" required/>
               <button class="btn rounded-pill wobble"  type="submit" sendMessage()>Join wailist</button>
           </form>
           </div>
         </div>
-        <div style="margin-top: 90px;">
-          <img src="https://i.pinimg.com/originals/8e/75/2c/8e752cf446947d3d01c0eaaf9e1504e2.gif" class="img-fluid " id="cat">
-
-        </div>
       </div>
-
 </main>
+
   <!-- Features -->
-  <p style="font-size: 50px; font-weight: lighter;" class="text-center mt-5 pt-5" id="features">Feature</p>
-  <div class="jumbotron row justify-content-center mb-5 pb-5">
-    <div class="col-sm-3 m-3 rounded p-3 card-about" style="max-width: 360px;">
-    <p class="fs-2 text-light">Explore</p>
-    <p class="fs-5 text-secondary">Each week, new suggestions are introduced, 
-      allowing readers to choose from among the seven vaults that represent different genres</p>
-    </div>
-    <div class="col-sm-3 m-3 rounded p-3 card-about" style="max-width: 360px;">
+  <p style="font-size: 50px; font-weight: lighter; margin-top: 160px;" class="text-center" id="features">Features</p>
+  <div class="row container me-auto ms-auto g-3">
+    <!-- explore -->
+    <div class="col-sm-6 rounded card-about me-auto ms-auto mt-auto mb-auto p-3 "  style="width: 500px; height: fit-content;">
+      <p class="fs-2 text-light">Explore</p>
+      <p class="fs-5 text-secondary">Each week, new suggestions are introduced, 
+          allowing readers to choose from among the seven vaults that represent different genres</p>
+          <a class="d-flex btn btn-light justify-content-center fs-6" style="border: 1px dashed grey;">Select a vault</a>
+      </div>   
+    <div class="col-sm-6 ">
+<img src="https://i.pinimg.com/originals/20/86/b1/2086b1189cc058579c87b346d91bc808.gif" 
+          class="img-fluid ms-3 pe-5 ps-5"  style="width: 500px; height: auto;">
+          <div class="container ms-auto me-auto mb-5">
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p>Books are mirros, you only see in them what you already have inside you </p>
+                <footer class="blockquote-footer">Anthony Doerr, <cite title="Source Title"> All the light we cannot see </cite></footer>
+              </blockquote>
+            </div>
+            </div>
+        </div>
+    <!-- contribute -->
+    <div class="col-sm-6 rounded card-about me-auto ms-auto mt-auto mb-auto p-3" style="width: 500px; height: fit-content;" style="width: 500px; height: fit-content;" >
       <p class="fs-2 text-light">Contribute</p>
       <p class="fs-5 text-secondary">Readers can suggest new books for inclusion, which will be displayed 
         in the relevant vault for all users, making it a user-contributed repo of selected books.
       </p>
       </div>
-      <div class="col-sm-3 m-3  rounded p-3 card-about" style="max-width: 360px;">
-        <p class="fs-2 text-light">XP</p>
-        <p class="fs-5 text-secondary">Upon finishing a book, readers can collect difficulty-based XP,
-           akin to quest completion. Each new book added equates to a fresh quest.
-        </p>
-        </div>
-  
+      <div class="col-sm-6"  id="cat">
+        <img src="https://cdna.artstation.com/p/assets/images/images/049/630/546/original/yuni_lamu-miaouuuu-export.gif?1653345866" 
+        class="img-fluid ms-3 pe-5 ps-5" style="width: 500px;">
+        <div class="container ms-auto me-auto mb-5" >
+          <div class="card-body">
+            <blockquote class="blockquote">
+              <p>Books are mirros, you only see in them what you already have inside you </p>
+              <footer class="blockquote-footer">Anthony Doerr, <cite title="Source Title"> All the light we cannot see </cite></footer>
+            </blockquote>
+          </div>
+          </div>
+      </div>
+      
+        <!-- XP -->
+        <div class="col-sm-6 rounded m-3 card-about me-auto ms-auto mb-auto mt-auto p-3" style="width: 500px; height: fit-content;">
+          <p class="fs-2 text-light">XP</p>
+          <p class="fs-5 text-secondary">Upon finishing a book, readers can collect difficulty-based XP,
+             akin to quest completion. Each new book added equates to a fresh quest.
+          </p>
+          </div>
+      <div class="col-sm-6" style="padding-top: 50px;">
+        <img src="https://bestanimations.com/media/coins/781167865gold-coins-animated-gif.gif" 
+        class="img-fluid ms-3 pe-5 ps-5 mb-4" >
+        <div class="container ms-auto me-auto mb-5 pb-5"  >
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>Open your eyes and see what you can with them before they close forever</p>
+              <footer class="blockquote-footer">Anthony Doerr, <cite title="Source Title"> All the light we cannot see </cite></footer>
+            </blockquote>
+          </div>
+          </div>
+      </div>
+      
   </div>
+
  
    <!-- Vaults -->
+
    <p style="font-size: 50px; font-weight: lighter;" class="text-center" id="vault" >Vaults</p><br>
+
    <div class="d-flex justify-content-center " >
    <div class="row g-5 mb-5 container">
     <div class="col ">
@@ -141,22 +181,17 @@
     </div>
 </div>
 </div>
-  <div class="container p-5 mb-5">
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p>Open your eyes and see what you can with them before they close forever</p>
-        <footer class="blockquote-footer"><cite title="Source Title"> All the light we cannot see </cite>| Anthony Doerr</footer>
-      </blockquote>
-    </div>
-    <div class="text-end gif container-fluid mt-4">
+<!-- pre footer -->
+
+    <div class="text-end gif container mt-5 p-5 mb-5">
       <p style="font-size: 5vw; font-weight: lighter;">Browse vaults</p>
       <p style="font-size: 5vw; font-weight: lighter;">Select novel</p>
       <p style="font-size: 5vw; font-weight: lighter;">Earn <mark style="background-color: black; color: white;">XP</mark></p>
     </div>
 </div>
+<!-- footer -->
     <footer class="navbar justify-content-center p-1" style="background-color: black;">
     <p class="lead text-light mt-2"><a class="text-light" href="#">Get early access</a></p> 
-           
     </footer>
   </div>
   <script type="module">

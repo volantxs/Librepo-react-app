@@ -2,6 +2,13 @@
 .bg-grad {
     background-image: linear-gradient(180deg, rgb(73, 109, 240), rgb(23, 188, 191), rgb(255, 255, 255));
 }
+.feature {
+    display: flex;
+    justify-content: center;
+    margin: none;
+    padding: none;
+    width:auto;
+}
 
 .bg-black:hover {
     background-color: white;
@@ -60,12 +67,6 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
-
-/* .gif2 {
-    background-image: url("https://i.pinimg.com/originals/1c/a5/ba/1ca5ba6ee4774c4a595b2a859bc7c8e3.gif");
-    background-size: contain;
-    background-repeat: no-repeat;
-} */
 
 @media only screen and (min-width: 600px){
     h1 {
