@@ -17,7 +17,12 @@
         <a class=" btn btn-dark rounded-pill h4 pe-4 ps-4" href="./index.html">&lt;</a>
         <p class="fs-2 lead">Version 1.0</p>
         <section>
-        <p class="xp_show rounded-pill h3" >XP | <p class="xp_show fs-3" id="total-xp" ></p></p>
+        <div class="d-flex rounded-pill lead" >
+            <p class="fs-3 me-2">fun | </p><p class="fs-3" id="fun-xp" ></p>
+          <p class="fs-3 ms-2 me-2">wise | </p><p class="fs-3" id="wise-xp" ></p>
+          <p class="fs-3 ms-2 me-2">mushy | </p><p  class="fs-3" id="mushy-xp" ></p>
+          <p class="fs-3 ms-2 me-2">crime | </p><p  class="fs-3" id="crime-xp" ></p>
+        </div>
         </section>        
       </nav>
     </header>
@@ -35,12 +40,12 @@
       <div class="col-md-2 box p-2 m-3" name="1">
         <kbd>XP|700</kbd> Gillian Flynn 
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/41wjnFxdxnL.jpg" style="max-width: 100px;">
-        <button class="btn btn-book" id="1" onclick="getXP(this.id)" aria-valuenow="450">Gone Girl</button>
+        <button class="btn btn-book" id="1" onclick="getXP(this.id)" value="464" name="crime">Gone Girl</button>
         </div>
       <div class="col-md-2 box p-2 m-3">
         <kbd>XP|500</kbd> Keigo Higashino
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/513UDubStkL.jpg" style="max-width: 100px;">
-        <button class="btn btn-book" id="2" onclick="getXP(this.id)" aria-valuenow="450">The Devotion of Suspect X</button>
+        <button class="btn btn-book" id="2" onclick="getXP(this.id)" value="352" name="crime">The Devotion of Suspect X</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
         <kbd>XP|800</kbd> Frederick Forsyth
@@ -103,7 +108,7 @@
         <button class="btn btn-book" id="8" onclick="getXP(this.id)" aria-valuenow="450">The Talented Mr.Ripley</button>
       </div>
     </div>
-    <footer class="navbar-dark bg-black text-light p-3">
+    <footer class="navbar-dark fixed-bottom bg-black text-light p-3">
       <div class="d-flex justify-content-center">
       <a class="btn reset rounded ps-3 pe-3 text-center fs-3" role="button" id="reset">Reset XP &orarr;</a>
         <!-- <form method="POST" id="requestBook">
