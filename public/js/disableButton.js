@@ -17,6 +17,8 @@ const getBtnState = function (btns) {
    btn.addEventListener('click', function (e) {
      btn.disabled = true
      window.localStorage.setItem(btn.id, 'disabled')
+      document.getElementsByName(dis())[0].style.display = 'none';
+
    })
 });
 

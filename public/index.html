@@ -10,28 +10,33 @@
   </head>
 <body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  <main class="bg-grad jumbotron" >
-  <nav class="navbar ps-3 pe-2" >
-          <ul class="navbar-nav justify-content-start flex-grow-1 ">
-            <li class="nav-item"><a class="nav-link text-white-50 fs-5 " href="https://twitter.com/volantxs"><code>Request a feature</code></a></li>
-          </ul>
-        <p class="fs-1 text-light">Librepo</p>
-        <img src="img/logo_white.png" class="img-fluid" style="max-width: 40px;">
+  <main class=" jumbotron" >
+  <nav class="navbar ps-2 pe-2 pb-0 bg-nav" >
+    <p class="fs-2 text-light ms-3">Librepo</p>
+    <img src="img/logo_white.png" class="img-fluid me-3" style="max-width: 30px;">
+
   </nav>
       <!-- main page -->
-      <div class="vh-100 mt-3 me-3 ms-3" >
-        <div class="pt-5 text-light gif2" >
-          <h1 class="pt-5 mb-4 d-flex justify-content-start">Discover, share & <br> 
-            earn XP on books
-          </h1>
-          <a class="btn fs-6 btn-lib rounded-pill btn-lg me-3" href="#features">Learn librepo</a>
-          <a class="btn fs-6 btn-lib rounded-pill btn-lg" href="#cat">Pet a cat</a>
-          <div class="d-flex justify-content-center mb-5" >
-            <form action="" method="POST" id="joinWaitlist" class="input-group mt-5">
-              <input type="text" class="form-control rounded-pill me-3 col-lg-6" placeholder="adopt@librepo.com"  name="email" id="email" value="" required/>
-              <button class="btn rounded-pill wobble"  type="submit" sendMessage()>Join wailist</button>
+      <div class="vh-100 mt-3 me-3 ms-5" >
+
+        <div class="pt-5 text-light container" >
+          <h1 class="pt-5 container text-dark justify-content-center">gamified  world of literature</h1>
+          <div class="fs-4 text-secondary justify-content-start w-75 ps-3 sm">
+          <kbd class="bg-secondary">noun</kbd>
+          empower your reading journey by earning wisdom-based XP from each book, customize your tbr with what you read &
+            challenge yourself with weekly curated quests</div><br>
+          <a class="btn fs-6 btn-feature text-light rounded btn-lg ms-3 me-3 mt-3" href="#features">start adventure  &#8628;</a>
+          <a class="btn fs-6 btn-feature text-light rounded btn-lg mt-3" href="#cat">get me a cat</a>
+          <!-- <div class="d-flex justify-content-center mb-5 mt-4" > -->
+            <form action="" method="POST" id="joinWaitlist" class="input-group mt-5 ms-3">
+              <input type="text" class="form-control rounded bg-body-secondary col-lg-6" placeholder="email"  name="email" id="email" value="" required/>
+              <button class="btn btn-feature rounded text-light "  type="submit" sendMessage()> get quests</button>
           </form>
+          <!-- </div> -->
+          <div class="d-flex justify-content-end">
+            <img src="https://media0.giphy.com/media/12oufCB0MyZ1Go/200w.gif?cid=6c09b952b29zmnkn17hoc6ni0n61vlxzq54tg6m69cpfvg6g&ep=v1_gifs_search&rid=200w.gif&ct=s" class="img-fluid"> 
           </div>
+
         </div>
       </div>
 </main>
@@ -42,18 +47,18 @@
     <!-- explore -->
     <div class="col-sm-6 rounded card-about me-auto ms-auto mt-auto mb-auto p-3 "  style="width: 500px; height: fit-content;">
       <p class="fs-2 text-light">Explore</p>
-      <p class="fs-5 text-secondary">Each week, new suggestions are introduced, 
-          allowing readers to choose from among the seven vaults that represent different genres</p>
+      <p class="fs-5 text-secondary">each week, new suggestions are introduced, 
+          allowing readers to choose among the six vaults that represent different genres</p>
           <a class="d-flex btn btn-feature text-light justify-content-center fs-6" style="border: 1px solid grey;" href="#vault">Select a Vault</a>
       </div>   
     <div class="col-sm-6 ">
 <img src="https://i.pinimg.com/originals/20/86/b1/2086b1189cc058579c87b346d91bc808.gif" 
-          class="img-fluid ms-3 pe-5 ps-5"  style="width: 500px; height: auto;">
+          class="img-fluid ms-3 pe-5"  style="width: 500px; height: auto;">
           <div class="container ms-auto me-auto mb-5 p-5">
             <div class="card-body">
               <blockquote class="blockquote mb-0">
                 <p>Books are mirrors, you only see in them what you already have inside you </p>
-                <footer class="blockquote-footer">Carlor Ruiz Zaf&oacute;n, <cite title="Source Title">The Shadow of the Wind </cite></footer>
+                <footer class="blockquote-footer">Carlos Ruiz Zaf&oacute;n, <cite title="Source Title">The Shadow of the Wind </cite></footer>
               </blockquote>
             </div>
             </div>
@@ -61,16 +66,16 @@
     <!-- contribute -->
     <div class="col-sm-6 rounded card-about me-auto ms-auto mt-auto mb-auto p-3" style="width: 500px; height: fit-content;" style="width: 500px; height: fit-content;" >
       <p class="fs-2 text-light">Contribute</p>
-      <p class="fs-5 text-secondary">Readers can suggest new books for inclusion, which will be displayed 
+      <p class="fs-5 text-secondary">readers can suggest new books for inclusion, which will be displayed 
         in the relevant vault for all users, making it a user-contributed repo of selected books.
       </p>
-      <a class="d-flex btn text-light justify-content-center fs-6 disabled" style="border: 1px dashed grey;" >Request a Book [<kbd class="bg-secondary">Coming Soon</kbd>]</a>
+      <a class="d-flex btn text-light justify-content-center fs-6 disabled" style="border: 1px dashed grey;">Import Book -|<kbd class="bg-secondary">Coming Soon</kbd>|</a>
 
       </div>
       <div class="col-sm-6"  id="cat">
         <img src="https://cdna.artstation.com/p/assets/images/images/049/630/546/original/yuni_lamu-miaouuuu-export.gif?1653345866" 
-        class="img-fluid ms-3 pe-5 ps-5" style="width: 500px;">
-        <div class="container ms-auto me-auto mb-5 p-5" >
+        class="img-fluid ms-3 pe-5" style="width: 500px;">
+        <div class="container ms-auto me-auto mb-5 ps-5 pe-5" >
           <div class="card-body">
             <blockquote class="blockquote">
               <p>How wonderful it is that nobody need wait a single moment before starting to improve the world </p>
@@ -83,7 +88,7 @@
         <!-- XP -->
         <div class="col-sm-6 rounded m-3 card-about me-auto ms-auto mb-auto mt-auto p-3" style="width: 500px; height: fit-content;">
           <p class="fs-2 text-light">XP</p>
-          <p class="fs-5 text-secondary">Upon finishing a book, readers can collect difficulty-based XP,
+          <p class="fs-5 text-secondary">after finishing a book, readers can collect difficulty-based XP,
              akin to quest completion. Each new book added equates to a fresh quest.
           </p>
           <a class="d-flex btn justify-content-center text-light fs-6 btn-feature" style="border: 1px solid grey;" href="#vault">Click on the book to collect XP</a>
@@ -91,8 +96,8 @@
           </div>
       <div class="col-sm-6" style="padding-top: 50px;">
         <img src="https://bestanimations.com/media/coins/781167865gold-coins-animated-gif.gif" 
-        class="img-fluid ms-3 pe-5 ps-5 mb-4" >
-        <div class="container ms-auto me-auto mb-5 p-5"  >
+        class="img-fluid ms-3 pe-5 mb-4" >
+        <div class="container ms-auto me-auto mb-5 pe-5 ps-5"  >
           <div class="card-body">
             <blockquote class="blockquote mb-0">
               <p>Open your eyes and see what you can with them before they close forever</p>
@@ -166,8 +171,8 @@
     </div>
 </div>
 <!-- footer -->
-    <footer class="navbar justify-content-center p-1" style="background-color: black;">
-    <p class="lead text-light mt-2"><a class="text-light" href="#">Get early access</a></p> 
+    <footer class="navbar justify-content-center p-3" style="background-color: black;">
+      <a class="text-white fs-5  pt-0" role="button" href="mailto:librepo.app@gmail.com">Request a feature</a>
     </footer>
   </div>
   <script type="module">
