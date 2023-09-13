@@ -3,11 +3,12 @@ const joyXP = document.getElementById('joyXP');
 const sorrowXP = document.getElementById('sorrowXP');
 const wisdomXP = document.getElementById('wisdomXP');
 const reset = document.getElementById('reset');
-const progressBar = document.getElementById('progressBar');
 const water = document.getElementById('water');
 const earth = document.getElementById('earth');
 const air = document.getElementById('air');
 const fire = document.getElementById('fire');
+
+// progressBar.style.visibility = 'hidden'
 // var txp = parseInt(localStorage.getItem('txp')) ? parseInt(localStorage.getItem(('txp'))) : 0 ;
 var fxp = parseInt(localStorage.getItem('fxp')) ? parseInt(localStorage.getItem(('fxp'))) : 0 ;
 var jxp = parseInt(localStorage.getItem('jxp')) ? parseInt(localStorage.getItem(('jxp'))) : 0 ;
@@ -48,7 +49,6 @@ wisdomXP.onmouseenter = function () {
 wisdomXP.onmouseleave = function () {
     water.style.display = 'none';
 }
-
 
 // calculate individual XP
 function getXP(bookID) {
@@ -102,4 +102,5 @@ reset.addEventListener('click', function () {
     localStorage.clear();
     location.reload();
 })
+
 

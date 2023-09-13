@@ -1,5 +1,6 @@
 // // Create a variable storing the buttons
 const btns = document.querySelectorAll('.btn-book');
+const progressBar = document.getElementById('progressBar');
 
 // // Retrieve the button state from localStorage and each
 // // button's state
@@ -9,6 +10,8 @@ const getBtnState = function (btns) {
       btn.disabled = true
       btn.innerHTML = 'completed';
       btn.style.color = 'blue'
+    progressBar.style.visibility = 'visible'
+
     }
   });
 };
@@ -21,6 +24,10 @@ const getBtnState = function (btns) {
     window.localStorage.setItem(btn.id, 'disabled')
     btn.innerHTML = 'completed';
     btn.style.color = 'blue'
+    btn.style.transition = '2s'
+
+    progressBar.style.visibility = 'visible'
+
    })
 });
 
