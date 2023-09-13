@@ -1,4 +1,3 @@
-// const totalXP = document.getElementById('total-xp');
 const crimeXP = document.getElementById('crime-xp');
 const funXP = document.getElementById('fun-xp');
 const mushyXP = document.getElementById('mushy-xp');
@@ -10,10 +9,16 @@ var fxp = parseInt(localStorage.getItem('fxp')) ? parseInt(localStorage.getItem(
 var mxp = parseInt(localStorage.getItem('mxp')) ? parseInt(localStorage.getItem(('mxp'))) : 0 ;
 var wxp = parseInt(localStorage.getItem('wxp')) ? parseInt(localStorage.getItem(('wxp'))) : 0 ;
 // totalXP.innerHTML = txp;
-crimeXP.innerHTML = cxp;
-funXP.innerHTML = fxp;
-mushyXP.innerHTML = mxp;
-wiseXP.innerHTML = wxp;
+// crimeXP.innerHTML = cxp;
+// mushyXP.innerHTML = mxp;
+// funXP.innerHTML = fxp;
+// wiseXP.innerHTML = wxp;
+crimeXP.style.width = cxp + "%";
+funXP.style.width = fxp + "%";
+wiseXP.style.width = wxp + "%";
+mushyXP.style.width = mxp + "%";
+
+// calculate individual XP
 function getXP(bookID) {
     var book = document.getElementById(bookID);
     var pages = parseInt(book.value);
@@ -31,20 +36,25 @@ function getXP(bookID) {
     }
     // txp += cxp + wxp + fxp + mxp;
     // totalXP.innerHTML = txp;
-    crimeXP.innerHTML = cxp;
-    mushyXP.innerHTML = mxp;
-    funXP.innerHTML = fxp;
-    wiseXP.innerHTML = wxp;
+    crimeXP.style.width = cxp + "%";
+    funXP.style.width = fxp + "%";
+    wiseXP.style.width = wxp + "%";
+    mushyXP.style.width = mxp + "%";
+    // crimeXP.innerHTML = cxp;
+    // mushyXP.innerHTML = mxp;
+    // funXP.innerHTML = fxp;
+    // wiseXP.innerHTML = wxp;
+
     // localStorage.setItem('txp', JSON.stringify(txp))
-    localStorage.setItem('cxp', JSON.stringify(xp))
+    localStorage.setItem('cxp', JSON.stringify(cxp))
     localStorage.setItem('fxp', JSON.stringify(fxp))
     localStorage.setItem('mxp', JSON.stringify(mxp))
     localStorage.setItem('wxp', JSON.stringify(wxp))
 }
-
 reset.addEventListener('click', function () {
     localStorage.clear();
     location.reload();
 })
 
 
+arr = [];

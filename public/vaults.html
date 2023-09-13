@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="thriller repository" content="books of thriller genre">
+    <meta name="author" content="Sarika Singh">
+    <title>Thriller</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/thriller.css" type="text/css"/>
+    <link rel="stylesheet" href="./css/modal.css" type="text/css"/>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <script src="https://cdn.plot.ly/plotly-2.25.2.min.js" charset="utf-8"></script>
+</head>
+<body>
+    <header>
+      <nav class="navbar fixed-top bg-white" >
+        <div class="justify-content-start">
+        <div class="dropdown me-auto ms-auto ">
+        <button class=" btn btn-dark rounded-pill h4 pe-3 ps-4 mt-2" href="./index.html">&lt;</button>
+          <button class="btn btn-dark dropdown-toggle " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Vaults
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Mystery</a>
+            <a class="dropdown-item" href="#">Fantasy</a>
+            <a class="dropdown-item" href="#">Dystopian</a>
+            <a class="dropdown-item" href="#">Romance</a>
+            <a class="dropdown-item" href="#">Adventure</a>
+            <a class="dropdown-item" href="#">Growth</a>
+          </div>
+        </div>
+      </div>
+          <div class="  progress fs-6 ms-2 me-2 rounded-pill" style="width: 40vw;height: 5vh;">
+            <div  id="wise-xp" name="wxp" class=" progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="1000" >
+           wise </div>
+            <div  id="fun-xp" name="fxp" class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar"  aria-valuemin="0" aria-valuemax="1000" >
+            feel-good</div>
+            <div id="mushy-xp"  name="mxp" class="progress-bar bg-black progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="1000" >
+              mushy</div>
+            <div   id="crime-xp"  name="wcp" class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="1000" >
+            crime</div>
+        </div>
+        </section>        
+      </nav>
+    </header>
+    <div class=" me-4 ms-4 mt-5 pt-5">
+      <p class= "fs-2">Welcome to Librepo  <kbd class="hs">quests</kbd></p>
+      <!-- <a class="btn gs bg-black rounded-pill ps-3 pe-3 text-light text-center me-3" href="#repo">Get Started &#8628;</a>
+      <a class="btn gs bg-info-subtle rounded-pill ps-3 pe-3 me-3 text-center" href="./index.html#features">Learn to use &nrarr;</a>
+      <a class="btn gs bg-info-subtle rounded-pill ps-3 pe-3 text-center" >journey analysis &nrarr;</a> -->
+      <div class=" d-flex justify-content-center mt-5">
+        <img src="https://i.redd.it/ptq67jcuxagx.gif" class="img-fluid " style="width: 300px;" id="repo">
+      </div>
+      <div id="journey" style="width: 100%; max-width: 700px;">
+
+      </div>
+    </div>
+    <div id="mystery"></div>
+   <!-- vault begins here -->
+    <div class="row me-5 ms-5 g-3 p-3 justify-content-center text-center"   >
+      <div class="col-md-2 box p-2 m-3" name="1">
+        <kbd>XP|700</kbd> Gillian Flynn 
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/41wjnFxdxnL.jpg" style="max-width: 100px;"/>
+        <button class="btn btn-book" id="1" onclick="getXP(this.id)" value="464" name="crime">Gone Girl</button>
+        </div>
+      <div class="col-md-2 box p-2 m-3">
+        <kbd>XP|500</kbd> Keigo Higashino
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/513UDubStkL.jpg" style="max-width: 100px;"/>
+        <button class="btn btn-book" id="2" onclick="getXP(this.id)" value="352" name="crime">The Devotion of Suspect X</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <kbd>XP|800</kbd> Frederick Forsyth
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71exL21lNrL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;"/>
+        <button class="btn btn-book" id="3" onclick="getXP(this.id)" aria-valuenow="450">The Day 0f the Jackal</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <kbd>XP|900</kbd> Michael Crichton
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71em2HBF1gL._AC_UF1000,1000_QL80_.jpg" style="width: auto; height: 160px ;"/>
+        <button class="btn btn-book" id="4" onclick="getXP(this.id)" aria-valuenow="450">Timeline</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <kbd>XP|550</kbd> Michael Crichton
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/51vM37sPNWL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;"/>
+        <button class="btn btn-book" id="5" onclick="getXP(this.id)" aria-valuenow="450">Sphere</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <kbd>XP|450</kbd> Ken Follett
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71UdMJ7um0L._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;"/>
+        <button class="btn btn-book" id="6" onclick="getXP(this.id)" aria-valuenow="450">Eye of the Needle</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <kbd>XP|450</kbd>  Umberto Eco
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/819SFV6rfRL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;"/>
+        <button class="btn btn-book" id="7" onclick="getXP(this.id)" aria-valuenow="450">The Name of the Rose</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <kbd>XP|750</kbd> Umberto Eco
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71pPtZRx6qL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;"/>
+        <button class="btn btn-book" id="8" onclick="getXP(this.id)" aria-valuenow="450">The Prague Cemetery</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <kbd>XP|300</kbd> Gillian Flynn
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71PEVpZOtDL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;"/>
+        <button class="btn btn-book" id="8" onclick="getXP(this.id)" aria-valuenow="450">Sharp Objects</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <kbd>XP|500</kbd>  Terry Hayes
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/51bJXQkf2UL.jpg" style="max-width: 100px;"/>
+        <button class="btn btn-book" id="8" onclick="getXP(this.id)" aria-valuenow="450">I am Pilgrim</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <kbd>XP|650</kbd> Jack Carr
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71chOXyr66L._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;"/>
+        <button class="btn btn-book" id="8" onclick="getXP(this.id)" aria-valuenow="450">The Terminal List</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <kbd>XP|500</kbd> Alfred Lansing
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/81JeZ8MnaqL._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;"/>
+        <button class="btn btn-book" id="8" onclick="getXP(this.id)" aria-valuenow="450">Endurance</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <kbd>XP|800</kbd> Blake Crouch
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/81X6jSuxZ1L._AC_UF1000,1000_QL80_.jpg" style="max-width: 100px;"/>
+        <button class="btn btn-book" id="8" onclick="getXP(this.id)" aria-valuenow="450">Dark Matter</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <kbd>XP|600</kbd> Patricia Highsmith
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/518YQQJO6FL.jpg" style="max-width: 100px;"/>
+        <button class="btn btn-book" id="8" onclick="getXP(this.id)" aria-valuenow="450">The Talented Mr.Ripley</button>
+      </div>
+    </div>
+
+        <footer class="navbar-dark fixed-bottom bg-black text-light p-3">
+      <div class="d-flex justify-content-center">
+      <a class="btn reset rounded ps-3 pe-3 text-center fs-3" role="button" id="reset">Reset XP &orarr;</a>
+        <!-- <form method="POST" id="requestBook">
+          <label for="reqBook" class="lead">Request a book</label>
+          <input class="rounded-pill bg-dark text-light ps-2 ms-3" name="reqBook" placeholder="verity"> 
+          <button class="btn-black rounded text-light" type="submit" >Req</button>
+        </form> -->
+      </div>
+    </footer>
+    <script src="js/modal.js"></script>
+    <script src="js/getXP.js"></script>
+    <script src="js/disableButton.js"></script>
+    <!-- <script src="js/mystery.jsx"></script> -->
+  </body>
+</html>
