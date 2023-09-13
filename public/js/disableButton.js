@@ -1,6 +1,5 @@
 // // Create a variable storing the buttons
 const btns = document.querySelectorAll('.btn-book');
-var book_number = parseInt(localStorage.getItem("book_number")) ? parseInt(localStorage.getItem("book_number")) : 0;
 
 // // Retrieve the button state from localStorage and each
 // // button's state
@@ -8,6 +7,8 @@ const getBtnState = function (btns) {
   [].forEach.call(btns, function(btn) {
     if (window.localStorage.getItem(btn.id) == 'disabled') {
       btn.disabled = true
+      btn.innerHTML = 'completed';
+      btn.style.color = 'blue'
     }
   });
 };
@@ -18,6 +19,8 @@ const getBtnState = function (btns) {
    btn.addEventListener('click', function (e) {
     btn.disabled = true
     window.localStorage.setItem(btn.id, 'disabled')
+    btn.innerHTML = 'completed';
+    btn.style.color = 'blue'
    })
 });
 
