@@ -1,3 +1,4 @@
+// getting all required elements
 const frightXP = document.getElementById('frightXP');
 const joyXP = document.getElementById('joyXP');
 const sorrowXP = document.getElementById('sorrowXP');
@@ -7,24 +8,22 @@ const water = document.getElementById('water');
 const earth = document.getElementById('earth');
 const air = document.getElementById('air');
 const fire = document.getElementById('fire');
-
-// progressBar.style.visibility = 'hidden'
-// var txp = parseInt(localStorage.getItem('txp')) ? parseInt(localStorage.getItem(('txp'))) : 0 ;
+// getting saved XPs
 var fxp = parseInt(localStorage.getItem('fxp')) ? parseInt(localStorage.getItem(('fxp'))) : 0 ;
 var jxp = parseInt(localStorage.getItem('jxp')) ? parseInt(localStorage.getItem(('jxp'))) : 0 ;
 var sxp = parseInt(localStorage.getItem('sxp')) ? parseInt(localStorage.getItem(('sxp'))) : 0 ;
 var wxp = parseInt(localStorage.getItem('wxp')) ? parseInt(localStorage.getItem(('wxp'))) : 0 ;
-// totalXP.innerHTML = txp;
-// crimeXP.innerHTML = cxp;
-// mushyXP.innerHTML = mxp;
-// funXP.innerHTML = fxp;
-// wiseXP.innerHTML = wxp;
+//  getting all XP data
+var fxp_arr= JSON.parse(localStorage.getItem('fxp_arr')) ? JSON.parse(localStorage.getItem('fxp_arr')) : [] ;
+var sxp_arr= JSON.parse(localStorage.getItem('sxp_arr')) ? JSON.parse(localStorage.getItem('sxp_arr')) : [] ;
+var jxp_arr= JSON.parse(localStorage.getItem('jxp_arr')) ? JSON.parse(localStorage.getItem('jxp_arr')) : [] ;
+var wxp_arr= JSON.parse(localStorage.getItem('wxp_arr')) ? JSON.parse(localStorage.getItem('wxp_arr')) : [] ;
+// converting xp to pixels
 frightXP.style.width = fxp + "px";
 joyXP.style.width = jxp + "px";
 wisdomXP.style.width = wxp + "px";
 sorrowXP.style.width = sxp + "px";
-totalxp = fxp + jxp + sxp + wxp + "vw";
-var delay = 10;
+// mouse hover conditions for gifs
 frightXP.onmouseenter = function () {
     fire.style.display = 'flex'
 }
@@ -49,8 +48,7 @@ wisdomXP.onmouseenter = function () {
 wisdomXP.onmouseleave = function () {
     water.style.display = 'none';
 }
-
-// calculate individual XP
+// calculate individual XP for books
 function getXP(bookID) {
     var book = document.getElementById(bookID);
     var pages = parseInt(book.value);
@@ -81,26 +79,30 @@ function getXP(bookID) {
         fxp += (Math.round(pages/750))*10;
     }
 
-    // txp += cxp + wxp + fxp + mxp;
-    // totalXP.innerHTML = txp;
     frightXP.style.width = fxp + "px";
     joyXP.style.width = jxp + "px";
     wisdomXP.style.width = wxp + "px";
     sorrowXP.style.width = sxp + "px";
-    // crimeXP.innerHTML = cxp;
-    // mushyXP.innerHTML = mxp;
-    // funXP.innerHTML = fxp;
-    // wiseXP.innerHTML = wxp;
-
-    // localStorage.setItem('txp', JSON.stringify(txp))
+// storing new book's XP data into localstorage
     localStorage.setItem('fxp', JSON.stringify(fxp))
     localStorage.setItem('jxp', JSON.stringify(jxp))
     localStorage.setItem('sxp', JSON.stringify(sxp))
     localStorage.setItem('wxp', JSON.stringify(wxp))
+    dataXP(fxp, wxp, sxp, jxp)
 }
+// button to reset saved local storage
 reset.addEventListener('click', function () {
     localStorage.clear();
     location.reload();
 })
-
-
+// dataset for all XPs
+function dataXP(fxp, wxp, sxp, jxp) {
+    fxp_arr.push(fxp);
+    sxp_arr.push(sxp);
+    wxp_arr.push(wxp);
+    jxp_arr.push(jxp);
+    localStorage.setItem("fxp_arr" , JSON.stringify(fxp_arr));
+    localStorage.setItem("sxp_arr" , JSON.stringify(sxp_arr));
+    localStorage.setItem("wxp_arr" , JSON.stringify(wxp_arr));
+    localStorage.setItem("jxp_arr" , JSON.stringify(jxp_arr));
+}

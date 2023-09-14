@@ -2,7 +2,7 @@ body {
     background-color: white;
 }
 
-#water, #air, #fire, #earth, #modal {
+#water, #air, #fire, #earth, #modal, #myChart {
     display: none;
 }
 .level {

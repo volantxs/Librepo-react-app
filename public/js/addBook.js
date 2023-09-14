@@ -44,13 +44,13 @@ function addBook(bookVaultIn, bookNameIn, btnID, bookPagesIn) {
         newBookImg.setAttribute('src', 'https://m.media-amazon.com/images/I/41wjnFxdxnL.jpg')
         // create button element
         let newBookBtn = document.createElement('button')
-        newBookBtn.setAttribute('class', 'btn btn-dark')
+        newBookBtn.setAttribute('class', 'btn btn-book')
         // newBookBtn.setAttribute('style', 'width: 50px; height: 20px')
         newBookBtn.setAttribute('id', btnID)
         newBookBtn.setAttribute('onclick', "getXP(this.id)")
         newBookBtn.setAttribute('value', bookPagesIn)
         newBookBtn.setAttribute('name', random_theme);
-        newBookBtn.innerHTML = JSON.stringify(bookNameIn);
+        newBookBtn.innerHTML = bookNameIn;
         newBook.appendChild(newBookImg);
         newBook.appendChild(newBookBtn);
         try {
@@ -75,10 +75,6 @@ function addBook(bookVaultIn, bookNameIn, btnID, bookPagesIn) {
         }
 }
 
-// }
-
-
-// alert(bookVaultIn)
 addBookBtn.addEventListener("click", function () {
     try {
         var bookVaultIn = document.getElementById("bookVault").value;
