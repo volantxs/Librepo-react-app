@@ -15,11 +15,11 @@
 </head>
 <body>
     <header>
-      <nav class="navbar fixed-top bg-blur shadow" >
+      <nav class="navbar me-3 ms-3 fixed-top bg-blur shadow rounded-pill" >
         <div class="justify-content-start">
         <div class="dropdown me-auto ms-auto ">
         <a class=" btn btn-outline-dark rounded-pill h4  mt-2" href="./index.html">&lt;</a>
-          <button class="btn gs dropdown-toggle " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn gs dropdown-toggle  rounded-pill" style="font-size: 15px;" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Switch Vault
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -32,7 +32,7 @@
           </div>
         </div>
       </div>
-          <div class="progress border-1 border-black rounded-pill fs-6 ms-2 me-2 level" style="width: 50vw;height: 4vh;" id="progressBar">
+          <div class="progress border-1 border-black rounded-pill fs-6 ms-2 me-2 level" style="width: 40vw;height: 4vh;" id="progressBar">
             <div  id="wisdomXP" name="wxp" class=" progress-bar bg-water" role="progressbar" aria-valuemin="0" aria-valuemax="10000" >
            water </div>
             <div  id="joyXP" name="fxp" class="progress-bar bg-earth  " role="progressbar"  aria-valuemin="0" aria-valuemax="10000" >
@@ -42,7 +42,7 @@
             </div>
             <div   id="frightXP"  name="wcp" class="progress-bar bg-fire  " role="progressbar" aria-valuemin="0" aria-valuemax="10000" >
             fire</div>
-        </div>
+      </div>
         </section>
         <div class="container avatar " >
             <img id="water" class="mx-auto img-fluid rounded"  src="https://i.pinimg.com/originals/15/d2/fb/15d2fb84203e04903395378289e7b680.gif" >
@@ -51,21 +51,55 @@
             <img id="fire" class="mx-auto img-fluid rounded"  src="https://miro.medium.com/v2/resize:fit:1400/1*Hfa2WtO4rfCJeKavX0P3mQ.gif">
    
           </div>
-          
           <!-- <img src="https://i.redd.it/ptq67jcuxagx.gif" class="img-fluid " style="width: 300px;" id="repo"> -->
         </div>
       </nav>
     </header>
+   
+<!-- <div id="myplot">
+  <script src="js/plot.js"></script>
+
+</div> -->
+
+    <div class="container mt-5 pt-5">
+      <button class="btn btn-dark" id="modalBtn">Import book</button>
+      <div id="modal" class="mx-auto pb-3 modal" >
+      <div class="modal-content">
+        <div class="d-flex justify-content-end">
+          <input type="button" class="close btn btn-close text-end justify-content-end">
+        </div>
+        <form>
+          <fieldset>
+            <label for="book_name">Book name</label><br>
+            <input type="text" class="rounded-pill" id="bookName" name="book_name" required><br>
+            <label for="book_pages">Book Pages</label><br>
+            <input type="number" class="rounded-pill" id="bookPages" name="book_pages" required><br>
+
+            <label for="book_vault">Vault</label><br>
+            <input type="option" class="rounded-pill" id="bookVault" name="book_vault" required><br>
+          </fieldset>
+        </form>
+        <div class="modal-footer mt-3">
+          <input type="button" class="rounded-pill"  value="add" id="addBook">
+        </div>
+
+      </div>
+      
+      </div>
+      
+      <a class="btn gs bg-info-subtle rounded-pill ps-3 pe-3 text-center" >emotional analysis &nrarr;</a> 
+
+    </div>
+
     <div class=" me-4 ms-4 mt-5 pt-5">
-      <div id="congrats"></div>
       <p class= "fs-2" >Thriller <kbd class="hs">quests</kbd></p>
       <!-- <a class="btn gs bg-black rounded-pill ps-3 pe-3 text-light text-center me-3" href="#repo">Get Started &#8628;</a>
-      <a class="btn gs bg-info-subtle rounded-pill ps-3 pe-3 me-3 text-center" href="./index.html#features">Learn to use &nrarr;</a>
-      <a class="btn gs bg-info-subtle rounded-pill ps-3 pe-3 text-center" >journey analysis &nrarr;</a> -->
+      <a class="btn gs bg-info-subtle rounded-pill ps-3 pe-3 me-3 text-center" href="./index.html#features">Learn to use &nrarr;</a> -->
     </div>
-    <div id="mystery"></div>
+
    <!-- vault begins here -->
-    <div class="row mx-auto g-3 p-3 justify-content-center text-center mb-5 pb-5"   >
+    <div class="row mx-auto g-3 p-3 justify-content-center text-center mb-5 pb-5" id="thriller" >
+
       <div class="col-md-2 box p-2 m-3" name="1">
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/41wjnFxdxnL.jpg" style="width: 100px; height: 160px;"/>
         <button class="btn btn-book" id="1" onclick="getXP(this.id)" value="464" name="fright">Gone Girl</button>
@@ -100,27 +134,27 @@
       </div>
       <div class="col-md-2 box p-2 m-3">
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71PEVpZOtDL._AC_UF1000,1000_QL80_.jpg" style="width: 100px; height: 160px;"/>
-        <button class="btn btn-book" id="8" onclick="getXP(this.id)" value="328" name="fright">Sharp Objects</button>
+        <button class="btn btn-book" id="9" onclick="getXP(this.id)" value="328" name="fright">Sharp Objects</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/51bJXQkf2UL.jpg" style="width: 100px; height: 160px;"/>
-        <button class="btn btn-book" id="8" onclick="getXP(this.id)" value="624" name="fright">I am Pilgrim</button>
+        <button class="btn btn-book" id="10" onclick="getXP(this.id)" value="624" name="fright">I am Pilgrim</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/71chOXyr66L._AC_UF1000,1000_QL80_.jpg" style="width: 100px; height: 160px;"/>
-        <button class="btn btn-book" id="8" onclick="getXP(this.id)" value="432" name="sorrow">The Terminal List</button>
+        <button class="btn btn-book" id="11" onclick="getXP(this.id)" value="432" name="sorrow">The Terminal List</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/81JeZ8MnaqL._AC_UF1000,1000_QL80_.jpg" style="width: 100px; height: 160px;"/>
-        <button class="btn btn-book" id="8" onclick="getXP(this.id)" value="416" name="wisdom">Endurance</button>
+        <button class="btn btn-book" id="12" onclick="getXP(this.id)" value="416" name="wisdom">Endurance</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/81X6jSuxZ1L._AC_UF1000,1000_QL80_.jpg" style="width: 100px; height: 160px;"/>
-        <button class="btn btn-book" id="8" onclick="getXP(this.id)" value="496" name="fright">Dark Matter</button>
+        <button class="btn btn-book" id="13" onclick="getXP(this.id)" value="496" name="fright">Dark Matter</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/518YQQJO6FL.jpg" style="max-width: 100px;"/>
-        <button class="btn btn-book" id="8" onclick="getXP(this.id)" value="288" name="sorrow">The Talented Mr.Ripley</button>
+        <button class="btn btn-book" id="14" onclick="getXP(this.id)" value="288" name="sorrow">The Talented Mr.Ripley</button>
       </div>
     </div>
 
@@ -137,6 +171,7 @@
     <script src="js/modal.js"></script>
     <script src="js/getXP.js"></script>
     <script src="js/disableButton.js"></script>
+    <script src="js/addBook.js" defer></script>
     <!-- <script src="js/mystery.jsx"></script> -->
   </body>
 </html>
