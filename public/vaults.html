@@ -71,12 +71,17 @@
         <form>
           <fieldset>
             <label for="book_name">Book name</label><br>
-            <input type="text" class="rounded-pill" id="bookName" name="book_name" required><br>
+            <input type="text" class="rounded-pill" id="bookName"  name="book_name" required><br>
             <label for="book_pages">Book Pages</label><br>
             <input type="number" class="rounded-pill" id="bookPages" name="book_pages" required><br>
 
             <label for="book_vault">Vault</label><br>
-            <input type="option" class="rounded-pill" id="bookVault" name="book_vault" required><br>
+            <input class="rounded-pill p-2" id="bookVault" value="thriller" placeholder="thriller" readonly>
+              <!-- <option  disabled >Select vault</option>
+              <option value="dystopian">Dystopian</option>
+              <option value="thriller">Thriller</option>
+              <option value="romance">Romance</option>
+            </select> -->
           </fieldset>
         </form>
         <div class="modal-footer mt-3">
