@@ -10,7 +10,7 @@ body {
     visibility: hidden;
 }
 .bg-water {
-    background-image: linear-gradient(300deg, rgb(38, 172, 159), blue);
+    background-image: linear-gradient(300deg, rgb(18, 228, 207), blue);
 }
 .bg-fire {
     background-image: linear-gradient(300deg, rgb(255, 196, 0), rgb(255, 0, 0));
@@ -92,9 +92,13 @@ body {
 
 .btn-black {
     background-color: black;
+    color: white;
+    border: none;
 }
 .btn-black:hover {
-    background-color: rgb(66, 66, 66);
+    background-image: linear-gradient(90deg, rgb(89, 0, 255), rgb(0, 251, 255));
+    color: white;
+
 }
 
 /* .box:hover {
@@ -123,7 +127,7 @@ body {
     color: black;
 }
 
-@media only screen and (min-width: 300px) {
+@media only screen and (max-width: 500px) {
     .fs {
         font-size: 7vw;
         margin-top: 200px;
@@ -135,8 +139,28 @@ body {
     .tag {
         position: relative;
         bottom: -7vw;
-        left: 100px;
     }
+    .iconwater{
+        position: relative;
+        left: 70px;
+
+    }
+    .iconearth{
+        position: relative;left: 250px;
+        top: 0px;
+
+    }
+    .iconair {
+        position: relative;
+        left: 70px;
+
+
+    }
+    .iconfire {
+        position: relative;left: 250px;
+        top: 0px;
+    }
+
 }
 
 @media only screen and (min-width: 700px) {
@@ -153,6 +177,23 @@ body {
         position: relative;
         bottom: -40px;
         left: 40px;
+    }
+    .iconwater{
+        position: relative;
+        top: -90px;
+
+    }
+    .iconearth{
+        position: relative;top: -10px;
+
+    }
+    .iconair {
+        position: relative;top: -70px;
+
+    }
+    .iconfire {
+        position: relative;top: -94px;
+
     }
 }
 

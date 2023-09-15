@@ -5,10 +5,12 @@ var wxp_arr= JSON.parse(localStorage.getItem('wxp_arr')) ? JSON.parse(localStora
 var fireXP = []
 var waterXP = []
 var airXP = []
+var earthXP = []
 for (var  i=0 ; i<fxp_arr.length ; i++) {
   fireXP.push(parseInt(fxp_arr[i]))
   waterXP.push(parseInt(wxp_arr[i]))
   airXP.push(parseInt(sxp_arr[i]))
+  earthXP.push(parseInt(jxp_arr[i]))
 }
 function plotXP() {
   new Chart("myChart", {
@@ -30,6 +32,12 @@ function plotXP() {
           data: waterXP,
           borderColor: "blue",
           fill: false
+        }, {
+          label: "Earth",
+          data: earthXP,
+          borderColor: "green",
+          fill: false
+
         }]
       },
       options: {
