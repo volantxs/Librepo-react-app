@@ -41,7 +41,7 @@ function addBook(bookVaultIn, bookNameIn, btnID, bookPagesIn) {
         let newBookImg = document.createElement('img')
         newBookImg.setAttribute('class', 'img-fluid mx-auto d-block rounded m-3 img-shadow')
         newBookImg.setAttribute('style', 'width: 100px; height: 160px;')
-        newBookImg.setAttribute('src', 'https://m.media-amazon.com/images/I/41wjnFxdxnL.jpg')
+        newBookImg.setAttribute('src', 'https://d1noes6pcxfkh4.cloudfront.net/97814746/9781474609883.jpg')
         // create button element
         let newBookBtn = document.createElement('button')
         newBookBtn.setAttribute('class', 'btn btn-book')
