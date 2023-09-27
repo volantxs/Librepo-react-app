@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/thriller.css" type="text/css"/>
     <link rel="stylesheet" href="./css/modal.css" type="text/css"/>
+    <link rel="stylesheet" href="./css/leaderboard.css" type="text/css"/>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
     <script src="https://cdn.plot.ly/plotly-2.25.2.min.js" charset="utf-8"></script>
@@ -20,8 +21,6 @@
       <nav class="navbar me-3 ms-3 fixed-top bg-blur shadow rounded-pill" >
         <div class="justify-content-start">
         <div class="dropdown me-auto ms-auto ">
-      
-
         <a class="btn" href="./index.html">
           <img src="img/logo.png" class="img-fluid " style="max-width: 30px;">
         </a>
@@ -29,8 +28,8 @@
             Switch
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Mystery</a>
-            <a class="dropdown-item" href="#">Fantasy</a>
+            <a class="dropdown-item" href="#thriller">Thriller</a>
+            <a class="dropdown-item" href="#fantasy">Fantasy</a>
             <a class="dropdown-item" href="#">Dystopian</a>
             <a class="dropdown-item" href="#">Romance</a>
             <a class="dropdown-item" href="#">Adventure</a>
@@ -86,9 +85,9 @@
                 </p>
         </div>
         <div class="d-flex mt-5 mb-5 pt-3">
-          <button class="btn btn-black rounded justify-content-center ms-3" id="modalBtn" disabled>Import book</button>
+          <button class="btn btn-black rounded justify-content-center ms-3" id="modalBtn" >Import book</button>
           <button class="btn btn-black rounded ps-3 pe-3 text-center ms-3" type="button" id="analysis" onclick="plotXP()">Elemental analysis</button> 
-  
+          <button class="btn btn-black rounded ps-3 pe-3 text-center ms-3" type="button" id="analysis" onclick="leaderboard()">Leaderboard</button> 
         </div>
         </div>
         <div class="col-lg-4 row mt-5">
@@ -106,9 +105,20 @@
           </div>
         </div>
       </div>
- 
-      
+      <!-- getname  -->
+      <div id="getName" class="leaderboardModal">
+        <form action="POST">
 
+        </form>
+      </div>
+<!-- leaderboard -->
+      <div id="leaderboardModal" class="text-bg-dark" >
+        <button class="ms-1 me-2 btn btn-sm btn-outline-danger" id=closeBtn>X</button>
+          <span class="d-flex justify-content-center fs-3">Leaderboard</span>
+        <div id="leaderboard"></div>
+      </div>
+      
+<!-- import book -->
       <div id="modal" class="mx-auto pb-3 modal" >
       <div class="modal-content">
         <div class="d-flex justify-content-end">
@@ -116,18 +126,12 @@
         </div>
         <form>
           <fieldset>
-            <label for="book_name">Book name</label><br>
-            <input type="text" class="rounded-pill" id="bookName"  name="book_name" required><br>
-            <label for="book_pages">Book Pages</label><br>
-            <input type="number" class="rounded-pill" id="bookPages" name="book_pages" required><br>
-
-            <label for="book_vault">Vault</label><br>
-            <input class="rounded-pill p-2" id="bookVault" value="thriller" placeholder="thriller" readonly>
-              <!-- <option  disabled >Select vault</option>
-              <option value="dystopian">Dystopian</option>
-              <option value="thriller">Thriller</option>
-              <option value="romance">Romance</option>
-            </select> -->
+            <label for="book_name">Search</label><br>
+            <input type="text" class="rounded-pill" id="searchBar"  name="book_name" required><br>
+            <!-- <label for="book_pages">Book Pages</label><br>
+            <input type="number" class="rounded-pill" id="bookPages" name="book_pages" required><br> -->
+            <!-- <label for="book_vault">Vault</label><br>
+            <input class="rounded-pill p-2" id="bookVault" value="thriller" placeholder="thriller" readonly> -->
           </fieldset>
         </form>
         <div class="modal-footer mt-3">
@@ -142,22 +146,18 @@
 
       </canvas>
       <script src="js/plot.js"></script>
-        <p class= "fs-1 ms-3 mt-5" >Thriller <kbd class="hs">quests</kbd></p>
         <!-- <a class="btn gs bg-black rounded-pill ps-3 pe-3 text-light text-center me-3" href="#repo">Get Started &#8628;</a>
         <a class="btn gs bg-info-subtle rounded-pill ps-3 pe-3 me-3 text-center" href="./index.html#features">Learn to use &nrarr;</a> -->
 
     </div>
-    <div class="row mx-auto g-3 p-3 justify-content-center text-center mb-5 pb-5" id="thriller" >
-      <div class="col-md-2 box p-2 m-3">
-        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/41wjnFxdxnL.jpg" style="width: 100px; height: 160px;"/>
-        <button class="btn btn-book" id="1" onclick="getXP(this.id)" value="464" name="fright">Gone Girl</button>
-        </div>
-    </div>
-
-
 
    <!-- vault begins here -->
+   <div class="row mx-auto g-3 p-3 justify-content-center text-center mb-5 pb-5" id="importedBooks" >
+  
+  </div>
+  
     <div class="row mx-auto g-3 p-3 justify-content-center text-center mb-5 pb-5" id="thriller" >
+      <p class= "fs-1 ms-3 mt-5 text-start" >Thriller <kbd class="hs">quests</kbd></p>
       <div class="col-md-2 box p-2 m-3" >
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/41wjnFxdxnL.jpg" style="width: 100px; height: 160px;"/>
         <button class="btn btn-book" id="t1" onclick="getXP(this.id)" value="464" name="fright">Gone Girl</button>
@@ -217,9 +217,10 @@
     </div>
 
     <!-- fantasy -->
-    <p class= "fs-1 ms-3 mt-5" >Fantasy<kbd class="hs">quests</kbd></p>
 
     <div class="row mx-auto g-3 p-3 justify-content-center text-center mb-5 pb-5" id="fantasy" >
+    <p class= "fs-1 ms-3 mt-5 text-start" >Fantasy <kbd class="hs">quests</kbd></p>
+
       <div class="col-md-2 box p-2 m-3">
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://cdn.kobo.com/book-images/5287d250-d9f8-4bd1-8fd5-065c33a7fa3f/1200/1200/False/the-once-and-future-king.jpg" style="width: 100px; height: 160px;"/>
         <button class="btn btn-book" id="f1" onclick="getXP(this.id)" value="654" name="joy">The Once and the Future King</button>
@@ -230,44 +231,88 @@
       </div>
       <div class="col-md-2 box p-2 m-3">
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/513rqD5y9AS.jpg" style="width: 100px; height: 160px;"/>
-        <button class="btn btn-book" id="f1" onclick="getXP(this.id)" value="1258" name="joy">The Chronicles of Amber</button>
+        <button class="btn btn-book" id="f3" onclick="getXP(this.id)" value="1258" name="joy">The Chronicles of Amber</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/514oumoSktL._AC_UF1000,1000_QL80_.jpg" style="width: 100px; height: 160px;"/>
-        <button class="btn btn-book" id="f1" onclick="getXP(this.id)" value="288" name="wisdom">The Broken Sword</button>
+        <button class="btn btn-book" id="f4" onclick="getXP(this.id)" value="288" name="wisdom">The Broken Sword</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565188992l/51190882.jpg" style="width: 100px; height: 160px;"/>
-        <button class="btn btn-book" id="f1" onclick="getXP(this.id)" value="128" name="fright"> The Empress of Salt and Fortune</button>
+        <button class="btn btn-book" id="f5" onclick="getXP(this.id)" value="128" name="fright"> The Empress of Salt and Fortune</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/91NOCLnl8lL._AC_UF1000,1000_QL80_.jpg" style="width: 100px; height: 160px;"/>
-        <button class="btn btn-book" id="f1" onclick="getXP(this.id)" value="432" name="sorrow">The First Fifteen Lives of Harry August</button>
+        <button class="btn btn-book" id="f6" onclick="getXP(this.id)" value="432" name="sorrow">The First Fifteen Lives of Harry August</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/915EwVKtdOL._AC_UF894,1000_QL80_.jpg" style="width: 100px; height: 160px;"/>
-        <button class="btn btn-book" id="f1" onclick="getXP(this.id)" value="320" name="joy">Hollow Kingdom</button>
+        <button class="btn btn-book" id="f7" onclick="getXP(this.id)" value="320" name="joy">Hollow Kingdom</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/41wzK-7DHVL.jpg" style="width: 100px; height: 160px;"/>
-        <button class="btn btn-book" id="f1" onclick="getXP(this.id)" value="70" name="wisdom">The Sign of the Dragon</button>
+        <button class="btn btn-book" id="f8" onclick="getXP(this.id)" value="70" name="wisdom">The Sign of the Dragon</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/51wEd2FprXL.jpg" style="width: 100px; height: 160px;"/>
-        <button class="btn btn-book" id="f1" onclick="getXP(this.id)" value="1216" name="joy">The Lord of the Rings</button>
+        <button class="btn btn-book" id="f9" onclick="getXP(this.id)" value="1216" name="joy">The Lord of the Rings</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://upload.wikimedia.org/wikipedia/en/d/dc/A_Song_of_Ice_and_Fire_book_collection_box_set_cover.jpg" style="width: 100px; height: 160px;"/>
-        <button class="btn btn-book" id="f1" onclick="getXP(this.id)" value="4224" name="joy">A Song of Ice and Fire</button>
+        <button class="btn btn-book" id="f10" onclick="getXP(this.id)" value="4224" name="joy">A Song of Ice and Fire</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/81ZCdQ-8j3L._AC_UF1000,1000_QL80_.jpg" style="width: 100px; height: 160px;"/>
-        <button class="btn btn-book" id="f1" onclick="getXP(this.id)" value="320" name="sorrow">Black Company</button>
+        <button class="btn btn-book" id="f11" onclick="getXP(this.id)" value="320" name="sorrow">Black Company</button>
       </div>
       <div class="col-md-2 box p-2 m-3">
         <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/41zGUBv9XHL.jpg" style="width: 100px; height: 160px;"/>
-        <button class="btn btn-book" id="f1" onclick="getXP(this.id)" value="1235" name="joy">The Wandering Inn</button>
+        <button class="btn btn-book" id="f12" onclick="getXP(this.id)" value="1235" name="joy">The Wandering Inn</button>
       </div>
+
+    <div class="row mx-auto g-3 p-3 justify-content-center text-center mb-5 pb-5" id="fantasy" >
+      <p class= "fs-1 ms-3 mt-5 text-start" >Dystopian <kbd class="hs">quests</kbd></p>
+      <div class="col-md-2 box p-2 m-3">
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/81swy7EH2aL._AC_UF1000,1000_QL80_.jpg" style="width: 100px; height: 160px;"/>
+        <button class="btn btn-book" id="d1" onclick="getXP(this.id)" value="432" name="crime">House of the Scorpion</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/817J65Ey+JL._AC_UF1000,1000_QL80_.jpg" style="width: 100px; height: 160px;"/>
+        <button class="btn btn-book" id="d1" onclick="getXP(this.id)" value="384" name="fright">The Long Walk</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://cdn.kobo.com/book-images/c9472126-7f96-402d-ba57-5ba4c0f4b238/353/569/90/False/nineteen-eighty-four-1984-george.jpg" style="width: 100px; height: 160px;"/>
+        <button class="btn btn-book" id="d1" onclick="getXP(this.id)" value="328" name="fright">1984</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/51C62ct9-nL.jpg" style="width: 100px; height: 160px;"/>
+        <button class="btn btn-book" id="d1" onclick="getXP(this.id)" value="352" name="sorrow">A Canticle for Leibowitz</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/51DAN2157PL._AC_UF1000,1000_QL80_.jpg" style="width: 100px; height: 160px;"/>
+        <button class="btn btn-book" id="d1" onclick="getXP(this.id)" value="432" name="crime">Alas, Babylon</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/61b-VN9e4ZL._AC_UF1000,1000_QL80_.jpg" style="width: 100px; height: 160px;"/>
+        <button class="btn btn-book" id="d1" onclick="getXP(this.id)" value="312" name="sorrow">On the Beach</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/81swy7EH2aL._AC_UF1000,1000_QL80_.jpg" style="width: 100px; height: 160px;"/>
+        <button class="btn btn-book" id="d1" onclick="getXP(this.id)" value="272" name="crime">Fahrenheit 451</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/81swy7EH2aL._AC_UF1000,1000_QL80_.jpg" style="width: 100px; height: 160px;"/>
+        <button class="btn btn-book" id="d1" onclick="getXP(this.id)" value="288" name="wisdom">Never Let Me Go</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/81swy7EH2aL._AC_UF1000,1000_QL80_.jpg" style="width: 100px; height: 160px;"/>
+        <button class="btn btn-book" id="d1" onclick="getXP(this.id)" value="432" name="sorrow">House of the Scorpion</button>
+      </div>
+      <div class="col-md-2 box p-2 m-3">
+        <img class="img-fluid mx-auto d-block rounded m-3 img-shadow" src="https://m.media-amazon.com/images/I/81swy7EH2aL._AC_UF1000,1000_QL80_.jpg" style="width: 100px; height: 160px;"/>
+        <button class="btn btn-book" id="d1" onclick="getXP(this.id)" value="432" name="crime">House of the Scorpion</button>
+      </div>
+
     </div>
 
         <footer class="navbar-dark bg-black text-light p-3">
@@ -284,6 +329,8 @@
     <script src="js/getXP.js"></script>
     <script src="js/disableButton.js"></script>
     <script src="js/addBook.js" defer></script>
+    <script src="js/leaderboard.js" defer></script>
+    <script src="js/firebase.js" defer></script>
 
     <!-- <script src="js/mystery.jsx"></script> -->
   </body>

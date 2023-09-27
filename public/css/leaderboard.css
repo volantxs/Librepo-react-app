@@ -1,0 +1,14 @@
+#leaderboardModal {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    right: 20%;
+    padding: 10px;
+    border-radius: 8px;
+    /* display: none; */
+    display: none;
+}
+
+#closeBtn {
+    position: relative;
+}
