@@ -101,6 +101,20 @@ body {
 
 }
 
+.tooltip-modal {
+    position: fixed;
+    bottom: 0px;
+    /* width: 100%; */
+    margin: 50px;
+    padding: 10px;
+    border: 2px dotted black;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    z-index: 1;
+    display: none;
+}
+
+
 /* .box:hover {
     animation: none;
     /* transform: scale(1.03); */
