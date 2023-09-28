@@ -11,43 +11,40 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   <main class=" jumbotron" >
-  <nav class="navbar ps-2 pe-2 pb-0 bg-nav" >
-    <p class="fs-2 text-light ms-3">Librepo</p>
-    <img src="img/logo_white.png" class="img-fluid me-3" style="max-width: 30px;">
+    <!-- navbar -->
+  <nav class="navbar ps-2 pe-2 pb-0 bg-black" >
+    <p class="fs-2 text-light ms-3 mt-2">Librepo</p>
+    <img src="img/logo_white.png" class="img-fluid me-3 mb-2" style="max-width: 30px;">
   </nav>
       <!-- main page -->
       <div class="vh-100 mt-3 me-3 ms-3" >
-        <div class="pt-5 text-light container" >
-          <h1 class="pt-5 text-dark">gamified  world of literature</h1>
-          <div class="fs-4 text-secondary w-75 sm">
-          <kbd class="bg-secondary">noun</kbd>
-          empower your reading journey by earning <i>theme-based XP</i> from each book, analyze your emotional balance with 
-          <i>elemental analysis</i> feature and challenge yourself with weekly curated quests</div><br>
-          <a class="btn fs-6 btn-feature text-light rounded btn-lg me-3 mt-3" href="#features">start adventure  &#8628;</a>
-          <a class="btn fs-6 btn-feature text-light rounded btn-lg mt-3" href="#cat">get me a cat</a>
-          <!-- <div class="d-flex justify-content-center mb-5 mt-4" > -->
-            <form action="" method="POST" id="joinWaitlist" class="input-group mt-5 ">
-              <input type="text" class="form-control rounded bg-body-secondary col-lg-6" placeholder="email"  name="email" id="email" value="" required/>
-              <button class="btn btn-feature rounded text-light "  type="submit" sendMessage()> get quests</button>
+        <div class="pt-5 text-light container text-center" >
+          <h1 class="pt-5 text-dark trirong"><b class="bg-nav">Gamified</b>  world of literature</h1>
+          <div class="container text-center fs-5 text-secondary mt-3" style="max-width: 623px;font-style: italic;" >
+          Empower your reading journey by earning <b>theme-based XP</b> from each book, analyze your emotional balance with 
+          <b>elemental analysis</b> & challenge yourself with curated quests by readers around the world</div><br>
+          <img src="https://media0.giphy.com/media/12oufCB0MyZ1Go/200w.gif?cid=6c09b952b29zmnkn17hoc6ni0n61vlxzq54tg6m69cpfvg6g&ep=v1_gifs_search&rid=200w.gif&ct=s" class="img-fluid" style="max-width: 100px;"><br> 
+          <a class="btn fs-6 btn-feature text-bg-primary text-light btn-lg rounded me-3 mb-5 " href="#features">Start adventure  &#8628;</a>
+            <form action="" method="POST" id="joinWaitlist" class="input-group container mt-5 ">
+              <input type="text" class="form-control rounded-pill bg-body-secondary me-3 col-lg-6" placeholder="email"  name="email" id="email" value="" required/>
+              <button class="rounded btn-sm text-light fs-6 btn text-bg-secondary  " type="submit" sendMessage()>Get quests</button>
           </form>
-          <!-- </div> -->
-          <div class="d-flex justify-content-end">
-            <img src="https://media0.giphy.com/media/12oufCB0MyZ1Go/200w.gif?cid=6c09b952b29zmnkn17hoc6ni0n61vlxzq54tg6m69cpfvg6g&ep=v1_gifs_search&rid=200w.gif&ct=s" class="img-fluid"> 
-          </div>
 
         </div>
       </div>
 </main>
-
   <!-- Features -->
-  <p style="font-size: 50px; font-weight: lighter; margin-bottom: 60px;" class="text-center" id="features">Features</p>
+  <p style="font-size: 40px; font-weight: lighter; margin-bottom: 60px;" class="text-center" id="features">Features</p>
   <div class="row container me-auto ms-auto g-3">
     <!-- explore -->
     <div class="col-sm-6 rounded card-about me-auto ms-auto mt-auto mb-auto p-3 "  style="width: 500px; height: fit-content;">
-      <p class="fs-2 text-light">Explore</p>
-      <p class="fs-5 text-secondary">each week, new suggestions are introduced, 
-          allowing readers to choose among the six vaults that represent different genres</p>
-          <a class="d-flex btn btn-feature text-light justify-content-center fs-6" style="border: 1px solid grey;" href="#vault">Select a Vault</a>
+      <p class="fs-2 text-light">Xplore</p>
+      <p class="fs-5 text-secondary">
+        Each week, new suggestions are introduced, 
+        allowing readers to choose among the six vaults that represent different genres along with 
+        self-elemental analysis feature showing readers' as book characters displaying their 'type'
+      </p>
+          <a class="d-flex btn btn-feature text-light justify-content-center fs-6" style="border: 1px solid grey;" href="#vault">Learn more</a>
       </div>   
     <div class="col-sm-6 ">
 <img src="https://i.pinimg.com/originals/20/86/b1/2086b1189cc058579c87b346d91bc808.gif" 
@@ -64,7 +61,7 @@
     <!-- contribute -->
     <div class="col-sm-6 rounded card-about me-auto ms-auto mt-auto mb-auto p-3" style="width: 500px; height: fit-content;" style="width: 500px; height: fit-content;" >
       <p class="fs-2 text-light">Contribute</p>
-      <p class="fs-5 text-secondary">readers can suggest new books for inclusion, which will be displayed 
+      <p class="fs-5 text-secondary">Readers can suggest new books for inclusion, which will be displayed 
         in the relevant vault for all users, making it a user-contributed repo of selected books.
       </p>
       <a class="d-flex btn btn-feature text-light justify-content-center fs-6" style="border: 1px solid grey;" href="#vault">Import Book</a>
@@ -85,11 +82,11 @@
       
         <!-- XP -->
         <div class="col-sm-6 rounded m-3 card-about me-auto ms-auto mb-auto mt-auto p-3" style="width: 500px; height: fit-content;">
-          <p class="fs-2 text-light">XP</p>
-          <p class="fs-5 text-secondary">after finishing a book, readers can collect plot-based XP,
-             akin to quest completion. Each new book added equates to a fresh quest.
+          <p class="fs-2 text-light">Theme-based XP</p>
+          <p class="fs-5 text-secondary">After finishing a book, readers can collect XP by clicking on the book header,
+             akin to quest completion. Each new book added equates to a fresh quest with progress bar to keep a track of your character
           </p>
-          <a class="d-flex btn justify-content-center text-light fs-6 btn-feature" style="border: 1px solid grey;" href="#vault">Click on the book to collect XP</a>
+          <a class="d-flex btn justify-content-center text-light fs-6 btn-feature" style="border: 1px solid grey;" href="#vault">Earn XP</a>
 
           </div>
       <div class="col-sm-6" style="padding-top: 50px;">
