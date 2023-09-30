@@ -45,7 +45,7 @@ body {
 
 }
 
-.croissant {
+.trirong {
     font-family: "Trirong", serif;
 }
 
@@ -149,7 +149,7 @@ body {
     color: black;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
     .fs {
         font-size: 7vw;
         margin-top: 200px;
@@ -164,23 +164,7 @@ body {
     }
     .iconwater{
         position: relative;
-        left: 70px;
-
-    }
-    .iconearth{
-        position: relative;left: 250px;
-        top: 0px;
-
-    }
-    .iconair {
-        position: relative;
-        left: 70px;
-
-
-    }
-    .iconfire {
-        position: relative;left: 250px;
-        top: 0px;
+        top: 60px;
     }
 
 }
@@ -202,63 +186,41 @@ body {
     }
     .iconwater{
         position: relative;
-        top: -90px;
-
+        bottom: 45px;
     }
     .iconearth{
-        position: relative;top: -10px;
+        position: relative;
+        top: 39px;
 
     }
     .iconair {
-        position: relative;top: -70px;
+        position: relative;
+        top: 14px;
 
     }
     .iconfire {
-        position: relative;top: -94px;
+        position: relative;
+        top: 5px;
 
     }
 }
 
-@keyframes border-swish {
-    0% {
-        border: 2px solid rgb(102, 0, 255) ;
-        border-right: 2px solid rgb(255, 0, 225);
-        border-bottom: 2px solid rgb(255, 0, 225);
-    }
-    25% {
-        border: 2px solid rgb(150, 0, 255) ;
-        border-right: 2px solid rgb(200, 0, 225);
-        border-bottom: 2px solid rgb(200, 0, 225);
-    }
-    50% {
-        border: 2px solid rgb(200, 0, 255) ;
-        border-right: 2px solid rgb(150, 0, 225);
-        border-bottom: 2px solid rgb(150, 0, 225);
-    }
-    75% {
-        border: 2px solid rgb(255, 0, 255) ;
-        border-right: 2px solid rgb(102, 0, 225);
-        border-bottom: 2px solid rgb(102, 0, 225);
-    }
-    100% {
-        border: 2px solid rgb(102, 0, 255) ;
-        border-right: 2px solid rgb(255, 0, 225);
-        border-bottom: 2px solid rgb(255, 0, 225);
-    }
+.border-anim {
+    animation: border-swish2 infinite 2s;
 }
 
 @keyframes border-swish2 {
     0% {
         
-        border: 2px solid rgb(103, 213, 237) ;
+        border: 2px solid rgb(237, 226, 103) ;
     }
     
     50% {
-        border: 2px solid rgb(200, 0, 255) ;
+        border: 2px solid rgb(0, 0, 255) ;
     }
   
     100% {
-        border: 2px solid rgb(50, 245, 255) ;
+        border: 2px solid rgb(47, 255, 0) ;
     }
 }
 

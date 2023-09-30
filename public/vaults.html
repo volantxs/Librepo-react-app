@@ -18,7 +18,7 @@
   </head>
 <body>
     <header>
-      <nav class="navbar me-3 ms-3 fixed-top bg-blur shadow rounded-pill" >
+      <nav class="navbar m-3 fixed-top bg-blur shadow rounded-pill" >
         <div class="justify-content-start">
         <div class="dropdown me-auto ms-auto ">
         <a class="btn" href="./index.html">
@@ -37,7 +37,7 @@
           </div>
         </div>
       </div>
-          <div class="progress border-1 border-black rounded-pill fs-6 ms-2 me-2 level" style="width: 40vw;height: 4vh;" id="progressBar">
+          <div class="progress border-1 border-danger-subtle bg-white rounded-pill fs-6 ms-2 me-2 level" style="width: 40vw;height: 4vh;" id="progressBar">
             <div  id="wisdomXP" name="wxp" class=" progress-bar bg-water" role="progressbar" aria-valuemin="0" aria-valuemax="10000" >
            water </div>
             <div  id="joyXP" name="fxp" class="progress-bar bg-earth  " role="progressbar"  aria-valuemin="0" aria-valuemax="10000" >
@@ -49,57 +49,51 @@
             fire</div>
       </div>
         </section>
-        <div class=" container avatar " >
-            <img id="water" class="mx-auto img-fluid rounded"  src="https://i.pinimg.com/originals/15/d2/fb/15d2fb84203e04903395378289e7b680.gif" >
-            <img id="earth" class="mx-auto img-fluid rounded"  src="https://miro.medium.com/v2/resize:fit:1000/1*tPcVMRvevBFpTrH_MnQo5g.gif">
-            <img id="air" class="mx-auto img-fluid rounded"  src="https://i.gifer.com/4wLU.gif">
-            <img id="fire" class="mx-auto img-fluid rounded"  src="https://miro.medium.com/v2/resize:fit:1400/1*Hfa2WtO4rfCJeKavX0P3mQ.gif">
-          </div>
+
           <!-- <img src="https://i.redd.it/ptq67jcuxagx.gif" class="img-fluid " style="width: 300px;" id="repo"> -->
         
       </nav>
     </header>
-   
-    <div class="container-fluid text-center mt-5 pt-5  croissant" style="max-width: 600px;">
-      <p class="ms-3 mt-5 " style="font-size: 60px;">Vaults</p>
-          <p class="mb-4" style="font-style: normal; font-size: 18px;color: grey;">
-           Vaults employ an <b>elemental mechanism</b> to generate themes for each book. In this system, when a reader marks a book as 'completed,' 
-           it enhances the reader's elemental statistics(progress bar). These statistics not only determine the reader's emotional equilibrium after reading the 
-           book but also offer insights into the type of books readers tend to favor, along with a rough idea of their character stats.
-          </p>
-          <div class="text-start">
-           <p class=" ms-3 ps-3"  >
-          <p class=" bg-water text-light text-center  me-3 rounded-pill " style="display: inline-block;width: 20%;">
-          water</p>wisdom, creativity, curiosity, mysticism, ingenuity
-          </p>
-          <p class=" bg-earth text-light  text-center me-3 rounded-pill" style="display: inline-block;width: 20%;">
-             earth</p>elation, serenity, resilliance, empathy, contentment
-            </p>
-            <p class=" bg-air text-light text-center  me-3 rounded-pill" style="display: inline-block;width: 20%;"> 
-               air</p>adaptability, curiosity, spontaneity, sorrowful, nostalgic 
-              </p>
-              <p class=" bg-fire text-light text-center  me-3 rounded-pill" style="display: inline-block;width: 20%;">
-                fire</p>uneasiness, dread, suspense, impulsive, energetic
-                </p>
-              </div>
-        <div class="d-flex mt-5 mb-5 pt-3">
-          <button class="btn btn-black rounded justify-content-center ms-3" id="modalBtn" >Import book</button>
-          <button class="btn btn-black rounded ps-3 pe-3 text-center ms-3" type="button" id="analysis" onclick="plotXP()">Elemental analysis</button> 
-          <button class="btn btn-black rounded ps-3 pe-3 text-center ms-3" type="button" id="analysis" onclick="leaderboard()">Leaderboard</button> 
-        </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col-lg-3">
-            <img class="img-fluid iconwater" style="max-width: 110px;"  src="https://i.gifer.com/origin/d6/d6abed6047c79b8073fda9af7ba85358_w200.gif">
+
+    <div class="container-fluid text-center mt-5 pt-5 " >
+      <div class=" container avatar " >
+        <img id="water" class="mx-auto img-fluid rounded"  src="https://i.pinimg.com/originals/15/d2/fb/15d2fb84203e04903395378289e7b680.gif" >
+        <img id="earth" class="mx-auto img-fluid rounded"  src="https://miro.medium.com/v2/resize:fit:1000/1*tPcVMRvevBFpTrH_MnQo5g.gif">
+        <img id="air" class="mx-auto img-fluid rounded"  src="https://i.gifer.com/4wLU.gif">
+        <img id="fire" class="mx-auto img-fluid rounded"  src="https://miro.medium.com/v2/resize:fit:1400/1*Hfa2WtO4rfCJeKavX0P3mQ.gif">
+      </div>
+      <p class="ms-3 mt-5 trirong " style="font-size: 60px;">Vaults</p>
+      <div class="container mb-4" style="max-width: 670px;">
+        <p class="mb-4" style="font-style: normal; font-size: 18px;color: grey;">
+          Vaults employ an <b>elemental mechanism</b> to generate themes for each book. In this system, when a reader marks a book as 'completed,' 
+          it enhances the reader's elemental statistics(progress bar). These statistics not only determine the reader's emotional equilibrium after reading the 
+          book but also offer insights into the type of books readers tend to favor, along with a rough idea of their character stats.
+         </p>
+      </div>
+          <button class="btn btn-black rounded ms-3" id="modalBtn" >Import book</button>
+          <button class="btn btn-black rounded text-center ms-3" type="button" id="analysis" onclick="plotXP()">Elemental analysis</button> 
+          <button class="btn btn-black rounded text-center ms-3" type="button" id="analysis" onclick="leaderboard()">Leaderboard</button> 
+        <div class="container-fluid row mt-3">
+          <div class="col-lg-3 iconwater mb-5 pb-5">
+            <img class="img-fluid " style="max-width: 110px;"  src="https://i.gifer.com/origin/d6/d6abed6047c79b8073fda9af7ba85358_w200.gif">
+            <p class=" rounded pt-1" >
+              wisdom, creativity, curiosity, mysticism, ingenuity</p>
           </div>
-          <div class="col-lg-3">
-            <img class="img-fluid iconearth" style="max-width: 100px;"  src="https://i.pinimg.com/originals/34/73/a1/3473a11c923eaf4fd0faf2c733908f42.gif">
+          <div class="col-lg-3 iconearth">
+            <img class="img-fluid" style="max-width: 100px;"  src="https://i.pinimg.com/originals/34/73/a1/3473a11c923eaf4fd0faf2c733908f42.gif">
+            <p class="pt-4 rounded" >
+              elation, serenity, resilliance, empathy, contentment</p>
           </div>
-          <div class="col-lg-3">
-            <img class="img-fluid iconair" style="max-width: 100px;"  src="https://fatrodzianko.com/wp-content/uploads/2023/02/tornado.gif">
+          <div class="col-lg-3 iconair mt-3">
+            <img class="img-fluid " style="max-width: 100px;"  src="https://fatrodzianko.com/wp-content/uploads/2023/02/tornado.gif">
+            <p class="pt-2 rounded" > 
+              adaptability, curiosity, spontaneity, sorrowful, nostalgic 
+             </p>
           </div>
-          <div class="col-lg-3">
-            <img class="img-fluid iconfire" style="max-width: 150px;" src="https://67.media.tumblr.com/636e32142bbf8ab7609af99f771092b5/tumblr_nzmb1mz6gC1tkxhabo1_400.gif">
+          <div class="col-lg-3 iconfire">
+            <img class="img-fluid " style="max-width: 150px;" src="https://67.media.tumblr.com/636e32142bbf8ab7609af99f771092b5/tumblr_nzmb1mz6gC1tkxhabo1_400.gif">
+            <p class=" pt-2 rounded">
+              uneasiness, dread, suspense, impulsive, energetic</p>
           </div>
         </div>
       </div>
