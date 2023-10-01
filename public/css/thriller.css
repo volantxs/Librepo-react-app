@@ -3,6 +3,7 @@
 
 body {
     background-color: white;
+    cursor: grab;
 }
 
 #water, #air, #fire, #earth, #modal, #myChart {
@@ -49,6 +50,26 @@ body {
     font-family: "Trirong", serif;
 }
 
+.elementwater {
+    border: 1px solid rgb(92, 92, 255);
+    padding: 4px;
+    box-shadow: 2px 2px 4px rgb(66, 94, 255);
+}
+.elementearth {
+    border: 1px solid rgb(26, 161, 26);
+    padding: 4px;
+    box-shadow: 2px 2px 4px rgb(20, 168, 52);
+}
+.elementair {
+    border: 1px solid rgb(244, 199, 0);
+    padding: 4px;
+    box-shadow: 2px 2px 4px rgb(255, 230, 0);
+}
+.elementfire {
+    border: 1px solid rgb(242, 74, 44);
+    padding: 4px;
+    box-shadow: 2px 2px 4px rgb(245, 134, 49);
+}
 
 .gs:hover {
     background-image: linear-gradient(90deg, rgb(73, 109, 240), rgb(23, 188, 191));
@@ -187,6 +208,7 @@ body {
     .iconwater{
         position: relative;
         bottom: 45px;
+
     }
     .iconearth{
         position: relative;

@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Trirong&display=swap");
 
+body {
+    cursor: grab;
+}
+
 .trirong{
     font-family: "Trirong", serif;
 }
@@ -36,6 +40,9 @@
     color: white;
 }
 
+.no-hover:hover{
+}
+
 .card-about {
     background-color: rgb(14, 12, 12);
     box-shadow: 4px 4px 8px grey;
@@ -46,6 +53,7 @@
     max-width: 10rem;
     border-radius: 8px;
     box-shadow: 2px 2px 4px grey;
+    cursor: zoom-in;
   }
 
 .btn-feature:hover  {
@@ -57,7 +65,7 @@
 
 
 .card:hover {
-    transform: scale(1.1);
+    transform: scale(1.03);
 }
 
 .img-card {

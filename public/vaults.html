@@ -25,9 +25,10 @@
           <img src="img/logo.png" class="img-fluid " style="max-width: 30px;">
         </a>
           <button class="ms-0 btn dropdown-toggle  p-1 rounded-pill" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Switch
+            Import
           </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+            <button class="btn btn-black rounded ms-3 mt-2" id="modalBtn" >Import book</button><hr>
             <a class="dropdown-item" href="#thriller">Thriller</a>
             <a class="dropdown-item" href="#fantasy">Fantasy</a>
             <a class="dropdown-item" href="#">Dystopian</a>
@@ -63,37 +64,36 @@
         <img id="fire" class="mx-auto img-fluid rounded"  src="https://miro.medium.com/v2/resize:fit:1400/1*Hfa2WtO4rfCJeKavX0P3mQ.gif">
       </div>
       <p class="ms-3 mt-5 trirong " style="font-size: 60px;">Vaults</p>
-      <div class="container mb-4" style="max-width: 670px;">
+      <div class="container " style="max-width: 670px;">
         <p class="mb-4" style="font-style: normal; font-size: 18px;color: grey;">
           Vaults employ an <b>elemental mechanism</b> to generate themes for each book. In this system, when a reader marks a book as 'completed,' 
           it enhances the reader's elemental statistics(progress bar). These statistics not only determine the reader's emotional equilibrium after reading the 
           book but also offer insights into the type of books readers tend to favor, along with a rough idea of their character stats.
          </p>
       </div>
-          <button class="btn btn-black rounded ms-3" id="modalBtn" >Import book</button>
-          <button class="btn btn-black rounded text-center ms-3" type="button" id="analysis" onclick="plotXP()">Elemental analysis</button> 
-          <button class="btn btn-black rounded text-center ms-3" type="button" id="analysis" onclick="leaderboard()">Leaderboard</button> 
-        <div class="container-fluid row mt-3">
-          <div class="col-lg-3 iconwater mb-5 pb-5">
-            <img class="img-fluid " style="max-width: 110px;"  src="https://i.gifer.com/origin/d6/d6abed6047c79b8073fda9af7ba85358_w200.gif">
-            <p class=" rounded pt-1" >
-              wisdom, creativity, curiosity, mysticism, ingenuity</p>
+          <button class="btn btn-black rounded text-center me-3" type="button" id="analysis" onclick="plotXP()">Elemental analysis</button>
+          <button class="btn btn-black rounded text-center" type="button" id="analysis" onclick="leaderboard()" disabled  >Leaderboard</button> 
+        <div class="container-fluid row mt-5 trirong mx-auto ">
+          <div class="col-lg-3 iconwater mb-5">
+            <img class="img-fluid pb-1" style="max-width: 110px;"  src="https://i.gifer.com/origin/d6/d6abed6047c79b8073fda9af7ba85358_w200.gif">
+            <p class=" rounded  elementwater">
+              Wisdom, Creativity, Mysticism, Ingenuity</p>
           </div>
           <div class="col-lg-3 iconearth">
-            <img class="img-fluid" style="max-width: 100px;"  src="https://i.pinimg.com/originals/34/73/a1/3473a11c923eaf4fd0faf2c733908f42.gif">
-            <p class="pt-4 rounded" >
-              elation, serenity, resilliance, empathy, contentment</p>
+            <img class="img-fluid pb-4" style="max-width: 100px;"  src="https://i.pinimg.com/originals/34/73/a1/3473a11c923eaf4fd0faf2c733908f42.gif">
+            <p class=" rounded elementearth" >
+              Elation, Serenity, Resilliance, Contentment</p>
           </div>
           <div class="col-lg-3 iconair mt-3">
-            <img class="img-fluid " style="max-width: 100px;"  src="https://fatrodzianko.com/wp-content/uploads/2023/02/tornado.gif">
-            <p class="pt-2 rounded" > 
-              adaptability, curiosity, spontaneity, sorrowful, nostalgic 
+            <img class="img-fluid pb-2" style="max-width: 100px;"  src="https://fatrodzianko.com/wp-content/uploads/2023/02/tornado.gif">
+            <p class=" rounded elementair" > 
+              Adaptable, Spontaneity, Sorrow, Nostalgic 
              </p>
           </div>
           <div class="col-lg-3 iconfire">
-            <img class="img-fluid " style="max-width: 150px;" src="https://67.media.tumblr.com/636e32142bbf8ab7609af99f771092b5/tumblr_nzmb1mz6gC1tkxhabo1_400.gif">
-            <p class=" pt-2 rounded">
-              uneasiness, dread, suspense, impulsive, energetic</p>
+            <img class="img-fluid pb-2 " style="max-width: 150px;" src="https://67.media.tumblr.com/636e32142bbf8ab7609af99f771092b5/tumblr_nzmb1mz6gC1tkxhabo1_400.gif">
+            <p class="rounded elementfire">
+              Dread, Suspense, Impulsive, Energetic</p>
           </div>
         </div>
       </div>
@@ -134,7 +134,9 @@
     <div class="row mx-auto g-3 p-3 justify-content-center text-center mb-5 pb-5" id="importedBooks" >
     </div>
    <!-- vault begins here -->
-    <div class="tooltip-modal" id="tooltip"></div>
+    <div class="tooltip-modal" id="tooltip">
+      <p class= "fs-1 ms-3 mt-5 text-start" >Imported<kbd class="hs">quests</kbd></p>
+    </div>
     <div class="row mx-auto g-3 p-3 justify-content-center text-center mb-5 pb-5" id="thriller" >
       <p class= "fs-1 ms-3 mt-5 text-start" >Thriller <kbd class="hs">quests</kbd></p>
       <div class="col-md-2 box p-2 m-3" >
