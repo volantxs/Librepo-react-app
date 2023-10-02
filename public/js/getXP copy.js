@@ -49,33 +49,35 @@ wisdomXP.onmouseleave = function () {
     water.style.display = 'none';
 }
 // calculate individual XP for books
-export function getXP(name, value) {
+export function getXP(bookID, value) {
+    var book = document.getElementById(bookID);
+    console.log(book)
     if (value != null) {
         var pages  = parseInt(value);
     } else {
         var pages = parseInt(book.value);
     }
    
-     if (name == "fright") {
+     if (book.name == "fright") {
         fxp += (Math.round(pages/100))*10;
         sxp += (Math.round(pages/250))*10;
         wxp += (Math.round(pages/500))*10;
         jxp += (Math.round(pages/750))*10;
     }
-    if (name == "joy") {
+    if (book.name == "joy") {
         jxp += (Math.round(pages/100))*10;
         wxp += (Math.round(pages/250))*10;
         // fxp += (Math.round(pages/200))*10;
         sxp += (Math.round(pages/750))*10;
 
     }
-    if (name == "sorrow") {
+    if (book.name == "sorrow") {
         sxp += (Math.round(pages/1000))*10;
         wxp += (Math.round(pages/250))*10;
         fxp += (Math.round(pages/500))*10;
         jxp += (Math.round(pages/750))*10;
     }
-    if (name == "wisdom") {
+    if (book.name == "wisdom") {
         wxp += (Math.round(pages/100))*10;
         jxp += (Math.round(pages/250))*10;
         sxp += (Math.round(pages/500))*10;

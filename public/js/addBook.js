@@ -1,6 +1,5 @@
 const addBookBtn = document.getElementById("addBook");
-let themes = ['fright', 'wisdom', 'sorrow', 'joy']
-random_theme = themes[(Math.floor(Math.random() * themes.length))]
+
 var btnID = parseInt(localStorage.getItem("newBtnID")) ? parseInt(localStorage.getItem("newBtnID")) : 16 ; 
 
 function addBook(bookVaultIn, bookNameIn, btnID, bookPagesIn) {

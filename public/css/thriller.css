@@ -6,7 +6,7 @@ body {
     cursor: grab;
 }
 
-#water, #air, #fire, #earth, #modal, #myChart {
+#water, #air, #fire, #earth, #modal, #myChart, #addedAlert {
     display: none;
 }
 .level {
