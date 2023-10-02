@@ -20,6 +20,9 @@ body {
 
 }
 
+::placeholder{
+    color: white;
+}
 
 .feature {
     display: flex;
