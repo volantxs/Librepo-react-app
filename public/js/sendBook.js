@@ -8,6 +8,7 @@ formImport.onsubmit = (e) => {
     e.preventDefault();
     var book = document.getElementById("searchBar").value;
     var vault = dropdown.options[dropdown.selectedIndex].value;
+    var bookImage = 
     submitBookInfo(book, vault);
     document.getElementById("modal").style.display = 'none'
     document.getElementById("addedAlert").style.display = "flex"

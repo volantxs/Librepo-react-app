@@ -1,6 +1,5 @@
 import  {db}  from "./firebase";
 import { addDoc, collection } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js'
-
 var modal = document.getElementById("modal");
 var openImportModal = document.getElementById("openImportModal");
 var importBookBtn = document.getElementById("addBook")
@@ -14,6 +13,8 @@ var formImport = document.getElementById("importBook");
 var BookImg = '';
 var BookPageCount = '';
 var BookTitle = '';
+var BookAuthor = '';
+var BookDescription = '';
 
 
 var query = ''
@@ -27,6 +28,7 @@ openImportModal.onclick = function() {
   modal.style.display = "flex";
   searchInput.focus();
 }
+
 
 function ImportBook(vault) {
   const chosenVault = document.getElementById(vault);
@@ -67,40 +69,38 @@ function ImportBook(vault) {
       }
       try{
       newBookBtn.onmouseenter = (e) => getDescription(e);
-      newBookBtn.onmouseleave = () => {tooltip.style.display = 'none';}
+      newBookBtn.onmouseleave = (e) => {tooltip.innerHTML = '';}
       } catch(e) {
         alert("Could't fetch the Book Info. Try Again")
       }
       newBookNode.appendChild(newBookBtn);
       chosenVault.appendChild(newBookNode);
-      submitBookInfo(BookTitle, BookImg, BookPageCount, vault);
     }
   })
+
+  submitBookInfo(book, vault);
   document.getElementById("modal").style.display = 'none'
   document.getElementById("addedAlert").style.display = "flex"
   setTimeout(() => {
-  document.getElementById("addedAlert").style.display = "none" }, 2000)
-    BookImg = '';
-    BookPageCount = '';
-    BookTitle = '';
-    
+    document.getElementById("addedAlert").style.display = "none" }, 2000)
 }
 
-function submitBookInfo(BookTitle, BookImg, BookPageCount, vault) {
+function submitBookInfo(BookTitle, BookAuthor, BookImg, BookPageCount, vault) {
   try {
-    addDoc(collection(db, 'imported'), {
-      bookTitle: BookTitle,
+    const docRef = addDoc(collection(db, 'imported'), {
+      bookName: BookTitle,
       vaultName: vault,
       bookImg: BookImg,
       bookPageCount: BookPageCount,
+      bookAuthor: BookAuthor,
     });
+    alert("Added book to collection! id: " + docRef.id)
   } catch(e) {
     alert(e.message + "Couldn't send the book to cloud");
   }
-  
 }
 
-export function getDescription(e) {
+function getDescription(e) {
   query = e.target.innerHTML;
   // alert(typeof(query))
   tooltip.innerHTML = "Loading Book Info..";
@@ -110,22 +110,31 @@ export function getDescription(e) {
     url: URL.toString(),
     dataType: 'json',
     success: (data) => {
-      const getBookAuthor = data.items[0].volumeInfo.authors[0];
-      const getBookPages = data.items[0].volumeInfo.pageCount;
+      BookDescription =  data.items[0].volumeInfo.description;
+      BookAuthor = data.items[0].volumeInfo.authors[0];
+      const getBookPages = data.items[0].volumeInfo.title;
+      tooltip.innerHTML = "Author: "+  getBookAuthor + " | Pages: " + getBookPages;
       setTimeout(() => {
-        tooltip.innerHTML = "Author: "+  getBookAuthor + " | Pages: " + getBookPages;
-    }, 3000);
+        try{
+        tooltip.innerHTML = getBookDes;
+        } catch(e) {
+          tooltip.innerHTML = "Error in Loading the Book Description"
+        }
+    }, 6000);
   }})
 }
 
-formImport.onsubmit = (e) => {
-  e.preventDefault();
+importBookBtn.onclick = (e) => {
   vault = dropdown.options[dropdown.selectedIndex].value;
-  ImportBook(vault);
-  modal.style.display = 'none'
-  document.getElementById("addedAlert").style.display = "flex"
-  setTimeout(() => {
-    document.getElementById("addedAlert").style.display = "none" }, 2000)
+  try {
+    ImportBook(vault);
+    document.getElementById("modal").style.display = 'none'
+    document.getElementById("addedAlert").style.display = "flex"
+    setTimeout(() => {
+      document.getElementById("addedAlert").style.display = "none" }, 2000)
+  } catch(e) {
+    alert(e.message)
+  }
 }
 
 span.onclick = function() {
