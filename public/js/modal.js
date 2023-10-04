@@ -1,5 +1,3 @@
-import { getXP } from "./getXP";
-
 var modal = document.getElementById("modal");
 var openImportModal = document.getElementById("openImportModal");
 var importBookBtn = document.getElementById("addBook")
@@ -9,31 +7,21 @@ var bookBtns = document.querySelectorAll(".btn-book")
 var imgBtn = document.querySelectorAll(".img-shadow")
 var tooltip = document.getElementById("tooltip");
 var dropdown = document.getElementById("dropdownVault");
+var formImport = document.getElementById("importBook");
+
+
 var query = ''
 var URL = ''
-var googleKey = 'AIzaSyBmSE_tFFrraFhotpwPc8Vc4zMFEHL9zN8'
-var bookName;
-var bookID;
 var vault;
 
-var themes = ['fright', 'wisdom', 'sorrow', 'joy']
+var themes = ['fire', 'water', 'air', 'earth']
 var random_theme = themes[(Math.floor(Math.random() * themes.length))]
 
 openImportModal.onclick = function() {
   modal.style.display = "flex";
-}
+  searchInput.focus();
 
-bookBtns.forEach(occurence => {
-  occurence.addEventListener("mouseenter", (e) => {
-    bookName = e.target.innerHTML;
-    bookID = e.target.id;
-    getDescription();
-  })
-  occurence.addEventListener("mouseleave", (e) => {
-    tooltip.innerHTML = '';
-    tooltip.style.display ="none";
-  })
-})
+}
 
 window.addEventListener("click", () => {
   tooltip.style.display = 'none'
@@ -68,55 +56,50 @@ function ImportBook(vault) {
       newBookBtn.id = "bookID-" + (new Date()).getTime();
       newBookBtn.name = random_theme;
       try {
-      newBookBtn.onclick = getXP(newBookBtn.name, newBookBtn.value) ;
+      newBookBtn.onclick = (e) => {getXP(e); disableButton(e)};
       } catch(e) {
         alert(e.message + " Couldn't get the XP of the book");
+      }
+      try{
+      newBookBtn.onmouseover = (e) => {setTimeout(getDescription(e), 10000)}
+      } catch(e) {
+        alert("Could't get the description")
       }
       newBookNode.appendChild(newBookBtn);
       chosenVault.appendChild(newBookNode);
     }
   })
-
 }
 
-function getDescription() {
-  query = bookName;
+function getDescription(e) {
+  query = e.target.innerHTML;
   // alert(typeof(query))
   tooltip.style.display = "block"
-  tooltip.innerHTML = "Loading..."
+  tooltip.innerHTML = "Get info"
   URL = 'https://www.googleapis.com/books/v1/volumes?q=' + query + '&key=AIzaSyBmSE_tFFrraFhotpwPc8Vc4zMFEHL9zN8';
   $.ajax({
     url: URL.toString(),
     dataType: 'json',
     success: (data) => {
       const getData = data.items[0].volumeInfo.description;
-      tooltip.innerHTML = getData;
-    }
-  })
-  bookName ='';
+      setTimeout(() => {
+        tooltip.innerHTML = getData;
+    }, 5000);
+  }})
 }
 
-importBookBtn.onclick = () => {
+importBookBtn.onclick = (e) => {
+  vault = dropdown.options[dropdown.selectedIndex].value;
   try {
-    vault = dropdown.options[dropdown.selectedIndex].value;
     ImportBook(vault);
+    document.getElementById("modal").style.display = 'none'
+    document.getElementById("addedAlert").style.display = "flex"
+    setTimeout(() => {
+      document.getElementById("addedAlert").style.display = "none" }, 2000)
   } catch(e) {
     alert(e.message)
   }
 }
-
-searchInput.onkeydown = (e) => {
-  if (e.key === "Enter") {
-    try {
-      vault = dropdown.options[dropdown.selectedIndex].value;
-      ImportBook(vault);
-    } catch(e) {
-      alert(e.message);
-    }
-  }
-  
-}
-
 
 span.onclick = function() {
   modal.style.display = "none";
@@ -127,3 +110,4 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+

@@ -1,6 +1,6 @@
 import  {db}  from "./firebase";
 import { addDoc, collection } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js'
-
+var importBookBtn = document.getElementById("addBook")
 var formImport = document.getElementById("importBook");
 var dropdown = document.getElementById("dropdownVault");
 
@@ -14,13 +14,13 @@ formImport.onsubmit = (e) => {
     setTimeout(() => {
       document.getElementById("addedAlert").style.display = "none" }, 2000)
 }
-async function submitBookInfo(book, vault) {
+export async function submitBookInfo(book, vault) {
     try {
       const docRef = await addDoc(collection(db, 'imported'), {
         bookName: book,
         vaultName: vault,
       });
-      console.log("sent the book" + docRef.id)
+      alert("Added book to collection! id: " +docRef.id)
     } catch(e) {
       alert(e.message + "Couldn't send the book to cloud");
     }
