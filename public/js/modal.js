@@ -76,14 +76,10 @@ function ImportBook(vault) {
       submitBookInfo(BookTitle, BookImg, BookPageCount, vault);
     }
   })
-  document.getElementById("modal").style.display = 'none'
-  document.getElementById("addedAlert").style.display = "flex"
-  setTimeout(() => {
-  document.getElementById("addedAlert").style.display = "none" }, 2000)
     BookImg = '';
     BookPageCount = '';
     BookTitle = '';
-    
+    searchInput.value = '';
 }
 
 function submitBookInfo(BookTitle, BookImg, BookPageCount, vault) {
@@ -123,9 +119,11 @@ formImport.onsubmit = (e) => {
   vault = dropdown.options[dropdown.selectedIndex].value;
   ImportBook(vault);
   modal.style.display = 'none'
+  searchInput.value = '';
   document.getElementById("addedAlert").style.display = "flex"
   setTimeout(() => {
     document.getElementById("addedAlert").style.display = "none" }, 2000)
+
 }
 
 span.onclick = function() {
