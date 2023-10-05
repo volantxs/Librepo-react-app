@@ -3,14 +3,14 @@ import  { db }  from "./firebaseConfig.js";
 
 document.getElementById('joinWaitlist').onsubmit = (e) => {
     e.preventDefault();
-    const email = document.querySelector("#feedback").value;
-    sendMessage(email);
+    const feedback = document.querySelector("#feedback").value;
+    sendMessage(feedback);
   document.getElementById('joinWaitlist').reset();
   }
 
-  function sendMessage(email) {
+  function sendMessage(feedback) {
         const docRef = addDoc(collection(db, "feedback"),  {
-                feedback: email,
+                feedback: feedback,
             });
        alert("Thank you for your feedback!")
     }
