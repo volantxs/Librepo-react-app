@@ -1,5 +1,3 @@
-// // Create a variable storing the buttons
-
 const progressBar = document.getElementById("progressBar")
 
 function disableButton(e) {

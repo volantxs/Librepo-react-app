@@ -3,12 +3,8 @@ var earthXP = document.getElementById('earthXP');
 var airXP = document.getElementById('airXP');
 var waterXP = document.getElementById('waterXP');
 const reset = document.getElementById('reset');
-const water = document.getElementById('water');
-const earth = document.getElementById('earth');
-const air = document.getElementById('air');
-const fire = document.getElementById('fire');
 const pro = document.getElementById("progressBar")
-// getting saved XPs
+// saving XPs
 var fxp = parseInt(localStorage.getItem('fxp')) ? parseInt(localStorage.getItem(('fxp'))) : 0;
 var exp = parseInt(localStorage.getItem('exp')) ? parseInt(localStorage.getItem(('exp'))) : 0;
 var axp = parseInt(localStorage.getItem('axp')) ? parseInt(localStorage.getItem(('axp'))) : 0;
@@ -23,31 +19,6 @@ fireXP.style.width = fxp + "px";
 earthXP.style.width = exp + "px";
 waterXP.style.width = wxp + "px";
 airXP.style.width = axp + "px";
-// mouse hover conditions for gifs
-fireXP.onmouseenter = function () {
-    fire.style.display = 'flex'
-}
-fireXP.onmouseleave = function () {
-    fire.style.display = 'none';
-}
-earthXP.onmouseenter = function () {
-    earth.style.display = 'flex'
-}
-earthXP.onmouseleave = function () {
-    earth.style.display = 'none';
-}
-airXP.onmouseenter = function () {
-    air.style.display = 'flex'
-}
-airXP.onmouseleave = function () {
-    air.style.display = 'none';
-}
-waterXP.onmouseenter = function () {
-    water.style.display = 'flex'
-}
-waterXP.onmouseleave = function () {
-    water.style.display = 'none';
-}
 // calculate individual XP for books
  function getXP(e) {
     var name = e.target.name;
@@ -63,7 +34,7 @@ waterXP.onmouseleave = function () {
     else if (name == "earth") {
         exp += (Math.round(pages / 100)) * 10;
         wxp += (Math.round(pages / 250)) * 10;
-        fxp += (Math.round(pages/500))*10;
+        fxp += (Math.round(pages/500)) * 10;
         axp += (Math.round(pages / 750)) * 10;
 
     }
@@ -84,12 +55,11 @@ waterXP.onmouseleave = function () {
         earthXP.style.width = exp + "px";
         waterXP.style.width = wxp + "px";
         airXP.style.width = axp + "px";
-        // alert('fire ' + fxp + "water " + wxp + "earth " + exp + "air " + axp )
     } catch (e) {
         alert("Couldn't add XP in progress bar")
     }
     try{
-            // storing new book's XP data into localstorage
+// storing new book's XP data into localstorage
     localStorage.setItem('fxp', JSON.stringify(fxp))
     localStorage.setItem('exp', JSON.stringify(exp))
     localStorage.setItem('axp', JSON.stringify(axp))

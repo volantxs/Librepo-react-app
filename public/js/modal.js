@@ -1,5 +1,5 @@
-import  {db}  from "./firebase";
-import { addDoc, collection } from 'https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js'
+import { addDoc, collection } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js'
+import  {db}  from "./firebaseConfig.js";
 
 var modal = document.getElementById("modal");
 var openImportModal = document.getElementById("openImportModal");
@@ -67,7 +67,7 @@ function ImportBook(vault) {
       }
       try{
       newBookBtn.onmouseenter = (e) => getDescription(e);
-      newBookBtn.onmouseleave = () => {tooltip.style.display = 'none';}
+      newBookBtn.onmouseleave = () => {tooltip.style.display = 'none'; tooltip.innerHTML = '';}
       } catch(e) {
         alert("Could't fetch the Book Info. Try Again")
       }
@@ -88,14 +88,14 @@ function ImportBook(vault) {
 
 function submitBookInfo(BookTitle, BookImg, BookPageCount, vault) {
   try {
-    addDoc(collection(db, 'imported'), {
+    const docRef = addDoc(collection(db, "imported"), {
       bookTitle: BookTitle,
       vaultName: vault,
       bookImg: BookImg,
       bookPageCount: BookPageCount,
     });
   } catch(e) {
-    alert(e.message + "Couldn't send the book to cloud");
+    alert(e.message + "Couldn't send the book to cloud" + docRef.id);
   }
   
 }
@@ -114,7 +114,7 @@ export function getDescription(e) {
       const getBookPages = data.items[0].volumeInfo.pageCount;
       setTimeout(() => {
         tooltip.innerHTML = "Author: "+  getBookAuthor + " | Pages: " + getBookPages;
-    }, 3000);
+    }, 2000);
   }})
 }
 

@@ -3,38 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="thriller repository" content="books of thriller genre">
+    <meta name="Vault" content="Seven Vaults comprisign of different genres">
     <meta name="author" content="Sarika Singh">
     <title>Thriller</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/thriller.css" type="text/css"/>
+    <link rel="stylesheet" href="./css/vault.css" type="text/css"/>
     <link rel="stylesheet" href="./css/modal.css" type="text/css"/>
     <link rel="stylesheet" href="./css/leaderboard.css" type="text/css"/>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+    <link rel="icon" type="image/x-icon" href="./img/logo_white.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
     <script src="https://cdn.plot.ly/plotly-2.25.2.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"> </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
   </head>
 <body>
+<!-- Navbar Header -->
     <header>
-      <nav class="navbar fixed-top bg-blur shadow inter mb-5" >
+      <nav class="navbar fixed-top bg-blur shadow inter" >
         <div class="dropdown">
-        <button class="btn" onclick="history.back()">
-          <img src="img/logo.png" class="img-fluid " style="max-width: 30px;">
-        </button>
-          <button class="ms-0 btn btn-primary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn" onclick="history.back()">
+            <img src="img/logo.png" class="img-fluid " style="max-width: 30px;">
+          </button>
+          <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
             Play &UpArrowDownArrow;
           </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div class="dropdown-menu m-3" aria-labelledby="dropdownMenuButton">
             <button class="btn btn-black rounded m-3" id="openImportModal" >Import book</button>
-        <button class="btn btn-black rounded text-center m-3" type="button" id="analysis" onclick="plotXP()">Elements</button>
-        <hr>
+            <button class="btn btn-black rounded text-center ms-3" type="button" id="analysis" onclick="plotXP()">Elemental</button>
+            <hr>
             <a class="dropdown-item" href="#mystery">Mystery</a>
             <a class="dropdown-item" href="#fantasy">Fantasy</a>
             <a class="dropdown-item" href="#dystopian">Dystopian</a>
@@ -42,75 +40,49 @@
             <a class="dropdown-item" href="#growth">Growth</a>
             <a class="dropdown-item" href="#classics">Classics</a>
           </div>
-      </div>
-      <div class="progress border-0 bg-white rounded-pill fs-6 level" style="width: 40vw;height: 4vh;" id="progressBar" >
-        <div  id="waterXP" name="wxp" class=" progress-bar bg-water" role="progressbar" aria-valuemin="0" aria-valuemax="10000" >
-       water </div>
-        <div  id="earthXP" name="exp" class="progress-bar bg-earth  " role="progressbar"  aria-valuemin="0" aria-valuemax="10000" >
-        earth</div>
-        <div id="airXP"  name="axp" class="progress-bar  bg-air"  role= "progressbar" aria-valuemin="0" aria-valuemax="10000">
-        air
         </div>
-        <div   id="fireXP"  name="fxp" class="progress-bar bg-fire  " role="progressbar" aria-valuemin="0" aria-valuemax="10000">
-        fire</div>
-     </div>
-        </section>
+<!--Progress Bar  -->
+        <div class="progress border-0 bg-white rounded-pill fs-6 level inter" style="width: 40vw;height: 4vh;" id="progressBar" >
+          <div id="waterXP" name="wxp" class=" progress-bar bg-water" role="progressbar" aria-valuemin="0" aria-valuemax="10000" >
+            water 
+          </div>
+          <div  id="earthXP" name="exp" class="progress-bar bg-earth  " role="progressbar"  aria-valuemin="0" aria-valuemax="10000" >
+            earth
+          </div>
+          <div id="airXP"  name="axp" class="progress-bar  bg-air"  role= "progressbar" aria-valuemin="0" aria-valuemax="10000">
+            air
+          </div>
+          <div id="fireXP"  name="fxp" class="progress-bar bg-fire  " role="progressbar" aria-valuemin="0" aria-valuemax="10000">
+            fire
+          </div>
+        </div>
       </nav>
     </header>
+<!-- Main Content -->
     <div class="container-fluid  mt-5 pt-5 " >
-      <div class="container avatar" >
-        <img id="water" class="mx-auto img-fluid rounded"  src="https://i.pinimg.com/originals/15/d2/fb/15d2fb84203e04903395378289e7b680.gif" >
-        <img id="earth" class="mx-auto img-fluid rounded"  src="https://miro.medium.com/v2/resize:fit:1000/1*tPcVMRvevBFpTrH_MnQo5g.gif">
-        <img id="air" class="mx-auto img-fluid rounded"  src="https://i.gifer.com/4wLU.gif">
-        <img id="fire" class="mx-auto img-fluid rounded"  src="https://miro.medium.com/v2/resize:fit:1400/1*Hfa2WtO4rfCJeKavX0P3mQ.gif">
+      <div class="container mx-auto" >
+        <p class="mt-5 pt-5 trirong head_line">
+          Vault your
+          <kbd class="shadow animate__animated animate__zoomInUp ">pre-loved</kbd>
+          books
+        </p>
       </div>
-      <div class="row container mx-auto" >
-        <div class="col-lg-6 col-sm-12">
-          <p class="m-4 trirong" style="font-size: 7vw;">
-            Vault your <kbd class="shadow">pre-loved</kbd> books</p>
-        </div>
-        <div class="col-sm-12 col-lg-6 p-3 align-self-lg-center">
-          <div class="container-fluid row mx-auto text-center inter" style="max-width: 500px;">
-          <p class="text-center h5 text-secondary mb-3 mt-3 rounded">ALL IN ONE PLACE</p>
-            <div class="col-lg-12" >
-              <p class="fs-5 rounded shadow p-3 animate__animated animate__fadeInDown">
-                Import novels with Google Books API</p>
-            </div>
-            <div class="col-lg-12 ">
-              <p class="fs-5 rounded shadow-lg p-3 animate__animated animate__fadeInDown animate__delay-1s" >
-                Get Elemental Insights with ChartJS</p>
-            </div>
-            <div class="col-lg-12">
-              <p class=" rounded shadow-lg fs-5 p-3 animate__animated animate__fadeInDown animate__delay-2s" > 
-                 Preview Book Description on Hover
-               </p>
-            </div>
-            <div class="col-lg-12 ">
-              <p class="rounded p-3 fs-5 shadow-lg animate__animated animate__fadeInDown animate__delay-3s">
-                Collect XP on each New Completions</p>
-            </div>
-          </div>
-        </div>        
-      </div>
-         <canvas id="myChart" class="p-5 container" style="max-width:700px;height: 400px;">
-        </canvas>
-      
-      </div>
-<!-- leaderboard -->
-      <div id="leaderboardModal" class="text-bg-dark" >
-        <button class="ms-1 me-2 btn btn-sm btn-outline-danger" id=closeBtn>X</button>
-          <span class="d-flex justify-content-center fs-3">Leaderboard</span>
-        <div id="leaderboard"></div>
-      </div>
-      
-<!-- import book -->
-      <div id="modal" class="mx-auto pb-3 modal inter">
+      <!-- Elemental Graph  -->
+      <canvas 
+        id="myChart" 
+        class="p-5 container" 
+        style="max-width:700px;height: 400px;">
+      </canvas>
+    </div>
+
+<!-- Modal: Import Book -->
+    <section id="modal" class="mx-auto pb-3 modal inter">
       <div class="modal-content">
         <input type="button" class="close btn btn-close text-end justify-content-end">
         <form  id="importBook" class="input-group">
           <fieldset class="mx-auto container">
             <label class="fs-5 mb-2" for="searchBar">Search Novels</label><br>
-            <input type="text" class="rounded-pill form-control border-2" id="searchBar" placeholder="Book Name" name="BookName" ><br>
+            <input type="text" class="rounded-pill form-control border-2" id="searchBar" placeholder="Book Name" name="BookName"><br>
             <label class="fs-5" for="dropdownVault">Vault</label><br>
             <select id="dropdownVault" class="form-control mb-2 rounded-pill border-2"  name="select">
               <option class="btn-lg" selected disabled>Select</option>
@@ -121,65 +93,67 @@
               <option class="btn-lg" value="importedGrowth">Growth</option>
               <option class="btn-lg" value="importedClassics">Classics</option>
             </select>
-          <button class="btn btn-black rounded mt-3" type="submit" value="Import" id="addBook">Import</button>
+            <button class="btn btn-black rounded mt-3" type="submit" value="Import" id="addBook">Import</button>
           </fieldset>
         </form>
       </div>
-      </div>
-  <!-- added book alert -->
-      <div class="modal" id="addedAlert">
-        <div class="text-bg-primary rounded bg-blur" style="width: fit-content;height: fit-content;">
-          <p class="fs-2 p-3">Imported in your selected vault!</p>
-        </div>
-      </div>
-<!-- elemental analysis -->
+    </section>
 
-    </div>
-<!-- Imported Books -->
-    <div class="row mx-auto g-3 p-3 justify-content-center text-center mb-5 pb-5" id="importedBooks" >
-    </div>
-<!--Book Info tool tip-->
+<!-- Modal: Alert after addition of the book in the Vault -->
+    <section class="modal" id="addedAlert">
+      <div class="text-bg-primary rounded bg-blur" style="width: fit-content;height: fit-content;">
+        <p class="fs-2 p-3">Imported in your selected vault!</p>
+      </div>
+    </section>
+
+<!--Modal: Giving book info to users on hovering-->
     <div class="tooltip-modal" id="tooltip">
     </div>
-<!-- vault begins here -->
 
-    <div class="container row mx-auto g-3 p-3 justify-content-center text-center mb-5 pb-5" id="thriller" >
-      <p class= "fs-1 ms-3 mt-5 text-start" id="mystery"  >Mystery <kbd class="hs">quests</kbd></p>
+
+<!-- Imported Book will appear here -->
+    <div class="container row mx-auto g-3 justify-content-center text-center pb-5 mt-5 pt-5" id="thriller" >
+      <!-- Mystery -->
+      <p class= "fs-1 mt-5 text-start" id="mystery" >Mystery<kbd class="hs">quests</kbd></p>
       <div class="row" id="importedMystery"></div>
-      <p class= "fs-1 ms-3 mt-5 text-start" id="fantasy">Fantasy <kbd class="hs">quests</kbd></p>
+      <!-- Fantasy -->
+      <p class= "fs-1 mt-5 text-start" id="fantasy">Fantasy <kbd class="hs">quests</kbd></p>
       <div class="row" id="importedFantasy"></div>
-      <p class= "fs-1 ms-3 mt-5 text-start" id="dystopian" >Dystopian <kbd class="hs">quests</kbd></p>
-      <div id="importedDystopian"></div>
-      <p class= "fs-1 ms-3 mt-5 text-start" id="romance" >Romance <kbd class="hs">quests</kbd></p>
+      <!-- Dystopian -->
+      <p class= "fs-1 mt-5 text-start" id="dystopian" >Dystopian <kbd class="hs">quests</kbd></p>
+      <div class="row" id="importedDystopian"></div>
+      <!-- Romance -->
+      <p class= "fs-1 mt-5 text-start" id="romance" >Romance <kbd class="hs">quests</kbd></p>
       <div class="row" id="importedRomance"></div>
-      <p class= "fs-1 ms-3 mt-5 text-start" id="growth">Growth <kbd class="hs">quests</kbd></p>
+      <!-- Growth -->
+      <p class= "fs-1 mt-5 text-start" id="growth">Growth <kbd class="hs">quests</kbd></p>
       <div id="importedGrowth"></div>
-      <p class= "fs-1 ms-3 mt-5 text-start" id="classics" >Classics <kbd class="hs">quests</kbd></p>
-      <div id="importedClassics"></div>
-      </div>
+      <!-- Classics -->
+      <p class= "fs-1 mt-5 text-start" id="classics" >Classics <kbd class="hs">quests</kbd></p>
+      <div class="row mb-5" id="importedClassics"></div>
+    </div>
 
-      <footer class="navbar container pt-4 rounded-top" style="background-color: rgb(217, 217, 217);" >
-        <form action="" method="POST" id="joinWaitlist" class="input-group container pb-4" style="max-width: 500px;" >
-          <input type="text" class="form-control rounded me-2 text-bg-light" placeholder="email"  name="email" id="email" value="" required/>
-          <button class="rounded btn-sm text-light fs-6 btn text-bg-secondary" type="submit" sendMessage()>Get quests</button>
-        </form>
+    <footer class="navbar container-fluid pt-4 mt-5" style="background-color: rgb(217, 217, 217);" >
+      <form action="" method="POST" id="joinWaitlist" class="input-group container pb-4" style="max-width: 500px;" >
+        <input type="text" class="form-control rounded me-2 text-bg-light" placeholder="email"  name="email" id="email" value="" required/>
+        <button class="rounded btn-sm text-light fs-6 btn text-bg-secondary" type="submit" sendMessage()>Get quests</button>
+      </form>
       <dl class="row pt-2 mx-auto">
-          <dd class="col-3"><a href="https://github.com/volantxs"><img class="ps-2 pb-2" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="40"></a></dd>
-          <dd class="col-3"><a href="https://twitter.com/volantxs"><img class="ps-2 pb-2" src="https://cdn-icons-png.flaticon.com/512/3488/3488290.png" width="40"></a></dd>
-          <dd class="col-3"><a href="https://www.linkedin.com/in/sarikasingh7/"><img class="ps-2 pb-2" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="40"></a></dd>
-          <dd class="col-3"><a href="https://medium.com/@volantxs"><img class="ps-2 pb-2" src="https://cdn1.iconfinder.com/data/icons/social-media-circle-7/512/Circled_Medium_svg5-512.png" width="40"></a></dd>
-      <a class="btn btn-outline-danger rounded mt-3" role="button" id="reset">Reset saved data &circlearrowleft;</a>
-        
-        </dl>
+        <dd class="col-3"><a href="https://github.com/volantxs"><img class="ps-2 pb-2" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="40"></a></dd>
+        <dd class="col-3"><a href="https://twitter.com/volantxs"><img class="ps-2 pb-2" src="https://cdn-icons-png.flaticon.com/512/3488/3488290.png" width="40"></a></dd>
+        <dd class="col-3"><a href="https://www.linkedin.com/in/sarikasingh7/"><img class="ps-2 pb-2" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="40"></a></dd>
+        <dd class="col-3"><a href="https://medium.com/@volantxs"><img class="ps-2 pb-2" src="https://cdn1.iconfinder.com/data/icons/social-media-circle-7/512/Circled_Medium_svg5-512.png" width="40"></a></dd>
+        <a class="btn btn-outline-danger rounded mt-3" role="button" id="reset">Reset saved data &circlearrowleft;</a>
+      </dl>
+    </footer>
 
-      </footer>
-      
-    <script type="module" src="js/loadAllBooks.js"></script>
-    <!-- <script type="module" src="js/sendBook.js"></script> -->
-    <script  src="js/getXP.js" defer></script>
-    <script  src="js/disableButton.js" defer></script>
-    <script src="js/plot.js"></script>
-    <script type="module" src="js/modal.js" defer></script>
-     <script type="module" src="js/joinWaitlist.js" defer></script>
-  </body>
+<!-- Module Scripts -->
+<script type="module" src="js/loadAllBooks.js" ></script>
+<script type="module" src="js/modal.js" ></script>
+<script type="module" src="js/joinWaitlist.js" ></script>
+<!-- Non-module scripts -->
+<script  src="js/getXP.js" ></script>
+<script  src="js/disableButton.js" ></script>
+<script  src="js/plot.js" ></script>
+</body>
 </html>

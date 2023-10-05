@@ -1,6 +1,6 @@
-import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js";
-import  { db }  from "./firebase";
-import { getDescription } from "./modal";
+import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
+import  { db }  from "./firebaseConfig.js";
+import { getDescription } from "./modal.js";
 
 const querySnapshot = await getDocs(collection(db, "imported"));
 
@@ -38,7 +38,7 @@ querySnapshot.forEach((doc) => {
   var id = doc.id;
   const chosenVault = document.getElementById(vault);
   var newBookNode = document.createElement('div');
-  newBookNode.className = "col-md-2 box p-2 m-3" ;
+  newBookNode.className = "col-sm-2 box p-2 m-3" ;
   // img element
   var newBookImg = document.createElement('img');
   newBookImg.src = bookImg;
